@@ -20,7 +20,7 @@ public class PersonList {
 	}
 	
 	/**
-	 *sorts the ArrayList<Person> people by the PersonObjects' lastName Strings
+	 * orts the ArrayList<Person> people by the PersonObjects' lastName Strings
 	 */
 	public void sortByLastName()
 	{

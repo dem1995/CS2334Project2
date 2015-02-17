@@ -11,8 +11,10 @@ public class PersonList {
 	public PersonList()
 	{}
 	
+
+	
 	/**
-	 * Sorts the ArrayList<Person> people by the PersonObjects' firstName Strings
+	 * Sorts the ArrayList of Person objects by their FirstName Strings
 	 */
 	public void sortByFirstName()
 	{
@@ -20,7 +22,7 @@ public class PersonList {
 	}
 	
 	/**
-	 *sorts the ArrayList<Person> people by the PersonObjects' lastName Strings
+	 * Sorts the ArrayList of Person objects by their LastName Strings
 	 */
 	public void sortByLastName()
 	{
