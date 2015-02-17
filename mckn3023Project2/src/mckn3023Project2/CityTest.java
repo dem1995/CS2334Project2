@@ -9,7 +9,7 @@ public class CityTest {
 	@Test
 	public void test() {
 		City test = new City();
-		PersonList output = test.searchForName(name);
+		PersonList output = test.searchForName();
 		assertEquals(("expected result"), output);
 	}
 
