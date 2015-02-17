@@ -21,7 +21,7 @@ public class City implements Comparable<City> {
 	
 	public int compareTo(City city) {
 		// TODO Auto-generated method stub
-		return 0;1
+		return 0;
 	}
 	
 	
