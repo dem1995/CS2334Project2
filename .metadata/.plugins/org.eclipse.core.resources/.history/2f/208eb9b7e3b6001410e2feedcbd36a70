@@ -1,0 +1,17 @@
+package mckn3023Project2;
+
+public class Country 
+{
+	
+public Country(){}
+ArrayList states;
+	
+public void Country(ArrayList<states>)
+{
+}
+
+public PersonList searchForName(String name)
+{
+	return new PersonList();
+}
+}

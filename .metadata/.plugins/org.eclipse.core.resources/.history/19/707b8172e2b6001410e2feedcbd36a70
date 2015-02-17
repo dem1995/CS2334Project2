@@ -1,0 +1,10 @@
+package mckn3023Project2;
+
+public class City {
+	private PersonList personList;
+	public City(PersonLIst personList)
+	{
+		this.personList=personList;
+	}
+	
+}
