@@ -11,7 +11,10 @@ public class PersonList {
 	public PersonList()
 	{}
 	
-
+	public void addPerson(Person person)
+	{
+		people.add(person);		
+	}
 	
 	/**
 	 * Sorts the ArrayList of Person objects by their FirstName Strings
@@ -49,13 +52,5 @@ public class PersonList {
 		return new PersonList();
 	}
 	
-	public void addPerson(Person person)
-	{
-		people.add(person);		
-	}
 	
-	public Person getPerson(int i)
-	{
-		return (people.get(i));
-	}
 }

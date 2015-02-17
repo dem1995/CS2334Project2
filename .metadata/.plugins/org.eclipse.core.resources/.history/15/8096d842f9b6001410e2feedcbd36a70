@@ -1,13 +1,7 @@
 package mckn3023Project2;
 
-public class City implements Comparable<City> {
+public class City implements Comparable {
 	private PersonList personList;
-	
-	public City()
-	{
-		this.personList=new PersonList();
-	}
-	
 	public City(PersonList personList)
 	{
 		this.personList=personList;
@@ -19,9 +13,9 @@ public class City implements Comparable<City> {
 		return new PersonList();
 	}
 	
-	public int compareTo(City city) {
+	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
-		return 0;1
+		return 0;
 	}
 	
 	

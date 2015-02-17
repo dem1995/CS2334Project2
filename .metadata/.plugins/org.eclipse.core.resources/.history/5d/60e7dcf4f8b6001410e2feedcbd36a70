@@ -53,9 +53,4 @@ public class PersonList {
 	{
 		people.add(person);		
 	}
-	
-	public Person getPerson(int i)
-	{
-		return (people.get(i));
-	}
 }
