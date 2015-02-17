@@ -2,22 +2,14 @@ package mckn3023Project2;
 
 import java.util.ArrayList;
 
-/**
- *A sort-of wrapper for an ArrayList<Person> object 
- */
 public class PersonList {
 	/**
 	 * An ArrayList of Person objects
 	 */
 	private ArrayList<Person> people;
 	
-	/**
-	 * Creates a PersonList with an empty ArrayList<Person> people object
-	 */
 	public PersonList()
-	{
-		people=new ArrayList<Person>();
-	}
+	{}
 	
 	/**
 	 * Sorts the ArrayList<Person> people by the PersonObjects' firstName Strings
@@ -64,11 +56,6 @@ public class PersonList {
 		people.add(person);		
 	}
 	
-	/**
-	 * A method for getting a Person from PersonList's ArrayList<Person> people object at index i
-	 * @param i The index of the person to be gotten
-	 * @return The person at index i of PersonList's ArrayList<Person> people object
-	 */
 	public Person getPerson(int i)
 	{
 		return (people.get(i));

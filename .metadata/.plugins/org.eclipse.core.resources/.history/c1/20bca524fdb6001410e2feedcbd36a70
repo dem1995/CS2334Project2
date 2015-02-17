@@ -2,9 +2,6 @@ package mckn3023Project2;
 
 import java.util.ArrayList;
 
-/**
- *A sort-of wrapper for an ArrayList<Person> object 
- */
 public class PersonList {
 	/**
 	 * An ArrayList of Person objects
@@ -15,9 +12,7 @@ public class PersonList {
 	 * Creates a PersonList with an empty ArrayList<Person> people object
 	 */
 	public PersonList()
-	{
-		people=new ArrayList<Person>();
-	}
+	{}
 	
 	/**
 	 * Sorts the ArrayList<Person> people by the PersonObjects' firstName Strings

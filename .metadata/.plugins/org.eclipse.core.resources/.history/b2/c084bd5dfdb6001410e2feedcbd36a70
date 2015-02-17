@@ -2,9 +2,6 @@ package mckn3023Project2;
 
 import java.util.ArrayList;
 
-/**
- *A sort-of wrapper for an ArrayList<Person> object 
- */
 public class PersonList {
 	/**
 	 * An ArrayList of Person objects
