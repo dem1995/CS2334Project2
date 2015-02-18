@@ -5,12 +5,12 @@ package mckn3023Project2;
 
 import java.util.Date;
 
-
 /**
- * 
- *
+ * An object that contains data about a person, such as a first name, a last name, and a birthdate. Middle names are opional.
  */
 public class Person implements Comparable<Person> {
+	
+	//Instance Variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
 	/**
 	 *The first name of the person 
@@ -29,6 +29,7 @@ public class Person implements Comparable<Person> {
 	 */
 	private Date birthDate;
 	
+	//Instance Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
 	/**
 	 * Constructor method for person with a first name, a middle name, a last name, and a birthdate.
@@ -58,16 +59,19 @@ public class Person implements Comparable<Person> {
 
 	
 	/**
-	 * A getter method for the first name
+	 * Getter method for the first name
 	 * @return The firstName String of the person object
 	 */
+	
+	//Getter Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
 	public String getFirstName()
 	{
 		return firstName;
 	}
 	
 	/**
-	 * A getter method for the last name
+	 * Getter method for the last name
 	 * @return The firstName String of the person object
 	 */
 	public String getLastName()
@@ -76,21 +80,13 @@ public class Person implements Comparable<Person> {
 	}
 	
 	/**
-	 * A getter method for the middle names
+	 * Getter method for the middle names
 	 * @return The firstName String of the person object
 	 */
 	public String getMiddleNames()
 	{
 		return middleNames;
 	}
-	
-	
-
-	public int compareTo(Person o) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	
 	
 	/**
 	 * Returns the full name of the person, in the order First Middles Last
@@ -99,6 +95,21 @@ public class Person implements Comparable<Person> {
 	public String getFullName()
 	{
 		return (firstName+" "+middleNames+" "+lastName);
+	}
+	
+	/**
+	 * Getter method for the birthdate
+	 * @return The date of birth of the Person
+	 */
+	public Date getBirthDate()
+	{
+		return birthDate;
+	}
+	
+	//Interface-required Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	public int compareTo(Person otherPerson) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 

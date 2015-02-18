@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Country {
 
-	ArrayList states;
+
+	ArrayList<State> states;
 	public Country() {
 	
 	}
@@ -15,9 +16,12 @@ public class Country {
 		this.states = states;
 	}
 	
-	public State getState(String name)
+	
+	
+	public State findState(String name)
 	{
-		return 
+		//TODO
+		return null;
 	}
 
 	public PersonList searchForName(String name) {
