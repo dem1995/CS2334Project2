@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- *A sort-of wrapper for an ArrayList<Person> object 
+ *A sort-of wrapper for an <code>ArrayList</code> of <code>Person</code>s
  */
 public class PersonList {
 	
@@ -30,30 +30,25 @@ public class PersonList {
 	public String currentlySortedBy="";
 	
 	/**
-	 * An ArrayList of Person objects
+	 * An <code>ArrayList</code> of <code>Person</code>s
 	 */
 	private ArrayList<Person> people;
 	
-	/**
-	 * Creates a PersonList with an empty ArrayList<Person> people object
-	 */
 	
 	//Instance methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	/**
+	 * Creates a <code>PersonList</code> with an empty <code>people</code>
+	 */
 	public PersonList()
 	{
 		people=new ArrayList<Person>();
 	}
 	
-	/**
-	 * Sorts the ArrayList<Person> people via a Comparator comparator. If comparator is null, sorts via natural ordering defined by the methods defined for the Comparable<Person> interface of Person objects
-	 * @param comparator The Comparator<Person> with which the sorting will be done. If null, uses the natural ordering defined by the methods defined for the Comparable<Person> interface of Person objects
-	 */
-	
 	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
-	 * A method for getting a Person from PersonList's ArrayList<Person> people object at index i
+	 * A method for getting a <code>Person</code> from <code>people</code>
 	 * @param i The index of the person to be gotten
-	 * @return The person at index i of PersonList's ArrayList<Person> people object
+	 * @return The person at index i of PersonList's people object
 	 */
 	public Person getPerson(int i)
 	{
@@ -62,8 +57,8 @@ public class PersonList {
 	
 	//Sorting methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
-	 * Sorts the ArrayList<Person> people using the Comparator<Person> comparator
-	 * @param comparator How the ArrayList<Person> people should be sorted
+	 * Sorts <code>people</code> using <code>comparator</code>. If <code>comparator</code> is <code>null</code>, uses natural ordering. Changes <code>currentlySortedBy</code>.
+	 * @param comparator How people should be sorted
 	 */
 	public void sortUsing(Comparator<Person> comparator)
 	{
@@ -72,7 +67,7 @@ public class PersonList {
 	
 	//Searching methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
-	 * Searches the ArrayList<Person> people for Person objects with data that exactly match the key
+	 * Searches <code>people</code> for and returns <code>Person</code>s with data that exactly match <code>key</code>
 	 * @param key Either a full name, a first name, a last name, or a String representation of a date, depending on the comparator
 	 * @param comparator How the searching will be done
 	 * @return A PersonList with Person objects whose data exactly matches the key
@@ -84,7 +79,7 @@ public class PersonList {
 	}
 	
 	/**
-	 * Searches the ArrayList<Person> people for Person objects with full names that contain the key
+	 * Searches <code>people</code> for and returns <code>Person</code>s with full names that contain <code>key</code>
 	 * @param name What the Persons in the returned PersonList should contain in their full names
 	 * @return A PersonList with Person objects whose full names contain the key
 	 */
@@ -97,8 +92,8 @@ public class PersonList {
 
 	//Other methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
-	 * Merges two person objects into one
-	 * @param person
+	 * Merges two <code>Person</code>s into one
+	 * @param person The Person to be merged with the Person this is called on.
 	 * @return a combination of the PersonList that the combineWith method was called for and the PersonList the combineWith method was sent
 	 */
 	public PersonList combineWith(PersonList person)
@@ -108,7 +103,7 @@ public class PersonList {
 	}
 	
 	/**
-	 * A method for adding a person to PersonList's ArrayList<Person> people object
+	 * A method for adding a <code>Person</code> to <code>people</code>
 	 * @param person The person to be added to People
 	 */
 	public void addPerson(Person person)

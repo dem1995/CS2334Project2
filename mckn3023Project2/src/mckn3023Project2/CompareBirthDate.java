@@ -3,7 +3,7 @@ package mckn3023Project2;
 import java.util.Comparator;
 
 /**
- * A comparator object that takes in two Person objects and compares their birthdates
+ * A comparator object that takes in two <code>Person</code>s and compares their <code>birthDates</code>s
  */
 public class CompareBirthDate implements Comparator<Person>{
 

@@ -1,0 +1,36 @@
+package mckn3023Project2;
+
+import java.util.ArrayList;
+
+/**
+ * Holds an ArrayList<City> of City objects and provides methods for searching that list
+ */
+public class State {
+	
+	/**
+	 * An ArrayList<City> of City objects in this State object
+	 */
+	private ArrayList<City> cities;
+	
+	
+	/**
+	 * Creates a State object that contains a copy of the ArrayList<City> cities
+	 * @param cities The Cities for this State to hold
+	 */
+	public State(ArrayList<City> cities)
+	{
+		this.cities=cities;
+	}
+	
+	/** 
+	 * Adds a City object to this State's ArrayList<City> of Cities
+	 * @param city The City to be added
+	 */
+	public void addCity(City city)
+	{
+		this.cities.add(city);
+	}
+	
+	
+	
+}

@@ -6,7 +6,7 @@ package mckn3023Project2;
 import java.util.Date;
 
 /**
- * An object that contains data about a person, such as a first name, a last name, and a birthdate. Middle names are opional.
+ * An object that contains data about a person, such as a first name, a last name, and a birthdate. Middle names are optional.
  */
 public class Person implements Comparable<Person> {
 	
@@ -32,7 +32,7 @@ public class Person implements Comparable<Person> {
 	//Instance Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
 	/**
-	 * Constructor method for person with a first name, a middle name, a last name, and a birthdate.
+	 * Constructor method for a person with a first name, a middle name, a last name, and a birthdate.
 	 * @param firstName The person's first name
 	 * @param lastName The person's last name
 	 * @param birthDate The person's birth date.
@@ -58,21 +58,21 @@ public class Person implements Comparable<Person> {
 	}
 
 	
-	/**
-	 * Getter method for the first name
-	 * @return The firstName String of the person object
-	 */
+
 	
 	//Getter Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	
+	/**
+	 * Getter method for <code>firstName</code>
+	 * @return The firstName String of the person object
+	 */
 	public String getFirstName()
 	{
 		return firstName;
 	}
 	
 	/**
-	 * Getter method for the last name
-	 * @return The firstName String of the person object
+	 * Getter method for <code>lastName</code>
+	 * @return The lastName String of the person object
 	 */
 	public String getLastName()
 	{
@@ -80,8 +80,8 @@ public class Person implements Comparable<Person> {
 	}
 	
 	/**
-	 * Getter method for the middle names
-	 * @return The firstName String of the person object
+	 * Getter method for <code>middleNames</code>
+	 * @return The middleNames String of the person object
 	 */
 	public String getMiddleNames()
 	{
@@ -98,7 +98,7 @@ public class Person implements Comparable<Person> {
 	}
 	
 	/**
-	 * Getter method for the birthdate
+	 * Getter method for <code>birthDate</code>
 	 * @return The date of birth of the Person
 	 */
 	public Date getBirthDate()

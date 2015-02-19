@@ -3,7 +3,7 @@ package mckn3023Project2;
 import java.util.Comparator;
 
 /**
- * A comparator object that takes in two Person objects and compares their last names
+ * A comparator object that takes in two <code>Person</code>s and compares their <code>lastName</code>s
  */
 public class CompareLastName implements Comparator<Person>{
 
