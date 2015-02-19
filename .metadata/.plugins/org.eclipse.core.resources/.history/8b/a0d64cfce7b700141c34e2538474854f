@@ -43,15 +43,6 @@ public class City implements Comparable<City> {
 		return personList;
 	}
 	
-	/**
-	 * A getter method for cityName
-	 * @return the name of the city
-	 */
-	public String getName()
-	{
-		return cityName;
-	}
-	
 	//Interface-required methods
 	public int compareTo(City city) {
 		// TODO Auto-generated method stub

@@ -13,29 +13,23 @@ import java.util.ArrayList;
  */
 public class State {
 	
-	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	/**
-	 * <code>True</code> if <code>cities</code> has been sorted, <code>False</code> otherwise
-	 */
-	public boolean isSorted;
-	
+	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
 	 * An <code>ArrayList</code> of <code>City</code> objects
 	 */
 	private ArrayList<City> cities;
 	
 	/**
-	 * The name of the city
+	 * <code>True</code> if <code>cities</code> has been sorted, <code>False</code> otherwise
 	 */
-	private String stateName;
+	public boolean isSorted;
 	
 	//Instance methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
 	 * Creates a <code>State</code> with an empty <code>ArrayList</code> of <code>Cities</code>
 	 */
-	public State(String stateName)
+	public State()
 	{
-		this.stateName=stateName;
 		this.cities=new ArrayList<City>();
 	}
 	/**
@@ -67,16 +61,6 @@ public class State {
 	public void addCity(City city)
 	{
 		this.cities.add(city);
-	}
-	
-	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	/**
-	 * A getter method for <code>stateName</code>
-	 * @return stateName
-	 */
-	public String getName()
-	{
-		return stateName;
 	}
 	
 	

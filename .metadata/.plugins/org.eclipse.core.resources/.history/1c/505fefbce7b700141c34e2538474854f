@@ -17,19 +17,12 @@ public class City implements Comparable<City> {
 	 */
 	private PersonList personList;
 	
-	/**
-	 * The name of the city
-	 */
-	private String cityName;
-	
 	//Instance method
 	/**
-	 * Creates a <code>City</code> with the name <code>cityName</code> and an empty <code>PersonList</code>
-	 * @param cityName
+	 * Creates a <code>City</code> and an empty <code>PersonList</code>
 	 */
-	public City(String cityName)
+	public City()
 	{
-		this.cityName=cityName;
 		this.personList=new PersonList();
 	}
 	
@@ -41,15 +34,6 @@ public class City implements Comparable<City> {
 	public PersonList getPersonList()
 	{
 		return personList;
-	}
-	
-	/**
-	 * A getter method for cityName
-	 * @return the name of the city
-	 */
-	public String getName()
-	{
-		return cityName;
 	}
 	
 	//Interface-required methods

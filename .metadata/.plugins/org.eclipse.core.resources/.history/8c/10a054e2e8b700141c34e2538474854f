@@ -33,7 +33,7 @@ public class State {
 	/**
 	 * Creates a <code>State</code> with an empty <code>ArrayList</code> of <code>Cities</code>
 	 */
-	public State(String stateName)
+	public State(stateName)
 	{
 		this.stateName=stateName;
 		this.cities=new ArrayList<City>();
@@ -67,16 +67,6 @@ public class State {
 	public void addCity(City city)
 	{
 		this.cities.add(city);
-	}
-	
-	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	/**
-	 * A getter method for <code>stateName</code>
-	 * @return stateName
-	 */
-	public String getName()
-	{
-		return stateName;
 	}
 	
 	
