@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
- *A sort-of wrapper for an <code>ArrayList</code> of <code>Person</code>s
+ * Project #2
+ * CS 2334, Section 010
+ * Feb 18, 2015
+ * <p>
+ * A sort-of wrapper for an <code>ArrayList</code> of <code>Person</code>s
+ * </p>
+ * @version 1.0
  */
 public class PersonList {
 	

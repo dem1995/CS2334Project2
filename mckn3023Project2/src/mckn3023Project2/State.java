@@ -3,7 +3,13 @@ package mckn3023Project2;
 import java.util.ArrayList;
 
 /**
+ * Project #2
+ * CS 2334, Section 010
+ * Feb 18, 2015
+ * <p>
  * Holds an <code>ArrayList</code> of <code>Cities</code> and provides methods for searching that list
+ * </p>
+ * @version 1.0
  */
 public class State {
 	

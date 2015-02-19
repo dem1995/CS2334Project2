@@ -1,7 +1,13 @@
 package mckn3023Project2;
 
 /**
- *Holds a <code>PersonList</code> of people, emulating the population of a city
+ * Project #2
+ * CS 2334, Section 010
+ * Feb 18, 2015
+ * <p>
+ * Holds a <code>PersonList</code> of people, emulating the population of a city
+ * </p>
+ * @version 1.0
  */
 public class City implements Comparable<City> {
 	
