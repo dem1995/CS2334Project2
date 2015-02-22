@@ -25,7 +25,7 @@ public class City implements Comparable<City> {
 	//Instance method
 	/**
 	 * Creates a <code>City</code> with the name <code>cityName</code> and an empty <code>PersonList</code>
-	 * @param cityName
+	 * @param cityName The name of the city
 	 */
 	public City(String cityName)
 	{

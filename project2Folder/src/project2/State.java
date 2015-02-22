@@ -25,13 +25,14 @@ public class State {
 	private ArrayList<City> cities;
 	
 	/**
-	 * The name of the city
+	 * The name of the state
 	 */
 	private String stateName;
 	
 	//Instance methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
 	 * Creates a <code>State</code> with an empty <code>ArrayList</code> of <code>Cities</code>
+	 * @param stateName The name of the state
 	 */
 	public State(String stateName)
 	{
