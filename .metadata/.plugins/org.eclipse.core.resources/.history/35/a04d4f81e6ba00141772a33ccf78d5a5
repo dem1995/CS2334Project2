@@ -16,6 +16,7 @@ public class CompareLastName implements Comparator<Person>{
 
 
 	public int compare(Person person1, Person person2) {
+		// TODO Auto-generated method stub
 		return person1.getLastName().compareToIgnoreCase(person2.getLastName());
 	}
 

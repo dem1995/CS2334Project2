@@ -16,6 +16,7 @@ public class CompareLastName implements Comparator<Person>{
 
 
 	public int compare(Person person1, Person person2) {
+		// TODO compares the lastName of person1 to the lastName of person2 and returns a negative value, zero, or a positive value if person1's lastName is less than, equal to, or greater than person2's lastName, respectively
 		return person1.getLastName().compareToIgnoreCase(person2.getLastName());
 	}
 

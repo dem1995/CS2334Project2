@@ -1,7 +1,6 @@
 package project2;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 /**
@@ -69,8 +68,7 @@ public class PersonList {
 	 */
 	public void sortUsing(Comparator<Person> comparator)
 	{
-		Collections.sort(people, comparator);
-		System.out.println(comparator.getClass());
+		//TODO
 	}
 	
 	//Searching methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
