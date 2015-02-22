@@ -52,12 +52,12 @@
 		<item value="true" key="splitindex"/>
 		<item value="true" key="fromStandard"/>
 		<item value="false" key="notree"/>
-		<item value="C:\CS2334\CS2334Project2\project2Folder\UML" key="destdir"/>
+		<item value="C:\CS2334\CS2334Project2\project2Folder\JavaDoc" key="destdir"/>
 		<item value="false" key="openinbrowser"/>
 		<section name="projects">
 			<section name="project2Folder">
 				<item value="C:\CS2334\CS2334Project2\project2Folder\javadoc.xml" key="antpath"/>
-				<item value="C:\CS2334\CS2334Project2\project2Folder\UML" key="destdir"/>
+				<item value="C:\CS2334\CS2334Project2\project2Folder\JavaDoc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
 		</section>

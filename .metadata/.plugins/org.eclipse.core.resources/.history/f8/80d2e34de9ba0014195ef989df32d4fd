@@ -1,18 +1,8 @@
 package project2;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
 /**
  * Project #2
@@ -59,7 +49,7 @@ public class PeoplAce {
 		{
 			try{
 				Person person=convertStringToPerson(personString, formatter);
-				personCollection.addPerson(person);
+				personCollection.add(person);
 			}catch (Exception e)
 			{
 				errors+=(e.getMessage()+"\n");
@@ -76,8 +66,8 @@ public class PeoplAce {
 			String userInput=(String)JOptionPane.showInputDialog(null, "Enter the name or part of the name of the person that you wish to search for, or press \"cancel\" to quit", "searching for name", JOptionPane.PLAIN_MESSAGE);
 			if (userInput!=null)
 			{	
-				PersonList temp=personCollection.partialSearchNamesFor(userInput);
-				//temp.sort();
+				PersonCollection temp=personCollection.findPersonByName(userInput);
+				temp.sort();
 				messageOutput(temp.toString(), "Search Results");
 			}
 			else
@@ -116,7 +106,6 @@ public class PeoplAce {
 	{
 		Person aPerson=null;
 		String[] personParts = personString.split(",");
-		String[] names=personParts[0].split(" ");
 		
 		if (personParts.length<4||personParts.length>5)
 			throw new Exception("\""+personString+"\""+"had too many/too few parts separated by commas");
@@ -124,9 +113,9 @@ public class PeoplAce {
 		try
 		{
 		if (personParts.length==4)
-			aPerson=new Person(names[0], names[names.length], formatter.parse(personParts[1]));
+			aPerson=new Person(personParts[0], formatter.parse(personParts[1]), personParts[2], personParts[3]);
 		else if (personParts.length==5)
-			aPerson=new Person(names[0], names[names.length], formatter.parse(personParts[1]));
+			aPerson=new Person(personParts[0], formatter.parse(personParts[1]), personParts[2], personParts[3], formatter.parse(personParts[4]));
 		}
 			catch (ParseException e)
 		{throw new Exception("\""+personString+"\""+ "'s parts separated by commas were in the wrong formats");}
@@ -151,4 +140,4 @@ public class PeoplAce {
 	
 }
 
-
+}
