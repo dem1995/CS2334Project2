@@ -16,7 +16,7 @@ public class State {
 	
 	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
-	 * <code>true</code> if <code>cities</code> has been sorted, <code>false</code> otherwise
+	 * <code>True</code> if <code>cities</code> has been sorted, <code>False</code> otherwise
 	 */
 	public boolean isSorted=false;
 	
