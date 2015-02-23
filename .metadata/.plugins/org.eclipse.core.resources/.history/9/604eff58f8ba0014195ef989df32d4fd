@@ -85,14 +85,8 @@ public class PersonList {
 	 */
 	public PersonList exactSearchFor(String key, Comparator<Person> comparator)
 	{
-		PersonList personList=new PersonList();
-		Person keyPerson=new Person(key, null);
-		if (!currentlySortedBy.equals(comparator.getClass().getSimpleName()))
-			sortUsing(comparator);
-		int keyMatch=Collections.binarySearch(people, keyPerson, comparator);
-		if (keyMatch>0)
-			personList.addPerson(people.get(keyMatch));
-		return personList;
+		//TODO
+		return null;
 	}
 	
 	/**

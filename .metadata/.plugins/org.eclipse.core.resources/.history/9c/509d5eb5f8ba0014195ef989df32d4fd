@@ -21,15 +21,15 @@ public class Person implements Comparable<Person> {
 	/**
 	 *The first name of the person 
 	 */
-	private String firstName="";
+	private String firstName;
 	/**
 	 * The last name of the person
 	 */
-	private String lastName="";
+	private String lastName;
 	/**
 	 * The middle names of the person, separated by spaces
 	 */
-	private String middleNames="";
+	private String middleNames;
 	/**
 	 * The date of birth of the person
 	 */

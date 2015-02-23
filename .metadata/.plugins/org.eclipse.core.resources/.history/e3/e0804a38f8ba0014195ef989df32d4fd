@@ -21,15 +21,15 @@ public class Person implements Comparable<Person> {
 	/**
 	 *The first name of the person 
 	 */
-	private String firstName="";
+	private String firstName;
 	/**
 	 * The last name of the person
 	 */
-	private String lastName="";
+	private String lastName;
 	/**
 	 * The middle names of the person, separated by spaces
 	 */
-	private String middleNames="";
+	private String middleNames;
 	/**
 	 * The date of birth of the person
 	 */
@@ -37,7 +37,6 @@ public class Person implements Comparable<Person> {
 	
 	//Instance Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
-
 	/**
 	 * Constructor method for a person with a first name, a middle name, a last name, and a birthdate.
 	 * @param firstName The person's first name
@@ -62,28 +61,6 @@ public class Person implements Comparable<Person> {
 	{
 		this(firstName, lastName, birthDate);
 		this.middleNames=middleNames;
-	}
-	
-	/**
-	 * Constructor method for a person with a given name
-	 * @param fullName The person's fullName, is split up, and its components are assigned to firstName, lastName, and middleNames
-	 * @param birthDate The person's birth date
-	 */
-	public Person(String fullName, Date birthDate)
-	{
-		String[] names=fullName.split(" ");
-		for (int i=0; i<names.length; i++)
-		{
-			if (i==0)
-				this.firstName=names[i];
-			else if (i<names.length-2)
-				this.middleNames+=(names[i]+" ");
-			else if (i==names.length-2)
-				this.middleNames+=(names[i]);
-			else if (i==names.length-1)
-				this.lastName=names[i];
-		}			
-		this.birthDate=birthDate;
 	}
 
 	
