@@ -16,7 +16,6 @@ public class CityTest {
 		assertEquals(firstComparison/Math.abs(firstComparison), -1);
 		int oppositeComparison=city2.compareTo(city);
 		assertEquals(oppositeComparison/Math.abs(oppositeComparison), 1);
-		int equalsComparison=city.compareTo(city);
-		assertEquals(equalsComparison, 0);
 	}
+
 }

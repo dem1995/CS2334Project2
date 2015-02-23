@@ -122,7 +122,7 @@ public class PersonList {
 	public PersonList combineWith(PersonList person)
 	{
 		people.addAll(person.people);
-		return this;
+		return null;
 	}
 	
 	/**
