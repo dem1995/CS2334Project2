@@ -41,7 +41,7 @@ public class PeoplAce {
 	public static void main(String[] args) {
 		
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
-		PersonList personList= new PersonList(); // The collection of people
+		PersonList personCollection= new PersonList(); // The collection of people
 		String errors=""; // When exceptions are caught, they add info to this String. This String is then output as a JMessageDialog to the user.
 		Scanner reader = new Scanner(System.in);
 		String fileName;
@@ -61,13 +61,13 @@ public class PeoplAce {
 		{
 			try{
 				Person person=convertStringToPerson(personString, formatter);
-				personList.addPerson(person);
+				personCollection.addPerson(person);
 			}catch (Exception e)
 			{
 				errors+=(e.getMessage()+"\n");
 			}
 		}
-		System.out.println(personList);
+		System.out.println(personCollection);
 		
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
