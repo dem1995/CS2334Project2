@@ -57,12 +57,7 @@ public class State {
 	 */
 	public City searchFor(String cityName)
 	{
-		City keyCity=new City(cityName);
-		if (!isSorted)
-			this.sort();
-		int cityFoundAt=Collections.binarySearch(cities, keyCity);
-		if (cityFoundAt>=0)
-			return cities.get(cityFoundAt);
+		//TODO
 		return null;
 	}
 	
@@ -90,7 +85,7 @@ public class State {
 	/**
 	 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
 	 */
-	public void sort()
+	public void Sort()
 	{
 		Collections.sort(cities);
 		isSorted=true;
