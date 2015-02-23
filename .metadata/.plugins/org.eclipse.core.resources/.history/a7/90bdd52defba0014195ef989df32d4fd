@@ -111,17 +111,17 @@ public class PeoplAce {
 		String firstName="";
 		String middleNames="";
 		String lastName="";
-		for (int i=0; i<names.length; i++)
-		{
-			if (i==0)
-				firstName=names[i];
-			else if (i<names.length-2)
-				middleNames+=(names[i]+" ");
-			else if (i==names.length-2)
-				middleNames+=(names[i]);
-			else if (i==names.length-1)
-				lastName=names[i];
-		}	
+		firstName+=names[0];
+		if (names.length>1)
+			lastName=names[names.length];			
+		if (names.length>2)
+			for (int i=1; i<names.length-1; i++)
+			{
+				if (i==1)
+					middleNames=names[i];
+				else
+					middleNames+=names[i];
+			}
 		
 		if (personParts.length<4||personParts.length>5)
 			throw new Exception("\""+personString+"\""+"had too many/too few parts separated by commas");
@@ -129,9 +129,9 @@ public class PeoplAce {
 		try
 		{
 		if (personParts.length==4) //Tests to see if person has a deathDate. True if false.
-			aPerson=new Person(firstName, middleNames, lastName, formatter.parse(personParts[1]));
+			aPerson=new Person(names[0], middleNames, names[names.length-1], formatter.parse(personParts[1]));
 		else if (personParts.length==5) //Tests to see if person has a deathDate. True if true
-			aPerson=new Person(firstName, middleNames, lastName, formatter.parse(personParts[1]));
+			aPerson=new Person(names[0], middleNames, names[names.length-1], formatter.parse(personParts[1]));
 		}
 			catch (ParseException e)
 		{throw new Exception("\""+personString+"\""+ "'s parts separated by commas were in the wrong formats");}

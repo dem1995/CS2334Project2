@@ -119,13 +119,5 @@ public class PersonList {
 		people.add(person);		
 	}
 	
-	public String toString()
-	{
-		String cheese="";
-		for (int i=0; i<people.size(); i++)
-			cheese+=people.get(i).toString()+"\n";
-		return cheese;
-	}
-	
 
 }

@@ -100,10 +100,6 @@ public class Person implements Comparable<Person> {
 	 */
 	public String getFullName()
 	{
-		if (lastName=="")
-			return firstName;
-		if (middleNames=="")
-			return firstName+" "+lastName;
 		return (firstName+" "+middleNames+" "+lastName);
 	}
 	
@@ -114,11 +110,6 @@ public class Person implements Comparable<Person> {
 	public Date getBirthDate()
 	{
 		return birthDate;
-	}
-	
-	public String toString()
-	{
-		return getFullName()+", Date will go here";
 	}
 	
 	//Interface-required Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
