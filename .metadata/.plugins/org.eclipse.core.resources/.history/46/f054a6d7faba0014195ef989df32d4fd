@@ -102,14 +102,8 @@ public class PersonList {
 	 */
 	public PersonList partialSearchNamesFor(String name)
 	{
-		PersonList personNameMatchList=new PersonList();
-		name=name.toLowerCase();
-		for (Person p:people)
-		{
-			if (p.getFullName().toLowerCase().contains(name))
-				personNameMatchList.addPerson(p);
-		}
-		return personNameMatchList;
+		//TODO
+		return null;
 	}
 	
 

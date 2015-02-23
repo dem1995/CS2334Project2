@@ -106,8 +106,9 @@ public class PersonList {
 		name=name.toLowerCase();
 		for (Person p:people)
 		{
-			if (p.getFullName().toLowerCase().contains(name))
+			if (p.getFullName().toLowerCase().contains(name));
 				personNameMatchList.addPerson(p);
+				System.out.println(p.getFirstName());
 		}
 		return personNameMatchList;
 	}

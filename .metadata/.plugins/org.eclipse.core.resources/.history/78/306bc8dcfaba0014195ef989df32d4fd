@@ -105,11 +105,9 @@ public class PersonList {
 		PersonList personNameMatchList=new PersonList();
 		name=name.toLowerCase();
 		for (Person p:people)
-		{
-			if (p.getFullName().toLowerCase().contains(name))
+			if (p.getFullName().toLowerCase().contains(name));
 				personNameMatchList.addPerson(p);
-		}
-		return personNameMatchList;
+		return null;
 	}
 	
 

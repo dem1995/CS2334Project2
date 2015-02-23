@@ -16,10 +16,10 @@ public class PersonListTest {
 		testPersonList.sortUsing(PersonList.lastNameComparator);
 		assertEquals("cobra", testPersonList.getPerson(0).getLastName());
 		testPersonList.sortUsing(PersonList.firstNameComparator);
-		assertEquals("fred", testPersonList.getPerson(0).getFirstName());
+		assertEquals("fred", testPersonList.getPerson(0));
 		
 		assertEquals("george", testPersonList.exactSearchFor("george", PersonList.firstNameComparator).getPerson(0).getFirstName());
-	 	assertEquals("harold cobra", testPersonList.partialSearchNamesFor("rold").getPerson(0).getFullName());
+		assertEquals("harold cobra", testPersonList.partialSearchNamesFor("rold").getPerson(0).getFullName());
 	}
 
 }
