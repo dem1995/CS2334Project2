@@ -55,7 +55,7 @@ public class State {
 	 * @param cityName The exact name of the city to be found
 	 * @return A City with a name that exactly matches the search parameter if one is found, otherwise returns null.
 	 */
-	public City searchFor(String cityName)
+	public City findCityOrAdd(String cityName)
 	{
 		City keyCity=new City(cityName);
 		if (!isSorted)
@@ -63,7 +63,12 @@ public class State {
 		int cityFoundAt=Collections.binarySearch(cities, keyCity);
 		if (cityFoundAt>=0)
 			return cities.get(cityFoundAt);
-		return null;
+		else
+		{
+			City newCity = new City(cityName);
+			cities.add(newCity);
+			return newCity;
+		}
 	}
 	
 	//Adder methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
@@ -85,6 +90,15 @@ public class State {
 	public String getName()
 	{
 		return stateName;
+	}
+	
+	/**
+	 * getter method for <code>cities</code>
+	 * @return the arrayList of Cities held by this State
+	 */
+	public ArrayList<City> getCities()
+	{
+		return cities;
 	}
 	
 	/**

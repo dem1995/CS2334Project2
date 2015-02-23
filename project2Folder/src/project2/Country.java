@@ -42,10 +42,17 @@ public class Country {
 	 * @param name The name of the State to be found
 	 * @return The State that was found
 	 */
-	public State findState(String name)
+	public State findStateOrAdd(String name)
 	{
-		//TODO
-		return null;
+		name=name.toLowerCase();
+		for (State state: states)
+		{
+			if (state.getName().toLowerCase()==name)
+				return state;
+		}
+		State newState=new State(name);
+		states.add(newState);
+		return newState;
 	}
 	
 	//Adder method
@@ -56,6 +63,24 @@ public class Country {
 	public void addState(State state)
 	{
 		states.add(state);
+	}
+	
+	/**
+	 * @return The Country as an arrayList of Person objects
+	 */
+	public PersonList toPersonList()
+	{
+		PersonList tempList=new PersonList();
+		for (State s: states)
+			for (City c: s.getCities())
+				for (Person p: c.getPersonList().getPeople())
+					tempList.addPerson(p);
+		return tempList;
+	}
+	
+	public String toString()
+	{
+		return toPersonList().toString();
 	}
 	
 }

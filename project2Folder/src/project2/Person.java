@@ -30,6 +30,16 @@ public class Person implements Comparable<Person> {
 	 * The middle names of the person, separated by spaces
 	 */
 	private String middleNames="";
+
+	/**
+	 * The name of the city the person lives in
+	 */
+	private String cityName="";
+	
+	/**
+	 * The name of the state the person lives in
+	 */
+	private String stateName="";
 	/**
 	 * The date of birth of the person
 	 */
@@ -69,6 +79,7 @@ public class Person implements Comparable<Person> {
 	 * @param fullName The person's fullName, is split up, and its components are assigned to firstName, lastName, and middleNames
 	 * @param birthDate The person's birth date
 	 */
+	
 	public Person(String fullName, Date birthDate)
 	{
 		String[] names=fullName.split(" ");
@@ -137,6 +148,44 @@ public class Person implements Comparable<Person> {
 	public Date getBirthDate()
 	{
 		return birthDate;
+	}
+	
+	/**
+	 * Getter method for <code>stateName</code>
+	 * @return the name of the state the person lives in
+	 */
+	public String getStateName()
+	{
+		return stateName;
+	}
+	
+	/**
+	 * Getter method for <code>cityName</code>
+	 * @return The name of the city the person lives in
+	 */
+	public String getCityName()
+	{
+		return cityName;
+	}
+	
+	//Setter Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	/**
+	 * Setter method for <code>stateName</code>
+	 * @param stateName
+	 */
+	public void setStateName(String stateName)
+	{
+		this.stateName=stateName;
+	}
+	
+	/**
+	 * Setter method for <code>cityName</code>
+	 * @param cityName
+	 */
+	public void setCityName(String cityName)
+	{
+		this.cityName=cityName;
 	}
 	
 	public String toString()

@@ -25,6 +25,10 @@ public class PeoplAce {
 	 */
 	public static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyyy");
 	
+	/**
+	 * Errors accumulated during the project
+	 */
+	public static String errors="";
 
 	/**
 	 *Allows users to search through data on people and places.
@@ -34,8 +38,9 @@ public class PeoplAce {
 		
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
 		PersonList personList= new PersonList(); // The collection of people
-		String errors=""; // When exceptions are caught, they add info to this String. This String is then output as a JMessageDialog to the user.
+		//String errors=""; // When exceptions are caught, they add info to this String. This String is then output as a JMessageDialog to the user.
 		Scanner reader = new Scanner(System.in);
+		Country country= new Country();
 		
 		
 		System.out.println("Enter the fileName");
@@ -49,19 +54,9 @@ public class PeoplAce {
 		{
 			errors+="There was a problem reading in the CSV file, or the file was not found"+"\n";
 		}
-		//Attempts to convert the ArrayList<String> personStrings to Person objects and add them to personCollection
-		for (String personString: personStrings)
-		{
-			try{
-				Person person=convertStringToPerson(personString, formatter);
-				personList.addPerson(person);
-			}catch (Exception e)
-			{
-				errors+=(e.getMessage()+"\n");
-			}
-		}
-		System.out.println(personList);
-		
+		//Attempts to convert the ArrayList<String> personStrings to a Country object
+		country=convertStringListToCountry(personStrings);
+		System.out.println(country);;
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
@@ -89,6 +84,28 @@ public class PeoplAce {
 	}
 	
 	/**
+	 * Builds a country from personStrings
+	 * @param personStrings
+	 * @return A country made from the arrayList of personStrings
+	 */
+	public static Country convertStringListToCountry(ArrayList<String> personStrings)
+	{
+		Country country=new Country();
+		for (String personString: personStrings)
+		{
+			try
+			{
+				Person aPerson=convertStringToPerson(personString, formatter);
+				country.findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
+			}
+			catch (Exception e)
+			{
+				errors+=(e.getMessage()+"\n");
+			}
+		}
+		return country;
+	}
+	/**
 	 * Method for converting a String in the form of "Name, birthDate, birthCity, birthState" or ""Name, birthDate, birthCity, birthState" containing Person data to a Person object
 	 * @param personString Sting representing a person object's data
 	 * @param formatter Formats the date data
@@ -106,10 +123,18 @@ public class PeoplAce {
 		
 		try
 		{
-		if (personParts.length==4) //Tests to see if person has a deathDate. True if false.
-			aPerson=new Person(fullName, formatter.parse(personParts[1]));
-		else if (personParts.length==5) //Tests to see if person has a deathDate. True if true
-			aPerson=new Person(fullName, formatter.parse(personParts[1]));
+			if (personParts.length==4) //Tests to see if person has a deathDate. Runs if false.
+			{
+				aPerson=new Person(fullName, formatter.parse(personParts[1]));
+				aPerson.setCityName(personParts[2]);
+				aPerson.setStateName(personParts[3]);
+			}
+			else if (personParts.length==5) //Tests to see if person has a deathDate. Runs if true
+			{
+				aPerson=new Person(fullName, formatter.parse(personParts[1]));
+				aPerson.setCityName(personParts[2]);
+				aPerson.setStateName(personParts[3]);
+			}
 		}
 			catch (ParseException e)
 		{throw new Exception("\""+personString+"\""+ "'s parts separated by commas were in the wrong formats");}

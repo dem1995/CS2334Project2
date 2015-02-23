@@ -62,6 +62,15 @@ public class PersonList {
 		return (people.get(i));
 	}
 	
+	/**
+	 * Getter method for <code>people</code>
+	 * @return people
+	 */
+	public ArrayList<Person> getPeople()
+	{
+		return people;
+	}
+	
 	//Sorting methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
 	 * Sorts <code>people</code> using <code>comparator</code>. If <code>comparator</code> is <code>null</code>, uses natural ordering. Changes <code>currentlySortedBy</code>.
@@ -133,6 +142,7 @@ public class PersonList {
 	{
 		people.add(person);		
 	}
+	
 	
 	public String toString()
 	{
