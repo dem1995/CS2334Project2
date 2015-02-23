@@ -39,10 +39,9 @@ public class PeoplAce {
 		PersonList personList= new PersonList(); // The collection of people
 		String errors=""; // When exceptions are caught, they add info to this String. This String is then output as a JMessageDialog to the user.
 		Scanner reader = new Scanner(System.in);
-		
-		
+		String fileName;
 		System.out.println("Enter the fileName");
-		String fileName=reader.nextLine();
+		fileName=reader.nextLine();
 		
 		//Attempts to convert the CSV file to an ArrayList of Strings and store that in personStrings
 		try
@@ -69,7 +68,6 @@ public class PeoplAce {
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
 		reader.close();
-		System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
 		System.exit(0);
 		}
 	

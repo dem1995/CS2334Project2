@@ -69,7 +69,6 @@ public class PeoplAce {
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
 		reader.close();
-		System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
 		System.exit(0);
 		}
 	

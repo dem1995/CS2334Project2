@@ -70,10 +70,7 @@ public class PersonList {
 	public void sortUsing(Comparator<Person> comparator)
 	{
 		Collections.sort(people, comparator);
-		if (comparator==null)
-			currentlySortedBy="natural";
-		else
-			currentlySortedBy=comparator.getClass().getSimpleName();
+		System.out.println(comparator.getClass());
 	}
 	
 	//Searching methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
