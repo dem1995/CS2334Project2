@@ -21,14 +21,17 @@ import java.util.Scanner;
 public class PeoplAce {
 
 	/**
+	 *Allows users to search through data on people and places.
+	 * @param args Doesn't/don't do anything for this program
+	 */
+	/**
 	 * Provides a formatter for changing String objects of the format dd/MM/yyyyy into Date objects
 	 */
 	public static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyyy");
 	
-
 	/**
-	 *Allows users to search through data on people and places.
-	 * @param args Doesn't/don't do anything for this program
+	 * Client for reading in a CSV file of people and searching them
+	 * @param args Contains the file name
 	 */
 	public static void main(String[] args) {
 		
