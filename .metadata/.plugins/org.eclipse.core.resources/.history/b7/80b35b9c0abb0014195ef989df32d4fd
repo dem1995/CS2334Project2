@@ -37,6 +37,7 @@ public class PeoplAce {
 	public static void main(String[] args) {
 		
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
+		PersonList personList= new PersonList(); // The collection of people
 		//String errors=""; // When exceptions are caught, they add info to this String. This String is then output as a JMessageDialog to the user.
 		Scanner reader = new Scanner(System.in);
 		Country country= new Country();
