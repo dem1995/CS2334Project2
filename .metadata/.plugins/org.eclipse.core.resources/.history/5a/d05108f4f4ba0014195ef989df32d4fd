@@ -63,7 +63,7 @@ public class State {
 	
 	//Adder methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/** 
-	 * Adds <code>city</code> to <code>cities</code>. Sets <code>isSorted</code> to false
+	 * Adds <code>city</code> to <code>cities</code>
 	 * @param city The City to be added
 	 */
 	public void addCity(City city)
@@ -82,9 +82,6 @@ public class State {
 		return stateName;
 	}
 	
-	/**
-	 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
-	 */
 	public void Sort()
 	{
 		Collections.sort(cities);

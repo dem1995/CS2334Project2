@@ -54,7 +54,8 @@ public class City implements Comparable<City> {
 	
 	//Interface-required methods
 	public int compareTo(City city) {
-		return this.getName().compareTo(city.getName());
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

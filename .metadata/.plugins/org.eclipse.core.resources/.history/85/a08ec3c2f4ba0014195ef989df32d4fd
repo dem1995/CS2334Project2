@@ -1,7 +1,6 @@
 package project2;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Project #2
@@ -18,7 +17,7 @@ public class State {
 	/**
 	 * <code>True</code> if <code>cities</code> has been sorted, <code>False</code> otherwise
 	 */
-	public boolean isSorted=false;
+	public boolean isSorted;
 	
 	/**
 	 * An <code>ArrayList</code> of <code>City</code> objects
@@ -63,13 +62,12 @@ public class State {
 	
 	//Adder methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/** 
-	 * Adds <code>city</code> to <code>cities</code>. Sets <code>isSorted</code> to false
+	 * Adds <code>city</code> to <code>cities</code>
 	 * @param city The City to be added
 	 */
 	public void addCity(City city)
 	{
 		this.cities.add(city);
-		isSorted=false;
 	}
 	
 	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,15 +78,6 @@ public class State {
 	public String getName()
 	{
 		return stateName;
-	}
-	
-	/**
-	 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
-	 */
-	public void Sort()
-	{
-		Collections.sort(cities);
-		isSorted=true;
 	}
 	
 	

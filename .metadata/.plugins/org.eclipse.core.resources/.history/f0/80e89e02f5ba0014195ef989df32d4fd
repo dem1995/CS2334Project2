@@ -63,7 +63,7 @@ public class State {
 	
 	//Adder methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/** 
-	 * Adds <code>city</code> to <code>cities</code>. Sets <code>isSorted</code> to false
+	 * Adds <code>city</code> to <code>cities</code>
 	 * @param city The City to be added
 	 */
 	public void addCity(City city)
