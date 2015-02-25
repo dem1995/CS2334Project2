@@ -19,7 +19,12 @@ import java.util.Scanner;
  * @version 1.0
  */
 public class PeoplAce {
-
+	
+	/**
+	 * Static Scanner to be used by all methods
+	 * */
+	static Scanner reader = new Scanner(System.in);
+	
 	/**
 	 * Provides a formatter for changing String objects of the format dd/MM/yyyyy into Date objects
 	 */
@@ -38,7 +43,7 @@ public class PeoplAce {
 		
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
 		//String errors=""; // When exceptions are caught, they add info to this String. This String is then output as a JMessageDialog to the user.
-		Scanner reader = new Scanner(System.in);
+		
 		Country country= new Country();
 		
 		
@@ -55,12 +60,13 @@ public class PeoplAce {
 		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
-		System.out.println(country);;
+		//System.out.println(country);;
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
 		reader.close();
-		System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
+		//System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
+		promptUser(country);
 		System.exit(0);
 		}
 	
@@ -122,13 +128,13 @@ public class PeoplAce {
 		
 		try
 		{
-			if (personParts[1].contains("/")) //Tests to see if person has a deathDate. Runs if false.
+			if (personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if true.
 			{
 				aPerson=new Person(fullName, formatter.parse(personParts[1]));
 				aPerson.setCityName(personParts[2]);
 				aPerson.setStateName(personParts[3]);
 			}
-			else if (!personParts[1].contains("/")) //Tests to see if person has a deathDate. Runs if true
+			else if (!personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if false.
 			{
 				aPerson=new Person(fullName, null);
 				aPerson.setCityName(personParts[1]);
@@ -139,6 +145,97 @@ public class PeoplAce {
 		{throw new Exception("\""+personString+"\""+ "'s parts separated by commas were in the wrong formats");}
 		
 		return aPerson;	
+	}
+	
+	/**
+	 * @return 
+	 * */
+	public static void promptUser(Country country)
+	{
+		Scanner reader = new Scanner(System.in);
+		boolean loop = true;
+		String answer1;
+		String answer2;
+		String answer3;
+		System.out.println("People or Place?");
+		answer1 = reader.nextLine();
+		while(loop)
+		{
+			if(answer1.equalsIgnoreCase("People"))
+			{
+				System.out.println("Sort ot Search?");
+				answer2 = reader.nextLine();
+				if(answer2.equalsIgnoreCase("Sort"))
+				{
+					System.out.println("First or Last?");
+					answer3 = reader.nextLine();
+					if(answer3.equalsIgnoreCase("First"))
+					{
+
+					}
+					else if(answer3.equalsIgnoreCase("Last"))
+					{
+
+					}
+					else
+					{
+						System.out.println("you did not enter 'First' or 'Last'");
+						System.out.println("please input one or the other");
+
+					}
+				}
+				else if(answer2.equalsIgnoreCase("Search"))
+				{
+					System.out.println("Exact ot Partial?");
+					answer3 = reader.nextLine();
+					if(answer3.equalsIgnoreCase("Exact"))
+					{
+
+					}
+					else if(answer3.equalsIgnoreCase("Partial"))
+					{
+
+					}
+					else
+					{
+						System.out.println("you did not enter 'Exact' or 'Partial'");
+						System.out.println("please input one or the other");
+
+					}
+				}
+				else
+				{
+					System.out.println("you did not enter 'Sort' or 'Search'");
+					System.out.println("please input one or the other");
+
+				}
+			}
+			else if(answer1.equalsIgnoreCase("Place"))
+			{
+				System.out.println("State or City?");
+				answer2 = reader.nextLine();
+				if(answer2.equalsIgnoreCase("State"))
+				{
+
+				}
+				else if(answer2.equalsIgnoreCase("City"))
+				{
+
+				}
+				else
+				{
+					System.out.println("you did not enter 'State' or 'City'");
+					System.out.println("please input one or the other");
+
+				}
+			}
+			else
+			{
+				System.out.println("you did not enter 'People' or 'Place'");
+				System.out.println("please input one or the other");
+
+			}
+		}
 	}
 	
 }
