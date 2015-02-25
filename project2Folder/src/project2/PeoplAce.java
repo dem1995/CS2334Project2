@@ -122,17 +122,17 @@ public class PeoplAce {
 		
 		try
 		{
-			if (personParts.length==4) //Tests to see if person has a deathDate. Runs if false.
+			if (personParts[1].contains("/")) //Tests to see if person has a deathDate. Runs if false.
 			{
 				aPerson=new Person(fullName, formatter.parse(personParts[1]));
 				aPerson.setCityName(personParts[2]);
 				aPerson.setStateName(personParts[3]);
 			}
-			else if (personParts.length==5) //Tests to see if person has a deathDate. Runs if true
+			else if (!personParts[1].contains("/")) //Tests to see if person has a deathDate. Runs if true
 			{
-				aPerson=new Person(fullName, formatter.parse(personParts[1]));
-				aPerson.setCityName(personParts[2]);
-				aPerson.setStateName(personParts[3]);
+				aPerson=new Person(fullName, null);
+				aPerson.setCityName(personParts[1]);
+				aPerson.setStateName(personParts[2]);
 			}
 		}
 			catch (ParseException e)

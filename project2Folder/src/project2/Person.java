@@ -190,7 +190,11 @@ public class Person implements Comparable<Person> {
 	
 	public String toString()
 	{
-		return getFullName()+", Date will go here";
+		if(getBirthDate() == null)
+		{
+			return getFullName()+","+getCityName()+","+getStateName();
+		}
+		return getFullName()+","+getCityName()+","+getStateName() +","+getBirthDate();
 	}
 	
 	//Interface-required Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
