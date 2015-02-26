@@ -17,7 +17,6 @@ import java.util.Scanner;
  * A class for searching through data on people and places
  * </p>
  * @version 1.0
- *
  */
 public class PeoplAce {
 	
@@ -43,7 +42,8 @@ public class PeoplAce {
 	public static void main(String[] args) {
 		
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
-		boolean	doContinue;	
+		//String errors=""; // When exceptions are caught, they add info to this String. This String is then output as a JMessageDialog to the user.
+		
 		Country country= new Country();
 		
 		
@@ -60,7 +60,6 @@ public class PeoplAce {
 		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
-		country.sort();
 		System.out.println(country);;
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))

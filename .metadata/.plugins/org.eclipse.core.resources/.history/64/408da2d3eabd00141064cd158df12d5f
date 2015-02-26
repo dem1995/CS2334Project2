@@ -12,7 +12,7 @@ import java.util.Collections;
  * </p>
  * @version 1.0
  */
-public class State implements Comparable<State>{
+public class State {
 	
 	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
@@ -105,11 +105,6 @@ public class State implements Comparable<State>{
 	{
 		Collections.sort(cities);
 		isSorted=true;
-	}
-	
-	@Override
-	public int compareTo(State s) {
-		return this.getName().compareToIgnoreCase(s.getName());
 	}
 	
 	

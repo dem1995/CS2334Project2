@@ -1,7 +1,6 @@
 package project2;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Project #2
@@ -79,13 +78,6 @@ public class Country {
 		return tempList;
 	}
 	
-	/**
-	 * Sorts the <code>State</code>s in this <code>Country</code>
-	 */
-	public void sort()
-	{
-		Collections.sort(states);
-	}
 	public String toString()
 	{
 		return toPersonList().toString();

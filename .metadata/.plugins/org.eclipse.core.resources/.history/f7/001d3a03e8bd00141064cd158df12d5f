@@ -43,7 +43,7 @@ public class PeoplAce {
 	public static void main(String[] args) {
 		
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
-		boolean	doContinue;	
+		boolean		
 		Country country= new Country();
 		
 		
@@ -60,7 +60,6 @@ public class PeoplAce {
 		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
-		country.sort();
 		System.out.println(country);;
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))

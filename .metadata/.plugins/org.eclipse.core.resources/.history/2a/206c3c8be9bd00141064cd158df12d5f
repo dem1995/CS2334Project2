@@ -12,7 +12,7 @@ import java.util.Collections;
  * </p>
  * @version 1.0
  */
-public class State implements Comparable<State>{
+public class State {
 	
 	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
@@ -55,17 +55,20 @@ public class State implements Comparable<State>{
 	 * @param cityName The exact name of the city to be found
 	 * @return A City with a name that exactly matches the search parameter if one is found, otherwise returns null.
 	 */
-	public City findCityOrAdd(String name)
+	public City findCityOrAdd(String cityName)
 	{
-		name=name.toLowerCase();
-		for (City city: cities)
+		City keyCity=new City(cityName);
+		if (!isSorted)
+			this.sort();
+		int cityFoundAt=Collections.binarySearch(cities, keyCity);
+		if (cityFoundAt>=0)
+			return cities.get(cityFoundAt);
+		else
 		{
-			if (city.getName().toLowerCase().equalsIgnoreCase(name))
-				return city;
+			City newCity = new City(cityName);
+			cities.add(newCity);
+			return newCity;
 		}
-		City newCity=new City(name);
-		cities.add(newCity);
-		return newCity;
 	}
 	
 	//Adder methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
@@ -105,11 +108,6 @@ public class State implements Comparable<State>{
 	{
 		Collections.sort(cities);
 		isSorted=true;
-	}
-	
-	@Override
-	public int compareTo(State s) {
-		return this.getName().compareToIgnoreCase(s.getName());
 	}
 	
 	

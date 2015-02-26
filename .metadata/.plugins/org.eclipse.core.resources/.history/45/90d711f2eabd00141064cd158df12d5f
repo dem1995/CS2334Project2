@@ -79,10 +79,7 @@ public class Country {
 		return tempList;
 	}
 	
-	/**
-	 * Sorts the <code>State</code>s in this <code>Country</code>
-	 */
-	public void sort()
+	public void Sort()
 	{
 		Collections.sort(states);
 	}

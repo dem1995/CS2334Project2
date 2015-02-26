@@ -109,7 +109,8 @@ public class State implements Comparable<State>{
 	
 	@Override
 	public int compareTo(State s) {
-		return this.getName().compareToIgnoreCase(s.getName());
+		this.getName().compareToIgnoreCase(s.getName());
+		return 0;
 	}
 	
 	
