@@ -30,6 +30,7 @@ public class State implements Comparable<State>{
 	 */
 	private String stateName;
 	
+	
 	//Instance methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
 	 * Creates a <code>State</code> with an empty <code>ArrayList</code> of <code>Cities</code>

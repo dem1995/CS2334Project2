@@ -49,11 +49,25 @@ public class PeoplAce {
 		
 		System.out.println("Enter the fileName");
 		String fileName=reader.nextLine();
-		
+					
 		//Attempts to convert the CSV file to an ArrayList of Strings and store that in personStrings
 		try
 		{
-			personStrings = convertCSVToStringList(fileName);
+			int enterLoop = 1;
+			while(enterLoop >0)
+			{
+				if (fileName.length() < 1)
+				{
+					System.out.println("You did not enter a FileName");
+					fileName=reader.nextLine();
+				}
+				else 
+				{
+					personStrings = convertCSVToStringList(fileName);
+					enterLoop--;
+				}
+			}
+			
 		}catch (IOException e)
 		{
 			errors+="There was a problem reading in the CSV file, or the file was not found"+"\n";
@@ -68,6 +82,7 @@ public class PeoplAce {
 		//System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
 		promptUser(country);
 		System.exit(0);
+			
 		}
 	
 	/**
