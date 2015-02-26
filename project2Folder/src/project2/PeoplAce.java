@@ -60,7 +60,7 @@ public class PeoplAce {
 		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
-		//System.out.println(country);;
+		System.out.println(country);;
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
@@ -146,33 +146,35 @@ public class PeoplAce {
 		return aPerson;	
 	}
 	
+
 	/**
-	 * @return 
-	 * */
+	 * @param country The country that contains the lists of people with which we're doing stuff
+	 */
 	public static void promptUser(Country country)
 	{
-		//Scanner reader = new Scanner(System.in);
 		boolean loop = true;
-		String answer1;
-		String answer2;
-		String answer3;
-		System.out.println("People or Place?");
-		answer1 = reader.nextLine();
-		while(loop)
+		String answer="";
+		//String answer2;
+		//String answer3;
+
+
+		while(!answer.equalsIgnoreCase("quit"))
 		{
-			if(answer1.equalsIgnoreCase("People"))
+		System.out.println("People or Place?");
+		answer = reader.nextLine();
+			if(answer.equalsIgnoreCase("People"))
 			{
 				System.out.println("Sort ot Search?");
-				answer2 = reader.nextLine();
-				if(answer2.equalsIgnoreCase("Sort"))
+				answer = reader.nextLine();
+				if(answer.equalsIgnoreCase("Sort"))
 				{
 					System.out.println("First or Last?");
-					answer3 = reader.nextLine();
-					if(answer3.equalsIgnoreCase("First"))
+					answer = reader.nextLine();
+					if(answer.equalsIgnoreCase("First"))
 					{
 
 					}
-					else if(answer3.equalsIgnoreCase("Last"))
+					else if(answer.equalsIgnoreCase("Last"))
 					{
 
 					}
@@ -183,15 +185,15 @@ public class PeoplAce {
 
 					}
 				}
-				else if(answer2.equalsIgnoreCase("Search"))
+				else if(answer.equalsIgnoreCase("Search"))
 				{
 					System.out.println("Exact ot Partial?");
-					answer3 = reader.nextLine();
-					if(answer3.equalsIgnoreCase("Exact"))
+					answer = reader.nextLine();
+					if(answer.equalsIgnoreCase("Exact"))
 					{
 
 					}
-					else if(answer3.equalsIgnoreCase("Partial"))
+					else if(answer.equalsIgnoreCase("Partial"))
 					{
 
 					}
@@ -209,15 +211,15 @@ public class PeoplAce {
 
 				}
 			}
-			else if(answer1.equalsIgnoreCase("Place"))
+			else if(answer.equalsIgnoreCase("Place"))
 			{
 				System.out.println("State or City?");
-				answer2 = reader.nextLine();
-				if(answer2.equalsIgnoreCase("State"))
+				answer = reader.nextLine();
+				if(answer.equalsIgnoreCase("State"))
 				{
 
 				}
-				else if(answer2.equalsIgnoreCase("City"))
+				else if(answer.equalsIgnoreCase("City"))
 				{
 
 				}
@@ -234,6 +236,8 @@ public class PeoplAce {
 				System.out.println("please input one or the other");
 
 			}
+		if (answer.equalsIgnoreCase("quit"))
+			System.out.println("You have quit the program");
 		}
 	}
 	
