@@ -6,7 +6,10 @@ import org.junit.Test;
 
 public class PersonListTest {
 
-	@Test
+	
+	/**
+	 * This is a test
+	 */
 	public void test() {
 		PersonList testPersonList=new PersonList();
 		testPersonList.addPerson(new Person("fred", "smith", null));

@@ -43,39 +43,39 @@ public class PeoplAce {
 	public static void main(String[] args) {
 		
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
-		boolean	doContinue;	
+		boolean	continueLoop=true;	
 		Country country= new Country();
 		
 		
-		System.out.println("Enter the fileName");
-		String fileName=reader.nextLine();
+
 					
 		//Attempts to convert the CSV file to an ArrayList of Strings and store that in personStrings
-		try
+		while (continueLoop)
 		{
-			int enterLoop = 1;
-			while(enterLoop >0)
+			System.out.println("Enter the fileName");
+			String fileName=reader.nextLine();
+			try
 			{
-				if (fileName.length() < 1)
+				if (fileName.length() == 0)
 				{
 					System.out.println("You did not enter a FileName");
-					fileName=reader.nextLine();
 				}
-				else 
+				else
 				{
 					personStrings = convertCSVToStringList(fileName);
-					enterLoop--;
+					continueLoop=false;
 				}
 			}
-			
-		}catch (IOException e)
-		{
-			errors+="There was a problem reading in the CSV file, or the file was not found"+"\n";
+			catch (IOException e)
+			{
+				System.out.println("There was a problem reading in the CSV file, or the file was not found");
+				continueLoop=true;
+			}
 		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
 		country.sort();
-		System.out.println(country);;
+		System.out.println(country);
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
