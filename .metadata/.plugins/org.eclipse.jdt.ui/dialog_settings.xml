@@ -36,7 +36,7 @@
 		<item value="400" key="height"/>
 	</section>
 	<section name="javadoc">
-		<item value="public" key="access"/>
+		<item value="private" key="access"/>
 		<item value="false" key="noindex"/>
 		<item value="C:\CS2334\CS2334Project2\project2Folder\javadoc.xml" key="antpath"/>
 		<item value="false" key="nodeprecatedlist"/>
@@ -61,6 +61,8 @@
 				<item value="" key="href"/>
 			</section>
 		</section>
+	</section>
+	<section name="RenameInformationPopup">
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>
