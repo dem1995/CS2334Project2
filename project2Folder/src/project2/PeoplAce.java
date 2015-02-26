@@ -64,7 +64,6 @@ public class PeoplAce {
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
-		reader.close();
 		//System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
 		promptUser(country);
 		System.exit(0);
@@ -152,7 +151,7 @@ public class PeoplAce {
 	 * */
 	public static void promptUser(Country country)
 	{
-		Scanner reader = new Scanner(System.in);
+		//Scanner reader = new Scanner(System.in);
 		boolean loop = true;
 		String answer1;
 		String answer2;
