@@ -180,6 +180,7 @@ public class PeoplAce {
 		{
 		errors="";
 		results="";
+		PersonList results=new PersonList();
 		System.out.println("People or Place?");
 		answer = reader.readLine();
 			if(answer.equalsIgnoreCase("People"))
@@ -192,11 +193,11 @@ public class PeoplAce {
 					answer = reader.readLine();
 					if(answer.equalsIgnoreCase("First"))
 					{
-						results=(country.toPersonList().returnAfterSortingUsing(PersonList.firstNameComparator)).toString();
+						results=(country.toPersonList().returnAfterSortingUsing(PersonList.firstNameComparator));
 					}
 					else if(answer.equalsIgnoreCase("Last"))
 					{
-						results=(country.toPersonList().returnAfterSortingUsing(PersonList.lastNameComparator)).toString();
+						results=(country.toPersonList().returnAfterSortingUsing(PersonList.lastNameComparator));
 
 					}
 					else
@@ -214,13 +215,13 @@ public class PeoplAce {
 					{
 						System.out.println("Enter the name of the person you're searching for");
 						answer=reader.readLine();
-						results=""+(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null));
+						results=(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null));
 					}
 					else if(answer.equalsIgnoreCase("Partial"))
 					{
 						System.out.println("Enter the name of the person you're searching for");
 						answer=reader.readLine();
-						results=(country.toPersonList().partialSearchNamesFor(answer)).toString();
+						results=(country.toPersonList().partialSearchNamesFor(answer));
 					}
 					else
 					{
@@ -230,8 +231,8 @@ public class PeoplAce {
 				}
 				else
 				{
-					System.out.println("you did not enter 'Sort' or 'Search'");
-					System.out.println("please input one or the other");
+					System.out.println("You did not enter 'Sort' or 'Search'");
+					System.out.println("Please input one or the other");
 
 				}
 			}
@@ -245,7 +246,10 @@ public class PeoplAce {
 				{
 					if(answer.equalsIgnoreCase("State"))
 					{
-						
+						for(City c: stateSearchedFor.getCities())
+						{
+							results.combineWith(c.getPersonList());
+						}
 					}
 					else if(answer.equalsIgnoreCase("City"))
 					{
