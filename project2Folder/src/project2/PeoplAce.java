@@ -22,9 +22,9 @@ import java.util.Scanner;
 public class PeoplAce {
 	
 	/**
-	 * Static Scanner to be used by all methods
+	 * Static CustomBufferedReader to be used by all methods
 	 * */
-	static Scanner reader = new Scanner(System.in);
+	static CustomBufferedReader reader = new CustomBufferedReader();
 	
 	/**
 	 * Provides a formatter for changing String objects of the format dd/MM/yyyyy into Date objects
@@ -53,7 +53,7 @@ public class PeoplAce {
 		while (continueLoop)
 		{
 			System.out.println("Enter the fileName");
-			String fileName=reader.nextLine();
+			String fileName=reader.readLine();
 			try
 			{
 				if (fileName.length() == 0)
@@ -79,8 +79,8 @@ public class PeoplAce {
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
-		new PeopleAce2(country, country.toPersonList(),country.getStates());
-		PeopleAce2.promptUser();
+		//System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
+		promptUser(country);
 		System.exit(0);
 			
 		}
@@ -116,7 +116,7 @@ public class PeoplAce {
 			try
 			{
 				Person aPerson=convertStringToPerson(personString, formatter);
-				country.findStateOrAdd(aPerson.getStateName()).addCity(aPerson.getCityName()).getPersonList().addPerson(aPerson);
+				country.findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
 			}
 			catch (Exception e)
 			{
@@ -161,6 +161,102 @@ public class PeoplAce {
 		
 		return aPerson;	
 	}
+	
+
+	/**
+	 * @param country The country that contains the lists of people with which we're doing stuff
+	 */
+	public static void promptUser(Country country)
+	{
+		boolean loop = true;
+		String answer="";
+		//String answer2;
+		//String answer3;
+
+
+		while(!answer.equalsIgnoreCase("quit"))
+		{
+		System.out.println("People or Place?");
+		answer = reader.readLine();
+			if(answer.equalsIgnoreCase("People"))
+			{
+				System.out.println("Sort ot Search?");
+				answer = reader.readLine();
+				if(answer.equalsIgnoreCase("Sort"))
+				{
+					System.out.println("First or Last?");
+					answer = reader.readLine();
+					if(answer.equalsIgnoreCase("First"))
+					{
+
+					}
+					else if(answer.equalsIgnoreCase("Last"))
+					{
+
+					}
+					else
+					{
+						System.out.println("you did not enter 'First' or 'Last'");
+						System.out.println("please input one or the other");
+
+					}
+				}
+				else if(answer.equalsIgnoreCase("Search"))
+				{
+					System.out.println("Exact ot Partial?");
+					answer = reader.readLine();
+					if(answer.equalsIgnoreCase("Exact"))
+					{
+
+					}
+					else if(answer.equalsIgnoreCase("Partial"))
+					{
+
+					}
+					else
+					{
+						System.out.println("you did not enter 'Exact' or 'Partial'");
+						System.out.println("please input one or the other");
+
+					}
+				}
+				else
+				{
+					System.out.println("you did not enter 'Sort' or 'Search'");
+					System.out.println("please input one or the other");
+
+				}
+			}
+			else if(answer.equalsIgnoreCase("Place"))
+			{
+				System.out.println("State or City?");
+				answer = reader.readLine();
+				if(answer.equalsIgnoreCase("State"))
+				{
+
+				}
+				else if(answer.equalsIgnoreCase("City"))
+				{
+
+				}
+				else
+				{
+					System.out.println("you did not enter 'State' or 'City'");
+					System.out.println("please input one or the other");
+
+				}
+			}
+			else
+			{
+				System.out.println("you did not enter 'People' or 'Place'");
+				System.out.println("please input one or the other");
+
+			}
+		if (answer.equalsIgnoreCase("quit"))
+			System.out.println("You have quit the program");
+		}
+	}
+	
 }
 
 
