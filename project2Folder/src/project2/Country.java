@@ -2,6 +2,7 @@ package project2;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Project #2
@@ -100,6 +101,8 @@ public class Country {
 	{
 		Collections.sort(states);
 	}
+	
+
 	public String toString()
 	{
 		return toPersonList().toString();

@@ -85,6 +85,22 @@ public class PersonList {
 			currentlySortedBy=comparator.getClass().getSimpleName();
 	}
 	
+	/**
+	 * Sorts <code>people</code> using <code>comparator</code>. If <code>comparator</code> is <code>null</code>, uses natural ordering. Changes <code>currentlySortedBy</code>.
+	 * @param comparator How people should be sorted
+	 * @return 
+	 */
+	public PersonList returnAfterSortingUsing(Comparator<Person> comparator)
+	{
+		Collections.sort(people, comparator);
+		if (comparator==null)
+			currentlySortedBy="natural";
+		else
+			currentlySortedBy=comparator.getClass().getSimpleName();
+		return this;
+	}
+	
+	
 	//Searching methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
 	 * Searches <code>people</code> for and returns <code>Person</code>s with data that exactly match <code>key</code>

@@ -188,10 +188,11 @@ public class PeoplAce {
 					answer = reader.readLine();
 					if(answer.equalsIgnoreCase("First"))
 					{
-
+						System.out.println(country.toPersonList().returnAfterSortingUsing(PersonList.firstNameComparator));
 					}
 					else if(answer.equalsIgnoreCase("Last"))
 					{
+						System.out.println(country.toPersonList().returnAfterSortingUsing(PersonList.lastNameComparator));
 
 					}
 					else
@@ -207,11 +208,15 @@ public class PeoplAce {
 					answer = reader.readLine();
 					if(answer.equalsIgnoreCase("Exact"))
 					{
-
+						System.out.println("Enter the name of the person you're searching for");
+						answer=reader.readLine();
+						System.out.println(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null));
 					}
 					else if(answer.equalsIgnoreCase("Partial"))
 					{
-
+						System.out.println("Enter the name of the person you're searching for");
+						answer=reader.readLine();
+						System.out.println(country.toPersonList().partialSearchNamesFor(answer));
 					}
 					else
 					{
