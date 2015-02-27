@@ -15,7 +15,7 @@ public class StateTest {
 		state.addCity(city);
 		state.addCity(city2);
 		state.addCity(city3);
-		assertEquals(state.findCityOrAdd("Town and Country").getName(), "Town and Country");
+		assertEquals(state.addCity("Town and Country").getName(), "Town and Country");
 	}
 
 }

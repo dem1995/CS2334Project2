@@ -55,7 +55,21 @@ public class Country {
 		states.add(newState);
 		return newState;
 	}
-	
+	/**
+	 * Finds and returns a <code>State</code> matching the <code>name</code> without adding any extra states
+	 * @param name The name of the State to be found
+	 * @return The State that was found
+	 */
+	public State findState(String name)
+	{
+		name=name.toLowerCase();
+		for (State state: states)
+		{
+			if (state.getName().toLowerCase().equalsIgnoreCase(name))
+				return state;
+		}
+		return null;
+	}
 	//Adder method
 	/**
 	 * Adds a <code>State</code> to <code>states</code>
@@ -91,4 +105,11 @@ public class Country {
 		return toPersonList().toString();
 	}
 	
+	/**
+	 * 
+	 */
+	public ArrayList<State> getStates()
+	{
+		return this.states;
+	}
 }

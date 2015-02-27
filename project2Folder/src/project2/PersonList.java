@@ -90,7 +90,7 @@ public class PersonList {
 	 * Searches <code>people</code> for and returns <code>Person</code>s with data that exactly match <code>key</code>
 	 * @param key Either a full name, a first name, a last name, or a String representation of a date, depending on the comparator
 	 * @param comparator How the searching will be done
-	 * @return A PersonList with Person objects whose data exactly matches the key
+	 * @return A PersonList with Person objects whose data exactly matches the key, if there is none return null
 	 */
 	public PersonList exactSearchFor(String key, Comparator<Person> comparator)
 	{
@@ -100,8 +100,11 @@ public class PersonList {
 			sortUsing(comparator);
 		int keyMatch=Collections.binarySearch(people, keyPerson, comparator);
 		if (keyMatch>0)
+		{
 			personList.addPerson(people.get(keyMatch));
-		return personList;
+			return personList;
+		}
+		return null;
 	}
 	
 	/**

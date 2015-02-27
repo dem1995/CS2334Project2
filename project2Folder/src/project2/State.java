@@ -56,7 +56,23 @@ public class State implements Comparable<State>{
 	 * @param cityName The exact name of the city to be found
 	 * @return A City with a name that exactly matches the search parameter if one is found, otherwise returns null.
 	 */
-	public City findCityOrAdd(String name)
+	public City findCity(String name)
+	{
+		name=name.toLowerCase();
+		for (City city: cities)
+		{
+			if (city.getName().toLowerCase().equalsIgnoreCase(name))
+				return city;
+		}
+		return null;
+	}
+	
+	/**
+	 * Searches for and returns a <code>City</code> with a name that exactly matches <code>cityName</code>.
+	 * @param cityName The exact name of the city to be found
+	 * @return A City with a name that exactly matches the search parameter if one is found, otherwise add that city and return it.
+	 */
+	public City addCity(String name)
 	{
 		name=name.toLowerCase();
 		for (City city: cities)
@@ -68,6 +84,7 @@ public class State implements Comparable<State>{
 		cities.add(newCity);
 		return newCity;
 	}
+	
 	
 	//Adder methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/** 
