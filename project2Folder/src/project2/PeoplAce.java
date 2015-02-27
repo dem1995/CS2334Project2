@@ -35,6 +35,11 @@ public class PeoplAce {
 	 * Errors accumulated during the project
 	 */
 	public static String errors="";
+		
+	/**
+	 * Results of searching/sorting
+	 */
+	public static String results="";
 
 	/**
 	 *Allows users to search through data on people and places.
@@ -168,19 +173,17 @@ public class PeoplAce {
 	 */
 	public static void promptUser(Country country)
 	{
-		boolean loop = true;
 		String answer="";
-		//String answer2;
-		//String answer3;
 
 
 		while(!answer.equalsIgnoreCase("quit"))
 		{
+		results="";
 		System.out.println("People or Place?");
 		answer = reader.readLine();
 			if(answer.equalsIgnoreCase("People"))
 			{
-				System.out.println("Sort ot Search?");
+				System.out.println("Sort or Search?");
 				answer = reader.readLine();
 				if(answer.equalsIgnoreCase("Sort"))
 				{
@@ -188,17 +191,17 @@ public class PeoplAce {
 					answer = reader.readLine();
 					if(answer.equalsIgnoreCase("First"))
 					{
-						System.out.println(country.toPersonList().returnAfterSortingUsing(PersonList.firstNameComparator));
+						results=(country.toPersonList().returnAfterSortingUsing(PersonList.firstNameComparator)).toString();
 					}
 					else if(answer.equalsIgnoreCase("Last"))
 					{
-						System.out.println(country.toPersonList().returnAfterSortingUsing(PersonList.lastNameComparator));
+						results=(country.toPersonList().returnAfterSortingUsing(PersonList.lastNameComparator)).toString();
 
 					}
 					else
 					{
-						System.out.println("you did not enter 'First' or 'Last'");
-						System.out.println("please input one or the other");
+						System.out.println("You did not enter 'First' or 'Last'");
+						System.out.println("Please input one or the other");
 
 					}
 				}
@@ -210,19 +213,18 @@ public class PeoplAce {
 					{
 						System.out.println("Enter the name of the person you're searching for");
 						answer=reader.readLine();
-						System.out.println(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null));
+						results=(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null)).toString();
 					}
 					else if(answer.equalsIgnoreCase("Partial"))
 					{
 						System.out.println("Enter the name of the person you're searching for");
 						answer=reader.readLine();
-						System.out.println(country.toPersonList().partialSearchNamesFor(answer));
+						results=(country.toPersonList().partialSearchNamesFor(answer)).toString();
 					}
 					else
 					{
-						System.out.println("you did not enter 'Exact' or 'Partial'");
-						System.out.println("please input one or the other");
-
+						System.out.println("You did not enter 'Exact' or 'Partial'");
+						System.out.println("Please input one or the other");
 					}
 				}
 				else
@@ -238,6 +240,7 @@ public class PeoplAce {
 				answer = reader.readLine();
 				if(answer.equalsIgnoreCase("State"))
 				{
+					System.out.println("Enter the name of the person you're searching for");
 
 				}
 				else if(answer.equalsIgnoreCase("City"))
@@ -253,12 +256,16 @@ public class PeoplAce {
 			}
 			else
 			{
-				System.out.println("you did not enter 'People' or 'Place'");
-				System.out.println("please input one or the other");
+				System.out.println("You did not enter 'People' or 'Place'");
+				System.out.println("Please input one or the other");
 
 			}
 		if (answer.equalsIgnoreCase("quit"))
 			System.out.println("You have quit the program");
+		else if (answer.equals(""))
+			System.out.println("Nothing was returned by your search");
+		else
+			System.out.println(results);
 		}
 	}
 	
