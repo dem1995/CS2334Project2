@@ -253,7 +253,12 @@ public class PeoplAce {
 					}
 					else if(answer.equalsIgnoreCase("City"))
 					{
-
+						System.out.println("Enter the city name");
+						City citySearchedFor=stateSearchedFor.findCity(reader.readLine());
+						if(citySearchedFor!=null)
+							results=citySearchedFor.getPersonList();
+						else
+							errors+="Failed to find city";
 					}
 					else
 					{
@@ -278,7 +283,9 @@ public class PeoplAce {
 			System.out.println("You have quit the program");
 		else if (!errors.equals(""))
 			System.out.println(errors);
-		else if (results.equals("")||(""+results).equals("null"))
+		else if ((""+results).equals("null"))
+			System.out.println("Nothing was returned from your search");
+		else if (results.equals(""))
 			System.out.println("Nothing was returned from your search");
 		else
 			System.out.println(results);
