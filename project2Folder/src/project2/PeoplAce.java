@@ -84,7 +84,7 @@ public class PeoplAce {
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 		System.out.println("Errors: "+errors);
-		//System.out.println(PersonList.firstNameComparator.getClass().getSimpleName());
+		errors="";
 		promptUser(country);
 		System.exit(0);
 			
@@ -178,6 +178,7 @@ public class PeoplAce {
 
 		while(!answer.equalsIgnoreCase("quit"))
 		{
+		errors="";
 		results="";
 		System.out.println("People or Place?");
 		answer = reader.readLine();
@@ -213,7 +214,7 @@ public class PeoplAce {
 					{
 						System.out.println("Enter the name of the person you're searching for");
 						answer=reader.readLine();
-						results=(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null)).toString();
+						results=""+(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null));
 					}
 					else if(answer.equalsIgnoreCase("Partial"))
 					{
@@ -238,20 +239,28 @@ public class PeoplAce {
 			{
 				System.out.println("State or City?");
 				answer = reader.readLine();
-				if(answer.equalsIgnoreCase("State"))
+				System.out.println("Enter the two-letter abbreviation of the State you're searching for");
+				State stateSearchedFor=country.findState(reader.readLine());
+				if (stateSearchedFor!=null)
 				{
-					System.out.println("Enter the name of the person you're searching for");
+					if(answer.equalsIgnoreCase("State"))
+					{
+						
+					}
+					else if(answer.equalsIgnoreCase("City"))
+					{
 
-				}
-				else if(answer.equalsIgnoreCase("City"))
-				{
+					}
+					else
+					{
+						System.out.println("you did not enter 'State' or 'City'");
+						System.out.println("please input one or the other");
 
+					}
 				}
 				else
 				{
-					System.out.println("you did not enter 'State' or 'City'");
-					System.out.println("please input one or the other");
-
+						errors+="Failed To Find State";
 				}
 			}
 			else
@@ -260,10 +269,13 @@ public class PeoplAce {
 				System.out.println("Please input one or the other");
 
 			}
+
 		if (answer.equalsIgnoreCase("quit"))
 			System.out.println("You have quit the program");
-		else if (answer.equals(""))
-			System.out.println("Nothing was returned by your search");
+		else if (!errors.equals(""))
+			System.out.println(errors);
+		else if (results.equals("")||(""+results).equals("null"))
+			System.out.println("Nothing was returned from your search");
 		else
 			System.out.println(results);
 		}

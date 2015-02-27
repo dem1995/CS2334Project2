@@ -112,7 +112,14 @@ public class PersonList {
 	{
 		PersonList personList=new PersonList();
 		Person keyPerson=new Person(key, null);
-		if (!currentlySortedBy.equals(comparator.getClass().getSimpleName()))
+		if(comparator==null)
+		{
+			if (!currentlySortedBy.equals("natural"))
+			{
+				sortUsing(comparator);
+			}
+		}
+		else if (!currentlySortedBy.equals(comparator.getClass().getSimpleName()))
 			sortUsing(comparator);
 		int keyMatch=Collections.binarySearch(people, keyPerson, comparator);
 		if (keyMatch>0)
