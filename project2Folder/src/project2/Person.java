@@ -172,7 +172,7 @@ public class Person implements Comparable<Person> {
 
 	/**
 	 * Setter method for <code>stateName</code>
-	 * @param stateName
+	 * @param stateName The name of the state
 	 */
 	public void setStateName(String stateName)
 	{
@@ -181,7 +181,7 @@ public class Person implements Comparable<Person> {
 	
 	/**
 	 * Setter method for <code>cityName</code>
-	 * @param cityName
+	 * @param cityName The name of the city
 	 */
 	public void setCityName(String cityName)
 	{

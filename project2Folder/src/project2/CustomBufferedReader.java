@@ -20,7 +20,7 @@ public class CustomBufferedReader extends BufferedReader{
 	
 	/**
 	 * Instantiates a CustomBufferedReader with given arguments. Calls CustomBufferedReader's superClass's instantiation method, so any requirements that this constructor would have in BufferedReader must also be present here
-	 * @param arg0
+	 * @param arg0 The reader to be wrapped by this
 	 */
 	public CustomBufferedReader(Reader arg0) {
 		super(arg0);

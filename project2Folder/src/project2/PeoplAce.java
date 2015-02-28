@@ -112,7 +112,7 @@ public class PeoplAce {
 	
 	/**
 	 * Builds a country from personStrings
-	 * @param personStrings
+	 * @param personStrings The strings from which the Person objects will be constructed
 	 * @return A country made from the arrayList of personStrings
 	 */
 	public static Country convertStringListToCountry(ArrayList<String> personStrings)
