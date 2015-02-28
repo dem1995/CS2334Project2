@@ -304,7 +304,7 @@ public class PeoplAce {
 				try{
 					FileWriter outfile = new FileWriter("output.txt");
 					BufferedWriter bw = new BufferedWriter(outfile);
-					bw.write("This is a test -- did it work?");
+					bw.write(results.toString());
 					bw.newLine();
 					bw.close();
 				}
