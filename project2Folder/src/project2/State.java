@@ -69,9 +69,7 @@ public class State implements Comparable<State>{
 			return cities;
 		}
 		
-		/**
-		 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
-		 */
+	
 	
 	//Search method~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
@@ -120,7 +118,9 @@ public class State implements Comparable<State>{
 		isSorted=false;
 	}
 	
-	
+	/**
+	 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
+	 */
 	public void sort()
 	{
 		Collections.sort(cities);
