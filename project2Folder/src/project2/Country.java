@@ -2,7 +2,6 @@ package project2;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * Project #2
@@ -107,9 +106,9 @@ public class Country {
 	{
 		return toPersonList().toString();
 	}
-	
+
 	/**
-	 * 
+	 * @return this <code>country</code>'s states
 	 */
 	public ArrayList<State> getStates()
 	{

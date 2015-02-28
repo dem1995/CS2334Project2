@@ -88,7 +88,7 @@ public class PersonList {
 	/**
 	 * Sorts <code>people</code> using <code>comparator</code>. If <code>comparator</code> is <code>null</code>, uses natural ordering. Changes <code>currentlySortedBy</code>.
 	 * @param comparator How people should be sorted
-	 * @return 
+	 * @return This object after it has been sorted
 	 */
 	public PersonList returnAfterSortingUsing(Comparator<Person> comparator)
 	{
