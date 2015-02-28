@@ -18,7 +18,7 @@ public class Country {
 	/**
 	 * The <code>State</code>s contained by this <code>Country</code>
 	 */
-	ArrayList<State> states;
+	private ArrayList<State> states;
 	
 	//Instance methods	
 	/**
