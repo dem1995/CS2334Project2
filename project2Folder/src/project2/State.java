@@ -50,6 +50,29 @@ public class State implements Comparable<State>{
 		this.cities=cities;
 	}
 	
+	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		/**
+		 * A getter method for <code>stateName</code>
+		 * @return stateName
+		 */
+		public String getName()
+		{
+			return stateName;
+		}
+		
+		/**
+		 * getter method for <code>cities</code>
+		 * @return the arrayList of Cities held by this State
+		 */
+		public ArrayList<City> getCities()
+		{
+			return cities;
+		}
+		
+		/**
+		 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
+		 */
+	
 	//Search method~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
 	 * Searches for and returns a <code>City</code> with a name that exactly matches <code>cityName</code>.
@@ -97,28 +120,7 @@ public class State implements Comparable<State>{
 		isSorted=false;
 	}
 	
-	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	/**
-	 * A getter method for <code>stateName</code>
-	 * @return stateName
-	 */
-	public String getName()
-	{
-		return stateName;
-	}
 	
-	/**
-	 * getter method for <code>cities</code>
-	 * @return the arrayList of Cities held by this State
-	 */
-	public ArrayList<City> getCities()
-	{
-		return cities;
-	}
-	
-	/**
-	 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
-	 */
 	public void sort()
 	{
 		Collections.sort(cities);

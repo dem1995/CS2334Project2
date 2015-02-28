@@ -3,7 +3,7 @@ package project2;
 /**
  * Project #2
  * CS 2334, Section 010
- * Feb 18, 2015
+ * Feb 27, 2015
  * <p>
  * Holds a <code>PersonList</code> of people, emulating the population of a city
  * </p>
@@ -33,7 +33,7 @@ public class City implements Comparable<City> {
 		this.personList=new PersonList();
 	}
 	
-	//Getter methods
+	//Accessor methods
 	/**
 	 * Retrieves <code>personList</code>
 	 * @return A PersonList of Person objects in this City's PersonList personList

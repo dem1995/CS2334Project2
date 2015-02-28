@@ -25,7 +25,7 @@ public class PeoplAce {
 	/**
 	 * Static CustomBufferedReader to be used by all methods
 	 * */
-	static CustomBufferedReader reader = new CustomBufferedReader();
+	private static CustomBufferedReader reader = new CustomBufferedReader();
 	
 	/**
 	 * Provides a formatter for changing String objects of the format dd/MM/yyyyy into Date objects
@@ -53,7 +53,8 @@ public class PeoplAce {
 		Country country= new Country();
 		
 		
-
+		//Welcomes the user
+		System.out.println("Hello! Welcome to PeoplAce! You may enter \"quit\" at any time to");
 					
 		//Attempts to convert the CSV file to an ArrayList of Strings and store that in personStrings
 		while (continueLoop)
@@ -313,6 +314,8 @@ public class PeoplAce {
 				}
 
 			}
+			else if (answer.equalsIgnoreCase("quit"))
+				System.out.println("You have quit the program");
 		}
 		}
 	}

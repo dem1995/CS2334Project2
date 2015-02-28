@@ -11,7 +11,7 @@ import java.io.Reader;
 public class CustomBufferedReader extends BufferedReader{
 
 	/**
-	 * Creates a new CustomBufferedReader using System.in as args
+	 * Creates a new CustomBufferedReader with <code>new</code> <code>InputStreamReader</code> <code>System.in</code> as args
 	 */
 	public CustomBufferedReader()
 	{
@@ -19,6 +19,7 @@ public class CustomBufferedReader extends BufferedReader{
 	}
 	
 	/**
+	 * Instantiates a CustomBufferedReader with given arguments. Calls CustomBufferedReader's superClass's instantiation method, so any requirements that this constructor would have in BufferedReader must also be present here
 	 * @param arg0
 	 */
 	public CustomBufferedReader(Reader arg0) {

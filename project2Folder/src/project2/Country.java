@@ -36,8 +36,17 @@ public class Country {
 		this.states = states;
 	}
 	
+	//Accessor Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	/**
+	 * @return this <code>country</code>'s states
+	 */
+	public ArrayList<State> getStates()
+	{
+		return this.states;
+	}
+	
 
-	//Search method
+	//Search methods
 	/**
 	 * Finds and returns a <code>State</code> matching the <code>name</code>
 	 * @param name The name of the State to be found
@@ -70,7 +79,8 @@ public class Country {
 		}
 		return null;
 	}
-	//Adder method
+	
+	//Adder methods
 	/**
 	 * Adds a <code>State</code> to <code>states</code>
 	 * @param state The State to be added to states
@@ -93,6 +103,8 @@ public class Country {
 		return tempList;
 	}
 	
+	//Other methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
 	/**
 	 * Sorts the <code>State</code>s in this <code>Country</code>
 	 */
@@ -107,11 +119,5 @@ public class Country {
 		return toPersonList().toString();
 	}
 
-	/**
-	 * @return this <code>country</code>'s states
-	 */
-	public ArrayList<State> getStates()
-	{
-		return this.states;
-	}
+
 }
