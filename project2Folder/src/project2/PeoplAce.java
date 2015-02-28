@@ -1,7 +1,9 @@
 package project2;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -238,10 +240,14 @@ public class PeoplAce {
 			}
 			else if(answer.equalsIgnoreCase("Place"))
 			{
+				State stateSearchedFor=null;
 				System.out.println("State or City?");
 				answer = reader.readLine();
-				System.out.println("Enter the two-letter abbreviation of the State you're searching for");
-				State stateSearchedFor=country.findState(reader.readLine());
+				if(answer.equalsIgnoreCase("State")||answer.equalsIgnoreCase("City"))
+				{
+					System.out.println("Enter the two-letter abbreviation of the State you're searching for");
+					stateSearchedFor=country.findState(reader.readLine());
+				}
 				if (stateSearchedFor!=null)
 				{
 					if(answer.equalsIgnoreCase("State"))
@@ -285,10 +291,30 @@ public class PeoplAce {
 			System.out.println(errors);
 		else if ((""+results).equals("null"))
 			System.out.println("Nothing was returned from your search");
-		else if (results.equals(""))
+		else if (results.toString().equals(""))
 			System.out.println("Nothing was returned from your search");
 		else
-			System.out.println(results);
+		{
+			@SuppressWarnings("unused")
+			String q=results.toString();
+			System.out.println("Would you like to save this to a file? Enter y/n");
+			answer=reader.readLine();
+			if(answer.contains("y")||answer.contains("Y"))
+			{
+				try{
+					FileWriter outfile = new FileWriter("output.txt");
+					BufferedWriter bw = new BufferedWriter(outfile);
+					bw.write("This is a test -- did it work?");
+					bw.newLine();
+					bw.close();
+				}
+				catch(IOException e)
+				{
+					System.out.println("Failed to print to a file");
+				}
+
+			}
+		}
 		}
 	}
 	
