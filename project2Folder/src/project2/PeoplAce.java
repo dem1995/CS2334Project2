@@ -195,11 +195,11 @@ public class PeoplAce {
 					answer = reader.readLine();
 					if(answer.equalsIgnoreCase("First"))
 					{
-						results=(country.toPersonList().returnAfterSortingUsing(PersonList.firstNameComparator));
+						results=(country.toPersonList().returnAfterSortingUsing(PersonList.middleNamesComparator).returnAfterSortingUsing(PersonList.lastNameComparator).returnAfterSortingUsing(PersonList.firstNameComparator));
 					}
 					else if(answer.equalsIgnoreCase("Last"))
 					{
-						results=(country.toPersonList().returnAfterSortingUsing(PersonList.lastNameComparator));
+						results=(country.toPersonList().returnAfterSortingUsing(PersonList.middleNamesComparator).returnAfterSortingUsing(PersonList.firstNameComparator).returnAfterSortingUsing(PersonList.lastNameComparator));
 
 					}
 					else
@@ -295,8 +295,8 @@ public class PeoplAce {
 			System.out.println("Nothing was returned from your search");
 		else
 		{
-			@SuppressWarnings("unused")
 			String q=results.toString();
+			System.out.println(q);
 			System.out.println("Would you like to save this to a file? Enter y/n");
 			answer=reader.readLine();
 			if(answer.contains("y")||answer.contains("Y"))

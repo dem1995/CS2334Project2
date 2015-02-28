@@ -25,6 +25,10 @@ public class PersonList {
 	 */
 	public static CompareLastName lastNameComparator=new CompareLastName();
 	/**
+	 * Comparator for searching/sorting by middle names
+	 */
+	public static CompareMiddleNames middleNamesComparator=new CompareMiddleNames();
+	/**
 	 * Comparator for searching/sorting by birthdate
 	 */
 	public static CompareBirthDate birthDateComparator=new CompareBirthDate();
