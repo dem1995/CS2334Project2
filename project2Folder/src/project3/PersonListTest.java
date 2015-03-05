@@ -23,6 +23,7 @@ public class PersonListTest {
 		
 		assertEquals("george", testPersonList.exactSearchFor("george", PersonList.firstNameComparator).getPerson(0).getFirstName());
 	 	assertEquals("harold cobra", testPersonList.partialSearchNamesFor("rold").getPerson(0).getFullName());
+	 	testPersonList.makeIntoChart(0);
 	}
 
 }
