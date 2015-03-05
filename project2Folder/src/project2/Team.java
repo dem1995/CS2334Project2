@@ -1,0 +1,92 @@
+package project2;
+/**
+ * Project #2
+ * CS 2334, Section 010
+ * March 4, 2015
+ * <p>
+ * Holds a <code>PersonList</code> of team members, the name of the city in which they are based, and the name of the state that city is in.
+ * </p>
+ * @version 1.0
+ */
+public class Team {
+
+	/**
+	 * The name of the state in which this team is based
+	 */
+	String stateName;
+	
+	/**
+	 * The name of the city in which this team is based
+	 */
+	String cityName;
+	
+	/**
+	 * The members of this team
+	 */
+	PersonList teamMembers;
+	
+	/**
+	 * Creates a Team object
+	 */
+	public Team()
+	{}
+	
+	
+	
+	
+	/**
+	 * Getter method for the PersonList containing this team's members
+	 * @return The PersonList containing this team's members
+	 */
+	public PersonList getPersonList()
+	{
+		return teamMembers;
+	}
+	
+	/**
+	 * Getter method for cityName
+	 * @return The name of the city in which this team is based
+	 */
+	public String getCityName()
+	{
+		return cityName;
+	}
+	
+	/**
+	 * Getter method for stateName
+	 * @return The name of the state in which this team is based
+	 */
+	public String getStateName()
+	{
+		return stateName;
+	}
+	
+	
+	/**
+	 * Setter method for cityName
+	 * @param cityName The name of the city in which this team is based
+	 */
+	public void setCityName(String cityName)
+	{
+		this.cityName=cityName;
+	}
+	
+	/**
+	 * Setter method for stateName
+	 * @param stateName The name of the state in which this team is based
+	 */
+	public void setStateName(String stateName)
+	{
+		this.stateName=stateName;
+	}
+	
+	/**
+	 * Setter method for teamMembers
+	 * @param teamMembers The team members of this team
+	 */
+	public void setPersonList(PersonList teamMembers)
+	{
+		this.teamMembers=teamMembers;
+	}
+	
+}

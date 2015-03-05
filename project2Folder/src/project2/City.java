@@ -1,5 +1,7 @@
 package project2;
 
+import java.awt.geom.Point2D;
+
 /**
  * Project #2
  * CS 2334, Section 010
@@ -22,6 +24,15 @@ public class City implements Comparable<City> {
 	 */
 	private String cityName;
 	
+	/**
+	 * The teams based in this city
+	 */
+	private TeamLinkedHashMap teams;
+	
+	/**
+	 * The geographic coordinates of this city
+	 */
+	private Point2D coordinates;
 	//Instance method
 	/**
 	 * Creates a <code>City</code> with the name <code>cityName</code> and an empty <code>PersonList</code>
@@ -50,6 +61,33 @@ public class City implements Comparable<City> {
 	public String getName()
 	{
 		return cityName;
+	}
+	
+	/**
+	 * A getter method for coordinates
+	 * @return The geographic coordinates of this city
+	 */
+	public Point2D getCoordinate()
+	{
+		return coordinates;
+	}
+	
+	//Setter methods
+	/**
+	 * Adjusts the y-value of this city's geographic location
+	 * @param latitude the y-value of this city's geographic location
+	 */
+	public void setLatitude(int latitude)
+	{
+	    //TODO	
+	}
+	/**
+	 * Adjusts the x-value of this city's geographic location
+	 * @param longitude the x-value of this city's geographic location
+	 */
+	public void setLongitude(int longitude)
+	{
+	    //TODO	
 	}
 	
 	//Interface-required methods
