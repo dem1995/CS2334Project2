@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Project #2
+ * Project #3
  * CS 2334, Section 010
  * Feb 18, 2015
  * <p>

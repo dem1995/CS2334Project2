@@ -3,7 +3,7 @@ package project2;
 import java.awt.geom.Point2D;
 
 /**
- * Project #2
+ * Project #3
  * CS 2334, Section 010
  * Feb 27, 2015
  * <p>

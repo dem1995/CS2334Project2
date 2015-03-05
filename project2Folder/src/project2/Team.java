@@ -1,6 +1,6 @@
 package project2;
 /**
- * Project #2
+ * Project #3
  * CS 2334, Section 010
  * March 4, 2015
  * <p>
@@ -8,7 +8,7 @@ package project2;
  * </p>
  * @version 1.0
  */
-public class Team {
+public class Team implements Comparable<Team> {
 
 	/**
 	 * The name of the state in which this team is based
@@ -87,6 +87,16 @@ public class Team {
 	public void setPersonList(PersonList teamMembers)
 	{
 		this.teamMembers=teamMembers;
+	}
+
+
+
+
+
+	@Override
+	public int compareTo(Team o) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

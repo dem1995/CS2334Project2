@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * Project #2
+ * Project #3
  * CS 2334, Section 010
  * Feb 18, 2015
  * <p>
@@ -171,6 +171,16 @@ public class PersonList {
 	public void addPerson(Person person)
 	{
 		people.add(person);		
+	}
+	
+	/**
+	 * Makes the data in this <code>PersonList</code> into a pie chart
+	 * @param chartType What parameters will be used to construct the chart
+	 * 
+	 */
+	public void makeIntoChart(int chartType)
+	{
+		//TODO
 	}
 	
 	

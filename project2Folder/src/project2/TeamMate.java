@@ -11,11 +11,11 @@ import java.util.ArrayList;
 
 
 /**
- * Project #2
+ * Project #3
  * CS 2334, Section 010
- * Feb 18, 2015
+ * March 4, 2015
  * <p>
- * A class for searching through data on people and places
+ * A class for searching through data on people, places, and teams
  * </p>
  * @version 1.0
  *
