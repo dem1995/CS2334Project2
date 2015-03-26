@@ -21,6 +21,11 @@ public class Team implements Comparable<Team> {
 	String cityName;
 	
 	/**
+	 * the name of the team
+	 */
+	String teamName;
+	
+	/**
 	 * The members of this team
 	 */
 	PersonList teamMembers;
@@ -28,8 +33,21 @@ public class Team implements Comparable<Team> {
 	/**
 	 * Creates a Team object
 	 */
-	public Team()
-	{}
+	public Team(String line)
+	{
+		String[] teamParts = line.split(";");
+		this.teamName	= teamParts[0];
+		this.cityName	= teamParts[1];
+		this.stateName	= teamParts[2];
+		PersonList personList	= new PersonList();
+		for(int i = 3; i<teamParts.length;i++)
+		{
+			Person person	= new Person(teamParts[i]);
+			personList.addPerson(person);
+		}
+		this.teamMembers	= personList;
+		
+	}
 	
 	
 	
@@ -38,7 +56,7 @@ public class Team implements Comparable<Team> {
 	 * Getter method for the PersonList containing this team's members
 	 * @return The PersonList containing this team's members
 	 */
-	public PersonList getPersonList()
+	public PersonList getTeamMembers()
 	{
 		return teamMembers;
 	}
@@ -84,19 +102,37 @@ public class Team implements Comparable<Team> {
 	 * Setter method for teamMembers
 	 * @param teamMembers The team members of this team
 	 */
-	public void setPersonList(PersonList teamMembers)
+	public void setTeamMembers(PersonList teamMembers)
 	{
 		this.teamMembers=teamMembers;
 	}
 
 
+	/**
+	 * Getter method for teamName
+	 * @return The name of the team
+	 */
+	public String getTeamName()
+	{
+		return stateName;
+	}
+	
+	
+	/**
+	 * Setter method for teamName
+	 * @param teamName The name of the team
+	 */
+	public void setTeamName(String teamName)
+	{
+		this.cityName=cityName;
+	}
+	
 
 
 
 	@Override
 	public int compareTo(Team o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.getTeamName().compareToIgnoreCase(o.getTeamName());
 	}
 	
 }

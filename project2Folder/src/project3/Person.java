@@ -46,7 +46,6 @@ public class Person implements Comparable<Person> {
 	private Date birthDate;
 	
 	//Instance Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	
 
 	/**
 	 * Constructor method for a person with a first name, a middle name, a last name, and a birthdate.
@@ -97,7 +96,27 @@ public class Person implements Comparable<Person> {
 		this.birthDate=birthDate;
 	}
 
+
+	/**
+	 * Constructor method for a person with a given name
+	 * @param fullName The person's fullName, is split up, and its components are assigned to firstName, lastName, and middleNames
+	 */
 	
+	public Person(String fullName)
+	{
+		String[] names=fullName.split(" ");
+		for (int i=0; i<names.length; i++)
+		{
+			if (i==0)
+				this.firstName=names[i];
+			else if (i<names.length-2)
+				this.middleNames+=(names[i]+" ");
+			else if (i==names.length-2)
+				this.middleNames+=(names[i]);
+			else if (i==names.length-1)
+				this.lastName=names[i];
+		}			
+	}
 
 	
 	//Getter Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

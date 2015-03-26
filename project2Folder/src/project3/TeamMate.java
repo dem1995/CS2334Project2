@@ -21,22 +21,22 @@ import java.util.ArrayList;
  *
  */
 public class TeamMate {
-	
+
 	/**
 	 * Static CustomBufferedReader to be used by all methods
 	 * */
 	private static CustomBufferedReader reader = new CustomBufferedReader();
-	
+
 	/**
 	 * Provides a formatter for changing String objects of the format dd/MM/yyyyy into Date objects
 	 */
 	public static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyyy");
-	
+
 	/**
 	 * Errors accumulated during the project
 	 */
 	public static String errors="";
-		
+
 	/**
 	 * Results of searching/sorting
 	 */
@@ -47,19 +47,19 @@ public class TeamMate {
 	 * @param args Doesn't/don't do anything for this program
 	 */
 	public static void main(String[] args) {
-		
+
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
 		boolean	continueLoop=true;	
 		Country country= new Country();
-		
-		
+
+
 		//Welcomes the user
 		System.out.println("Hello! Welcome to TeamMate! You may enter \"quit\" at any time to");
-					
+
 		//Attempts to convert the CSV file to an ArrayList of Strings and store that in personStrings
 		while (continueLoop)
 		{
-			System.out.println("Enter the fileName");
+			System.out.println("Enter the fileName that has the names of the players and their birthdates");
 			String fileName=reader.readLine();
 			try
 			{
@@ -79,19 +79,42 @@ public class TeamMate {
 				continueLoop=true;
 			}
 		}
+		continueLoop = true;
+		while (continueLoop)
+		{
+			System.out.println("Enter the fileName that has the names of the teams and the members of each");
+			String fileName=reader.readLine();
+			try
+			{
+				if (fileName.length() == 0)
+				{
+					System.out.println("You did not enter a FileName");
+				}
+				else
+				{
+					convertCSVToTeam(fileName);
+					continueLoop=false;
+				}
+			}
+			catch (IOException e)
+			{
+				System.out.println("There was a problem reading in the CSV file, or the file was not found");
+				continueLoop=true;
+			}
+		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
 		country.sort();
 		System.out.println(country);
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
-		System.out.println("Errors: "+errors);
+			System.out.println("Errors: "+errors);
 		errors="";
 		promptUser(country);
 		System.exit(0);
-			
-		}
-	
+
+	}
+
 	/**
 	 * Method for converting a CSV file to a list of String objects in the form "Name, birthDate, birthCity, birthState" or "Name, birthDate, birthCity, birthState"
 	 * @param fileName name of the CSV file to grab text from
@@ -100,16 +123,37 @@ public class TeamMate {
 	 */
 	public static ArrayList<String> convertCSVToStringList(String fileName) throws IOException
 	{
-			ArrayList<String> stringList = new ArrayList<String>();
-			BufferedReader br=new BufferedReader(new FileReader(fileName));
-			for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
-			{
-				stringList.add(lineOfCSV);
-			}
-			br.close();
+		ArrayList<String> stringList = new ArrayList<String>();
+		BufferedReader br=new BufferedReader(new FileReader(fileName));
+		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
+		{
+			stringList.add(lineOfCSV);
+		}
+		br.close();
 		return stringList;
 	}
 	
+	/**
+	 * @param fileName 
+	 * @throws IOException 
+	 * 
+	 * */
+	public static void convertCSVToTeam(String fileName) throws IOException
+	{
+		ArrayList<String> stringList = new ArrayList<String>();
+		BufferedReader br=new BufferedReader(new FileReader(fileName));
+		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
+		{
+			stringList.add(lineOfCSV);
+		}
+		br.close();
+		for(int i = 0; i<stringList.size();i++)
+		{
+			Team team = new Team(stringList.get(i));
+		}
+		
+	}
+
 	/**
 	 * Builds a country from personStrings
 	 * @param personStrings The strings from which the Person objects will be constructed
@@ -144,10 +188,10 @@ public class TeamMate {
 		Person aPerson=null;
 		String[] personParts = personString.split(",");
 		String fullName=personParts[0];
-		
+
 		if (personParts.length<4||personParts.length>5)
 			throw new Exception("\""+personString+"\""+"had too many/too few parts separated by commas");
-		
+
 		try
 		{
 			if (personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if true.
@@ -163,12 +207,12 @@ public class TeamMate {
 				aPerson.setStateName(personParts[2]);
 			}
 		}
-			catch (ParseException e)
+		catch (ParseException e)
 		{throw new Exception("\""+personString+"\""+ "'s parts separated by commas were in the wrong formats");}
-		
+
 		return aPerson;	
 	}
-	
+
 
 	/**
 	 * @param country The country that contains the lists of people with which we're doing stuff
@@ -180,12 +224,20 @@ public class TeamMate {
 
 		while(!answer.equalsIgnoreCase("quit"))
 		{
-		errors="";
-		results="";
-		PersonList results=new PersonList();
-		System.out.println("People or Place?");
-		answer = reader.readLine();
-			if(answer.equalsIgnoreCase("People"))
+			errors="";
+			results="";
+			PersonList results=new PersonList();
+			System.out.println("People, Place, or Team?");
+			answer = reader.readLine();
+			
+			if(answer.equalsIgnoreCase("Team"))
+			{
+				System.out.println("What's the name of the team?");
+				answer = reader.readLine();
+				
+			}
+
+			else if(answer.equalsIgnoreCase("People"))
 			{
 				System.out.println("Sort or Search?");
 				answer = reader.readLine();
@@ -275,7 +327,7 @@ public class TeamMate {
 				}
 				else
 				{
-						errors+="Failed To Find State";
+					errors+="Failed To Find State";
 				}
 			}
 			else
@@ -285,41 +337,40 @@ public class TeamMate {
 
 			}
 
-		if (answer.equalsIgnoreCase("quit"))
-			System.out.println("You have quit the program");
-		else if (!errors.equals(""))
-			System.out.println(errors);
-		else if ((""+results).equals("null"))
-			System.out.println("Nothing was returned from your search");
-		else if (results.toString().equals(""))
-			System.out.println("Nothing was returned from your search");
-		else
-		{
-			String q=results.toString();
-			System.out.println(q);
-			System.out.println("Would you like to save this to a file? Enter y/n");
-			answer=reader.readLine();
-			if(answer.contains("y")||answer.contains("Y"))
-			{
-				try{
-					FileWriter outfile = new FileWriter("output.txt");
-					BufferedWriter bw = new BufferedWriter(outfile);
-					bw.write(results.toString());
-					bw.newLine();
-					bw.close();
-				}
-				catch(IOException e)
-				{
-					System.out.println("Failed to print to a file");
-				}
-
-			}
-			else if (answer.equalsIgnoreCase("quit"))
+			if (answer.equalsIgnoreCase("quit"))
 				System.out.println("You have quit the program");
-		}
+			else if (!errors.equals(""))
+				System.out.println(errors);
+			else if ((""+results).equals("null"))
+				System.out.println("Nothing was returned from your search");
+			else if (results.toString().equals(""))
+				System.out.println("Nothing was returned from your search");
+			else
+			{
+				String q=results.toString();
+				System.out.println(q);
+				System.out.println("Would you like to save this to a file? Enter y/n");
+				answer=reader.readLine();
+				if(answer.contains("y")||answer.contains("Y"))
+				{
+					try{
+						FileWriter outfile = new FileWriter("output.txt");
+						BufferedWriter bw = new BufferedWriter(outfile);
+						bw.write(results.toString());
+						bw.newLine();
+						bw.close();
+					}
+					catch(IOException e)
+					{
+						System.out.println("Failed to print to a file");
+					}
+
+				}
+				else if (answer.equalsIgnoreCase("quit"))
+					System.out.println("You have quit the program");
+			}
 		}
 	}
-	
-}
 
+}
 
