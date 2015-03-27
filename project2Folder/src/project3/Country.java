@@ -97,6 +97,7 @@ public class Country {
 	public void addTeam(Team team)
 	{
 		this.findStateOrAdd(team.getStateName()).findCityOrAdd(team.getCityName()).addTeam(team);
+		
 	}
 
 	/**
