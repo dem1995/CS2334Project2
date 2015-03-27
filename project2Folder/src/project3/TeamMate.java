@@ -91,7 +91,7 @@ public class TeamMate {
 				}
 				else
 				{
-					convertCSVToTeam(fileName);
+					convertStringListToTeamLinkedHashMap(convertCSVToStringList(fileName));
 					continueLoop=false;
 				}
 			}
@@ -154,68 +154,26 @@ public class TeamMate {
 		br.close();
 		return stringList;
 	}
+	
 	/**
-	 * @throws IOException 
-	 * 
+	 * @param line The string to be converted to a team
+	 * @return a team created from the parater string
 	 */
-	public static void convertToCSV(String fileName) throws IOException
+	public static Team convertStringToTeam(String line)
 	{
-		Country country = new Country();
-		ArrayList<String> stringList = new ArrayList<String>();
-		BufferedReader br=new BufferedReader(new FileReader(fileName));
-		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
+		Team team= new Team();
+		String[] teamParts = line.split(";");
+		team.teamName	= teamParts[0];
+		team.cityName	= teamParts[1];
+		team.stateName	= teamParts[2];
+		PersonList personList	= new PersonList();
+		for(int i = 3; i<teamParts.length;i++)
 		{
-			stringList.add(lineOfCSV);
+			Person person	= new Person(teamParts[i]);
+			personList.addPerson(person);
 		}
-		br.close();
-		for(int i=0; i < stringList.size();i++)
-		{
-			String[] fileParts = stringList.get(i).split(";");
-			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[2]));
-			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[3]));
-		}
-	}
-	/**
-	 * @param fileName 
-	 * @throws IOException 
-	 * 
-	 * */
-	public static void convertCSVToTeam(String fileName) throws IOException
-	{
-		ArrayList<String> stringList = new ArrayList<String>();
-		BufferedReader br=new BufferedReader(new FileReader(fileName));
-		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
-		{
-			stringList.add(lineOfCSV);
-		}
-		br.close();
-		for(int i = 0; i<stringList.size();i++)
-		{
-			Team team = new Team(stringList.get(i));
-		}
-	}
-
-	/**
-	 * Builds a country from personStrings
-	 * @param personStrings The strings from which the Person objects will be constructed
-	 * @return A country made from the arrayList of personStrings
-	 */
-	public static Country convertStringListToCountry(ArrayList<String> personStrings)
-	{
-		Country country=new Country();
-		for (String personString: personStrings)
-		{
-			try
-			{
-				Person aPerson=convertStringToPerson(personString, formatter);
-				country.findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
-			}
-			catch (Exception e)
-			{
-				errors+=(e.getMessage()+"\n");
-			}
-		}
-		return country;
+		team.setTeamMembers(personList);
+		return team;
 	}
 	/**
 	 * Method for converting a String in the form of "Name, birthDate, birthCity, birthState" or ""Name, birthDate, birthCity, birthState" containing Person data to a Person object
@@ -268,7 +226,60 @@ public class TeamMate {
 
 		return aPerson;	
 	}
-
+	
+	/**
+	 * Builds a country from personStrings
+	 * @param personStrings The strings from which the Person objects will be constructed
+	 * @return A country made from the arrayList of personStrings
+	 */
+	public static Country convertStringListToCountry(ArrayList<String> personStrings)
+	{
+		Country country=new Country();
+		for (String personString: personStrings)
+		{
+			try
+			{
+				Person aPerson=convertStringToPerson(personString, formatter);
+				country.findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
+			}
+			catch (Exception e)
+			{
+				errors+=(e.getMessage()+"\n");
+			}
+		}
+		return country;
+	}
+	
+	/**
+	 * @param teamStrings
+	 * @return
+	 */
+	public static TeamLinkedHashMap convertStringListToTeamLinkedHashMap(ArrayList<String> teamStrings)
+	{
+		//TODO
+		return null;
+	}
+	/**
+	 * @throws IOException 
+	 * 
+	 */
+	public static void convertToCSV(String fileName) throws IOException
+	{
+		Country country = new Country();
+		ArrayList<String> stringList = new ArrayList<String>();
+		BufferedReader br=new BufferedReader(new FileReader(fileName));
+		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
+		{
+			stringList.add(lineOfCSV);
+		}
+		br.close();
+		for(int i=0; i < stringList.size();i++)
+		{
+			String[] fileParts = stringList.get(i).split(";");
+			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[2]));
+			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[3]));
+		}
+	}
 
 	/**
 	 * @param country The country that contains the lists of people with which we're doing stuff

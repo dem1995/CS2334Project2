@@ -50,7 +50,13 @@ public class Team implements Comparable<Team> {
 			personList.addPerson(person);
 		}
 		this.teamMembers	= personList;
-		
+	}
+	
+	/**
+	 * 
+	 */
+	public Team()
+	{
 	}
 
 
