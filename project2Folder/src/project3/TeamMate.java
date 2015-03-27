@@ -156,6 +156,7 @@ public class TeamMate {
 	}
 	
 	/**
+	 * Converts a String to a Team object
 	 * @param line The string to be converted to a team
 	 * @return a team created from the parater string
 	 */

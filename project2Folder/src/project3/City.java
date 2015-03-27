@@ -103,7 +103,16 @@ public class City implements Comparable<City> {
 		this.latitude=latitude;
 		this.longitude=longitude;		
 	}
-
+	
+	//Adder methods
+	/**
+	 * Adds a Team to this City's TeamLinkedHashMap
+	 * @param team the Team to be added
+	 */
+	public void addTeam(Team team)
+	{
+		//TODO
+	}
 	
 	//Interface-required methods
 	public int compareTo(City city) {

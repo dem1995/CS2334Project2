@@ -91,6 +91,16 @@ public class Country {
 	}
 	
 	/**
+	 * Adds a <code>Team</code> to the TeamLinkedHashMap of one of the Cities held by one of the States in this Country
+	 * @param team The team to be added
+	 */
+	public void addTeam(Team team)
+	{
+		this.findStateOrAdd(team.getStateName()).findCityOrAdd(team.getCityName()).addTeam(team);
+	}
+	
+	
+	/**
 	 * @return The Country as an arrayList of Person objects
 	 */
 	public PersonList toPersonList()
