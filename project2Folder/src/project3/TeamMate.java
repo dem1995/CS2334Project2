@@ -91,7 +91,7 @@ public class TeamMate {
 				}
 				else
 				{
-					convertStringListToTeamLinkedHashMap(convertCSVToStringList(fileName));
+					country.addTeams(convertStringListToArrayListOfTeams(convertCSVToStringList(fileName)));
 					continueLoop=false;
 				}
 			}
@@ -252,14 +252,18 @@ public class TeamMate {
 	}
 	
 	/**
+	 * Converts an ArrayList of Strings to an ArrayList of Teams
 	 * @param teamStrings
 	 * @return
 	 */
-	public static TeamLinkedHashMap convertStringListToTeamLinkedHashMap(ArrayList<String> teamStrings)
+	public static ArrayList<Team> convertStringListToArrayListOfTeams(ArrayList<String> teamStrings)
 	{
-		//TODO
-		return null;
+		ArrayList<Team> arrayListOfTeams=new ArrayList<Team>();
+		for (String teamString: teamStrings)
+			arrayListOfTeams.add(convertStringToTeam(teamString));
+		return arrayListOfTeams;
 	}
+
 	/**
 	 * @throws IOException 
 	 * 

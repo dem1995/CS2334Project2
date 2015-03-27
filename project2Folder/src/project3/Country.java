@@ -89,7 +89,7 @@ public class Country {
 	{
 		states.add(state);
 	}
-	
+//WARNING: Use the below methods to add teams to cities, don't use the addTeam method found in City
 	/**
 	 * Adds a <code>Team</code> to the TeamLinkedHashMap of one of the Cities held by one of the States in this Country
 	 * @param team The team to be added
@@ -98,6 +98,19 @@ public class Country {
 	{
 		this.findStateOrAdd(team.getStateName()).findCityOrAdd(team.getCityName()).addTeam(team);
 	}
+
+	/**
+	 * Adds <code>Team</code>s to the TeamLinkedHashMaps of one of the Cities held by the States in this Country
+	 * @param teams
+	 */
+	public void addTeams(ArrayList<Team> teams)
+	{
+		for (Team team: teams)
+			this.addTeam(team);
+	}
+	
+	
+
 	
 	
 	/**
