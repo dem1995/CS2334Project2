@@ -44,7 +44,14 @@ public class Person implements Comparable<Person> {
 	 * The date of birth of the person
 	 */
 	private Date birthDate;
-	
+	/**
+	 * The date of death of the person
+	 */
+	private Date deathDate;
+	/**
+	 * the age of the person
+	 */
+	private int age;
 	//Instance Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
@@ -58,6 +65,22 @@ public class Person implements Comparable<Person> {
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.birthDate=birthDate;
+		age = getAge(this.birthDate, null);
+	}
+	/**
+	 * Constructor method for a person with a first name, a middle name, a last name, and a birthdate.
+	 * @param firstName The person's first name
+	 * @param lastName	The person's last name
+	 * @param birthDate The person's birth date.
+	 * @param deathDate	the person's death date.
+	 */
+	public Person(String firstName, String lastName, Date birthDate, Date deathDate)
+	{
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.birthDate=birthDate;
+		this.deathDate=deathDate;
+		age = getAge(this.birthDate,this.deathDate);
 	}
 	
 	/**
@@ -179,6 +202,14 @@ public class Person implements Comparable<Person> {
 	}
 	
 	/**
+	 * Getter method for <code>deathDate</code>
+	 * @return the date of death of the person
+	 */
+	public Date getDeathDate() {
+		return deathDate;
+	}
+	
+	/**
 	 * Getter method for <code>cityName</code>
 	 * @return The name of the city the person lives in
 	 */
@@ -191,11 +222,19 @@ public class Person implements Comparable<Person> {
 
 	/**
 	 * Setter method for <code>stateName</code>
-	 * @param stateName The name of the state
+	 * @param stateName	The name of the state
 	 */
 	public void setStateName(String stateName)
 	{
 		this.stateName=stateName;
+	}
+	
+	/**
+	 * Setter method for <code>deathDate</code>
+	 * @param deathDate	the date of death of the person
+	 */
+	public void setDeathDate(Date deathDate) {
+		this.deathDate = deathDate;
 	}
 	
 	/**
@@ -214,6 +253,21 @@ public class Person implements Comparable<Person> {
 			return getFullName()+","+getCityName()+","+getStateName();
 		}
 		return getFullName()+","+getCityName()+","+getStateName() +","+getBirthDate();
+	}
+	
+	public int getAge(Date birth, Date death)
+	{
+		if(death ==null)
+		{
+			long age = (birth.getTime())/(1000*60*60*24*365);	
+		}
+		else
+		{
+			long age = (death.getTime()-birth.getTime())/(1000*60*60*24*365); // from ms to seconds to minutes to hours to days to years
+		}
+		
+		return (int) age;
+		
 	}
 	
 	//Interface-required Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

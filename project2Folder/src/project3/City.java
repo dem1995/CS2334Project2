@@ -33,6 +33,14 @@ public class City implements Comparable<City> {
 	 * The geographic coordinates of this city
 	 */
 	private Point2D coordinates;
+	/**
+	 * the latitude of this city
+	 */
+	private double latitude;
+	/**
+	 * the longitude of this city
+	 */
+	private double longitude;
 	//Instance method
 	/**
 	 * Creates a <code>City</code> with the name <code>cityName</code> and an empty <code>PersonList</code>
@@ -79,7 +87,7 @@ public class City implements Comparable<City> {
 	 */
 	public void setLatitude(int latitude)
 	{
-	    //TODO	
+		this.latitude = latitude;
 	}
 	/**
 	 * Adjusts the x-value of this city's geographic location
@@ -87,7 +95,22 @@ public class City implements Comparable<City> {
 	 */
 	public void setLongitude(int longitude)
 	{
-	    //TODO	
+	    this.longitude = longitude;
+	}
+	/**
+	 * 
+	 */
+	public void setCoordinates(int latitude, int longitude)
+	{
+		this.coordinates.setLocation(latitude, longitude);
+		
+	}
+	/**
+	 * 
+	 */
+	public void setCoordinates()
+	{
+		this.coordinates.setLocation(this.latitude, this.longitude);
 	}
 	
 	//Interface-required methods

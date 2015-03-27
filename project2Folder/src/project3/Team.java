@@ -1,4 +1,8 @@
 package project3;
+
+import java.util.Collections;
+import java.util.Comparator;
+
 /**
  * Project #3
  * CS 2334, Section 010
@@ -48,10 +52,11 @@ public class Team implements Comparable<Team> {
 		this.teamMembers	= personList;
 		
 	}
-	
-	
-	
-	
+
+
+
+
+
 	/**
 	 * Getter method for the PersonList containing this team's members
 	 * @return The PersonList containing this team's members
@@ -114,7 +119,7 @@ public class Team implements Comparable<Team> {
 	 */
 	public String getTeamName()
 	{
-		return stateName;
+		return teamName;
 	}
 	
 	
@@ -124,7 +129,7 @@ public class Team implements Comparable<Team> {
 	 */
 	public void setTeamName(String teamName)
 	{
-		this.cityName=cityName;
+		this.teamName=teamName;
 	}
 	
 
@@ -135,4 +140,11 @@ public class Team implements Comparable<Team> {
 		return this.getTeamName().compareToIgnoreCase(o.getTeamName());
 	}
 	
+	
+	public Team exactSearchFor(String name)
+	{
+		//TODO make the search method
+		return null;
+		
+	}
 }

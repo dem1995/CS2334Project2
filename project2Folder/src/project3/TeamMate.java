@@ -52,7 +52,6 @@ public class TeamMate {
 		boolean	continueLoop=true;	
 		Country country= new Country();
 
-
 		//Welcomes the user
 		System.out.println("Hello! Welcome to TeamMate! You may enter \"quit\" at any time to");
 
@@ -102,6 +101,29 @@ public class TeamMate {
 				continueLoop=true;
 			}
 		}
+		continueLoop = true;
+		while (continueLoop)
+		{
+			System.out.println("Enter the fileName that has the name of the cities and the longitude and the latitude");
+			String fileName=reader.readLine();
+			try
+			{
+				if (fileName.length() == 0)
+				{
+					System.out.println("You did not enter a FileName");
+				}
+				else
+				{
+					convertToCSV(fileName);
+					continueLoop=false;
+				}
+			}
+			catch (IOException e)
+			{
+				System.out.println("There was a problem reading in the CSV file, or the file was not found");
+				continueLoop=true;
+			}
+		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
 		country.sort();
@@ -132,7 +154,27 @@ public class TeamMate {
 		br.close();
 		return stringList;
 	}
-	
+	/**
+	 * @throws IOException 
+	 * 
+	 */
+	public static void convertToCSV(String fileName) throws IOException
+	{
+		Country country = new Country();
+		ArrayList<String> stringList = new ArrayList<String>();
+		BufferedReader br=new BufferedReader(new FileReader(fileName));
+		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
+		{
+			stringList.add(lineOfCSV);
+		}
+		br.close();
+		for(int i=0; i < stringList.size();i++)
+		{
+			String[] fileParts = stringList.get(i).split(";");
+			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[2]));
+			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[3]));
+		}
+	}
 	/**
 	 * @param fileName 
 	 * @throws IOException 
@@ -151,7 +193,6 @@ public class TeamMate {
 		{
 			Team team = new Team(stringList.get(i));
 		}
-		
 	}
 
 	/**
@@ -199,12 +240,27 @@ public class TeamMate {
 				aPerson=new Person(fullName, formatter.parse(personParts[1]));
 				aPerson.setCityName(personParts[2]);
 				aPerson.setStateName(personParts[3]);
+				if(personParts.length == 5)
+				{
+					if(personParts[4].contains("/"))
+					{
+						aPerson.setDeathDate(formatter.parse(personParts[4]));
+					}
+				}
+				
 			}
 			else if (!personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if false.
 			{
 				aPerson=new Person(fullName, null);
 				aPerson.setCityName(personParts[1]);
 				aPerson.setStateName(personParts[2]);
+				if(personParts.length == 4)
+				{
+					if(personParts[3].contains("/"))
+					{
+						aPerson.setDeathDate(formatter.parse(personParts[4]));
+					}
+				}
 			}
 		}
 		catch (ParseException e)
@@ -234,7 +290,7 @@ public class TeamMate {
 			{
 				System.out.println("What's the name of the team?");
 				answer = reader.readLine();
-				
+				results = null; //TODO
 			}
 
 			else if(answer.equalsIgnoreCase("People"))
@@ -368,6 +424,18 @@ public class TeamMate {
 				}
 				else if (answer.equalsIgnoreCase("quit"))
 					System.out.println("You have quit the program");
+			}
+			System.out.println("Graph, continue, or exit?");
+			answer = reader.readLine();
+			
+			if(answer.equalsIgnoreCase("Graph"))
+			{
+				
+			}
+			else if(answer.equalsIgnoreCase("exit"))
+			{
+				answer = "quit";
+				System.out.println("You have quit the program");
 			}
 		}
 	}
