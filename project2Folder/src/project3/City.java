@@ -111,7 +111,8 @@ public class City implements Comparable<City> {
 	 */
 	public void addTeam(Team team)
 	{
-		//TODO
+		teams.setTeam(team);
+		teams.setTeamName(team.getTeamName());
 	}
 	
 	//Interface-required methods
