@@ -28,11 +28,6 @@ public class City implements Comparable<City> {
 	 * The teams based in this city
 	 */
 	private TeamLinkedHashMap teams;
-	
-	/**
-	 * The geographic coordinates of this city
-	 */
-	private Point2D coordinates;
 	/**
 	 * the latitude of this city
 	 */
@@ -77,7 +72,7 @@ public class City implements Comparable<City> {
 	 */
 	public Point2D getCoordinate()
 	{
-		return coordinates;
+		return new Point2D.Double(latitude, longitude);
 	}
 	
 	//Setter methods
@@ -97,21 +92,18 @@ public class City implements Comparable<City> {
 	{
 	    this.longitude = longitude;
 	}
+	
 	/**
-	 * 
+	 * Sets the latitude and longitude of this city
+	 * @param latitude The latitude of this city
+	 * @param longitude The longitude of this city
 	 */
 	public void setCoordinates(int latitude, int longitude)
 	{
-		this.coordinates.setLocation(latitude, longitude);
-		
+		this.latitude=latitude;
+		this.longitude=longitude;		
 	}
-	/**
-	 * 
-	 */
-	public void setCoordinates()
-	{
-		this.coordinates.setLocation(this.latitude, this.longitude);
-	}
+
 	
 	//Interface-required methods
 	public int compareTo(City city) {
