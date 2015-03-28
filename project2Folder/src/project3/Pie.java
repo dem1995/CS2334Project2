@@ -8,7 +8,9 @@ import java.awt.geom.Rectangle2D;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.JComponent;
@@ -62,6 +64,16 @@ public class Pie extends JComponent {
 	 */
 	public Pie(Team team)
 	{
+		PersonList personList=team.getTeamMembers();
+		ArrayList<Person> personArrayList=personList.getPeople();
+		Set<Integer> setOfAges=new TreeSet<Integer>();
+		for (Person person: personArrayList)
+		{
+			setOfAges.add(new Integer(person.getAge()));
+		}
+		
+		
+		
 		
 	}
 	

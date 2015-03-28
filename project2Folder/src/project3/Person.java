@@ -218,6 +218,15 @@ public class Person implements Comparable<Person> {
 		return cityName;
 	}
 	
+	/**
+	 * Getter method for <code>age</code>
+	 * @return The name of the city the person lives in
+	 */
+	public int getAge()
+	{
+		return age;
+	}
+	
 	//Setter Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 	/**
