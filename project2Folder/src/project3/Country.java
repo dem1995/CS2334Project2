@@ -105,9 +105,12 @@ public class Country {
 	/**
 	 * Adds a <code>Team</code> to the TeamLinkedHashMap of one of the Cities held by one of the States in this Country
 	 * @param team The team to be added
+	 * @throws Exception if team is null
 	 */
-	public void addTeam(Team team)
+	public void addTeam(Team team) throws Exception
 	{
+		if (team==null)
+			throw new Exception();
 		this.findStateOrAdd(team.getStateName()).findCityOrAdd(team.getCityName()).addTeam(team);
 		
 	}
@@ -119,7 +122,12 @@ public class Country {
 	public void addTeams(ArrayList<Team> teams)
 	{
 		for (Team team: teams)
+			try
+		{
 			this.addTeam(team);
+		}catch (Exception e)
+		{
+		}
 	}
 	
 	

@@ -113,11 +113,13 @@ public class City implements Comparable<City> {
 	/**
 	 * Adds a Team to this City's TeamLinkedHashMap
 	 * @param team the Team to be added
+	 * @throws Exception exception if team is null
 	 */
-	public void addTeam(Team team)
+	public void addTeam(Team team) throws Exception
 	{
-		teams.setTeam(team);
-		teams.setTeamName(team.getTeamName());
+		if (team==null)
+			throw new Exception();
+		teams.addTeam(team);
 	}
 	
 

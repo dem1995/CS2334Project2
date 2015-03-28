@@ -9,6 +9,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+
 
 /**
  * Project #3
@@ -163,6 +165,9 @@ public class TeamMate {
 	public static Team convertStringToTeam(String line)
 	{
 		Team team= new Team();
+		try
+		{
+	
 		String[] teamParts = line.split(";");
 		team.teamName	= teamParts[0];
 		team.cityName	= teamParts[1];
@@ -174,6 +179,13 @@ public class TeamMate {
 			personList.addPerson(person);
 		}
 		team.setTeamMembers(personList);
+		}
+		catch (Exception e)
+		{
+			team.teamName="empty";
+			team.cityName="empty";
+			team.stateName="empty";
+		}
 		return team;
 	}
 	/**
@@ -299,6 +311,7 @@ public class TeamMate {
 			errors="";
 			results="";
 			PersonList results=new PersonList();
+			Team teamResults=new Team();
 			System.out.println("People, Place, or Team?");
 			answer = reader.readLine();
 			
@@ -315,7 +328,10 @@ public class TeamMate {
 					System.out.println("Team not found");
 				}
 				if(teamFound!=null)
+				{
 					results = teamFound.getTeamMembers();
+					teamResults=teamFound;
+				}
 			}
 
 			else if(answer.equalsIgnoreCase("People"))
@@ -455,7 +471,19 @@ public class TeamMate {
 			
 			if(answer.equalsIgnoreCase("Graph"))
 			{
-				
+				Pie pie = null;
+				try
+				{
+				pie= new Pie(teamResults);
+				}
+				catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+				JFrame jFrame=new JFrame();
+				jFrame.add(pie);
+				jFrame.pack();
+				jFrame.setVisible(true);
 			}
 			else if(answer.equalsIgnoreCase("exit"))
 			{

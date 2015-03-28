@@ -39,6 +39,8 @@ public class Team implements Comparable<Team> {
 	 */
 	public Team(String line)
 	{
+		try
+		{
 		String[] teamParts = line.split(";");
 		this.teamName	= teamParts[0];
 		this.cityName	= teamParts[1];
@@ -50,6 +52,10 @@ public class Team implements Comparable<Team> {
 			personList.addPerson(person);
 		}
 		this.teamMembers	= personList;
+		}
+		catch (Exception e)
+		{
+		}
 	}
 	
 	/**
