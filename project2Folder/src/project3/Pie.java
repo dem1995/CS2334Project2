@@ -57,6 +57,15 @@ public class Pie extends JComponent {
 		}
 	}
 	
+	/**
+	 * @param team Creates a Pie chart from a team object
+	 */
+	public Pie(Team team)
+	{
+		
+	}
+	
+	
 	public void paint(Graphics g)
 	{
 		Graphics2D g2D=(Graphics2D)g;
