@@ -304,9 +304,18 @@ public class TeamMate {
 			
 			if(answer.equalsIgnoreCase("Team"))
 			{
+				Team teamFound=null;
 				System.out.println("What's the name of the team?");
 				answer = reader.readLine();
-				results = null; //TODO
+				try{
+					teamFound=country.findTeam(answer);
+				}
+				catch(Exception e)
+				{
+					System.out.println("Team not found");
+				}
+				if(teamFound!=null)
+					results = teamFound.getTeamMembers();
 			}
 
 			else if(answer.equalsIgnoreCase("People"))

@@ -71,10 +71,6 @@ public class Pie extends JComponent {
 		{
 			setOfAges.add(new Integer(person.getAge()));
 		}
-		
-		
-		
-		
 	}
 	
 	

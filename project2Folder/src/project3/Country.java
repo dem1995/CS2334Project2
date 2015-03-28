@@ -80,6 +80,18 @@ public class Country {
 		return null;
 	}
 	
+	public Team findTeam(String teamName) throws Exception
+	{
+		Team team=null;
+		for (State state: getStates())
+			for (City city: state.getCities())
+				team=city.getTeams().getTeam(teamName);
+		if (team!=null)
+			throw new Exception();
+		else
+			return team;
+	}
+	
 	//Adder methods
 	/**
 	 * Adds a <code>State</code> to <code>states</code>

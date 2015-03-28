@@ -25,7 +25,7 @@ public class TeamLinkedHashMap{
 	/**
 	 * the LinkedHashMap for teams
 	 */
-	static  Map<String, Team> hashMap = new LinkedHashMap<String, Team>();
+	Map<String, Team> hashMap = new LinkedHashMap<String, Team>();
 	
 	/**
 	 * Default constructor for TeamLinkedHashMap
@@ -66,6 +66,11 @@ public class TeamLinkedHashMap{
 		return personList;
 	}
 	
+	public Team getTeam(String teamName)
+	{
+		return hashMap.get(teamName);
+	}
+	
 	//Setter methods
 	/**
 	 * @param	team	the team
@@ -80,5 +85,11 @@ public class TeamLinkedHashMap{
 	public void setTeamName(String teamName)
 	{
 		this.teamName = teamName;
+	}
+	
+	//Adder method
+	public void addTeam(Team team)
+	{
+		hashMap.put(team.getTeamName(), team);
 	}
 }

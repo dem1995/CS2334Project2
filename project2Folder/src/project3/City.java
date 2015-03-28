@@ -57,6 +57,11 @@ public class City implements Comparable<City> {
 		return personList;
 	}
 	
+	public TeamLinkedHashMap getTeams()
+	{
+		return teams;
+	}
+	
 	/**
 	 * A getter method for cityName
 	 * @return the name of the city
@@ -114,6 +119,8 @@ public class City implements Comparable<City> {
 		teams.setTeam(team);
 		teams.setTeamName(team.getTeamName());
 	}
+	
+
 	
 	//Interface-required methods
 	public int compareTo(City city) {
