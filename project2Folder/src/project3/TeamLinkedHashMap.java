@@ -12,7 +12,7 @@ import java.util.Map;
  * </p>
  * @version 1.0
  */
-public class TeamLinkedHashMap extends LinkedHashMap<String, Team> {
+public class TeamLinkedHashMap{
 
 	/**
 	 * the name of the team
