@@ -3,6 +3,8 @@ package project3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Project #3
@@ -178,9 +180,27 @@ public class PersonList {
 	 * @param chartType What parameters will be used to construct the chart
 	 * 
 	 */
-	public void makeIntoChart(int chartType)
+	public void makeIntoChart(int chartType, String location)
 	{
 		//TODO
+		int age;
+		ArrayList<Integer> rep	= new ArrayList<Integer>();
+		ArrayList<Integer> ages	= new ArrayList<Integer>();
+		for(int i= 0; i < getPeople().size();i++)
+		{
+			Person person = getPerson(i);
+			age = person.getAge(person.getBirthDate(), person.getDeathDate());
+			if(ages.contains(age))
+			{
+				rep.add(ages.indexOf(age), rep.indexOf(ages.indexOf(age))+1);
+			}
+			else if(!ages.contains(age))
+			{
+				ages.add(age);
+				rep.add(ages.indexOf(age), 1);
+			}
+			
+		}
 	}
 	
 	

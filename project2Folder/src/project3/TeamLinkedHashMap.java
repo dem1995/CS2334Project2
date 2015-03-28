@@ -1,6 +1,7 @@
 package project3;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Project #3
@@ -13,8 +14,6 @@ import java.util.LinkedHashMap;
  */
 public class TeamLinkedHashMap extends LinkedHashMap<String, Team> {
 
-
-	//TODO fill in the comments
 	/**
 	 * the name of the team
 	 */
@@ -23,6 +22,10 @@ public class TeamLinkedHashMap extends LinkedHashMap<String, Team> {
 	 * the team
 	 */
 	Team team;
+	/**
+	 * the LinkedHashMap for teams
+	 */
+	static  Map<String, Team> hashMap = new LinkedHashMap<String, Team>();
 	
 	/**
 	 * Default constructor for TeamLinkedHashMap
@@ -31,13 +34,14 @@ public class TeamLinkedHashMap extends LinkedHashMap<String, Team> {
 	{
 	}
 	/**
-	 * @param	team
-	 * @param	value
+	 * @param	team		the team
+	 * @param	teamName	the name of the team
 	 */
 	public TeamLinkedHashMap(Team team,String teamName)
 	{
 		this.team		=	team;
 		this.teamName	=	teamName;
+		hashMap.put(teamName, team);
 	}
 
 	/**
@@ -64,14 +68,14 @@ public class TeamLinkedHashMap extends LinkedHashMap<String, Team> {
 	
 	//Setter methods
 	/**
-	 * @param team
+	 * @param	team	the team
 	 */
 	public void setTeam(Team team)
 	{
 		this.team = team;
 	}
 	/**
-	 * @param value
+	 * @param	teamName	the name of the team
 	 */
 	public void setTeamName(String teamName)
 	{
