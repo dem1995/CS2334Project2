@@ -2,6 +2,7 @@ package project3;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Project #3
@@ -24,6 +25,13 @@ public class TeamLinkedHashMap extends LinkedHashMap<String, Team>{
 	//Adder method
 	public void addTeam(Team team)
 	{
+		assert(team!=null);
 		this.put(team.getTeamName(), team);
+	}
+	
+	public void sort()
+	{
+		TreeMap<String, Team> treeMap=new TreeMap<String, Team>(this);
+		this.putAll((treeMap));
 	}
 }

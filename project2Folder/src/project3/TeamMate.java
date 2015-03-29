@@ -53,7 +53,7 @@ public class TeamMate {
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
 		boolean	continueLoop=true;	
 		Country country= new Country();
-
+		Country players= new Country();
 		//Welcomes the user
 		System.out.println("Hello! Welcome to TeamMate! You may enter \"quit\" at any time to");
 
@@ -333,26 +333,30 @@ public class TeamMate {
 					results = teamFound.getTeamMembers();
 				}
 			}
-
 			else if(answer.equalsIgnoreCase("People"))
+//If they chose people
 			{
 				System.out.println("Sort or Search?");
 				answer = reader.readLine();
 				if(answer.equalsIgnoreCase("Sort"))
+//If they're sorting people
 				{
 					System.out.println("First or Last?");
 					answer = reader.readLine();
 					if(answer.equalsIgnoreCase("First"))
 					{
+//If they want it by first name
 						results=(country.toPersonList().returnAfterSortingUsing(PersonList.middleNamesComparator).returnAfterSortingUsing(PersonList.lastNameComparator).returnAfterSortingUsing(PersonList.firstNameComparator));
 					}
 					else if(answer.equalsIgnoreCase("Last"))
+//If they want it by last name
 					{
 						results=(country.toPersonList().returnAfterSortingUsing(PersonList.middleNamesComparator).returnAfterSortingUsing(PersonList.firstNameComparator).returnAfterSortingUsing(PersonList.lastNameComparator));
 
 					}
 					else
 					{
+//If they entered something incorrectly
 						System.out.println("You did not enter 'First' or 'Last'");
 						System.out.println("Please input one or the other");
 
@@ -360,28 +364,33 @@ public class TeamMate {
 				}
 				else if(answer.equalsIgnoreCase("Search"))
 				{
+//If they're searching people
 					System.out.println("Exact ot Partial?");
 					answer = reader.readLine();
 					if(answer.equalsIgnoreCase("Exact"))
 					{
+//If they're exact in they're searching
 						System.out.println("Enter the name of the person you're searching for");
 						answer=reader.readLine();
 						results=(country.toPersonList().returnAfterSortingUsing(null).exactSearchFor(answer, null));
 					}
 					else if(answer.equalsIgnoreCase("Partial"))
 					{
+//If they're searching for partial matches
 						System.out.println("Enter the name of the person you're searching for");
 						answer=reader.readLine();
 						results=(country.toPersonList().partialSearchNamesFor(answer));
 					}
 					else
 					{
+//If thye didn't input exact or partial
 						System.out.println("You did not enter 'Exact' or 'Partial'");
 						System.out.println("Please input one or the other");
 					}
 				}
 				else
 				{
+//If, when choosing what to do with people, they accidentally didn't choose sort or search
 					System.out.println("You did not enter 'Sort' or 'Search'");
 					System.out.println("Please input one or the other");
 
@@ -389,6 +398,7 @@ public class TeamMate {
 			}
 			else if(answer.equalsIgnoreCase("Place"))
 			{
+//If they're going by place
 				State stateSearchedFor=null;
 				System.out.println("State or City?");
 				answer = reader.readLine();
@@ -401,6 +411,7 @@ public class TeamMate {
 				{
 					if(answer.equalsIgnoreCase("State"))
 					{
+//If they're searching by state
 						for(City c: stateSearchedFor.getCities())
 						{
 							results.combineWith(c.getPersonList());
@@ -408,6 +419,7 @@ public class TeamMate {
 					}
 					else if(answer.equalsIgnoreCase("City"))
 					{
+//If they're searching by city
 						System.out.println("Enter the city name");
 						City citySearchedFor=stateSearchedFor.findCity(reader.readLine());
 						if(citySearchedFor!=null)
@@ -417,6 +429,7 @@ public class TeamMate {
 					}
 					else
 					{
+//If, when choosing the geographic scope, they accidentally didn't choose state or city
 						System.out.println("you did not enter 'State' or 'City'");
 						System.out.println("please input one or the other");
 
@@ -424,6 +437,7 @@ public class TeamMate {
 				}
 				else
 				{
+//If the state was not found
 					errors+="Failed To Find State";
 				}
 			}
@@ -433,7 +447,7 @@ public class TeamMate {
 				System.out.println("Please input one or the other");
 
 			}
-
+//Runs if the user entered quit
 			if (answer.equalsIgnoreCase("quit"))
 				System.out.println("You have quit the program");
 			else if (!errors.equals(""))
@@ -471,6 +485,7 @@ public class TeamMate {
 			
 			if(answer.equalsIgnoreCase("Graph"))
 			{
+//If the user wants to graph
 				Pie pie = null;
 				try
 				{
@@ -490,6 +505,7 @@ public class TeamMate {
 			}
 			else if(answer.equalsIgnoreCase("exit"))
 			{
+//If the user wants to quit
 				answer = "quit";
 				System.out.println("You have quit the program");
 			}

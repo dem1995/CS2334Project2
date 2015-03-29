@@ -27,7 +27,7 @@ public class City implements Comparable<City> {
 	/**
 	 * The teams based in this city
 	 */
-	private TeamLinkedHashMap teams;
+	private TeamLinkedHashMap teams=new TeamLinkedHashMap();
 	/**
 	 * the latitude of this city
 	 */

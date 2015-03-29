@@ -121,6 +121,9 @@ public class Team implements Comparable<Team> {
 	 */
 	public void setTeamMembers(PersonList teamMembers)
 	{
+		teamMembers.sortUsing(PersonList.middleNamesComparator);
+		teamMembers.sortUsing(PersonList.firstNameComparator);
+		teamMembers.sortUsing(PersonList.lastNameComparator);
 		this.teamMembers=teamMembers;
 	}
 
