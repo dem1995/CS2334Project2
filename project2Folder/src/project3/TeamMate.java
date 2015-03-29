@@ -318,7 +318,7 @@ public class TeamMate {
 			errors="";
 			results="";
 			PersonList results=new PersonList();
-			Team teamResults=new Team();
+			String teamName="";
 			System.out.println("People, Place, or Team?");
 			answer = reader.readLine();
 			
@@ -336,8 +336,8 @@ public class TeamMate {
 				}
 				if(teamFound!=null)
 				{
+					teamName=teamFound.getTeamName();
 					results = teamFound.getTeamMembers();
-					teamResults=teamFound;
 				}
 			}
 
@@ -481,7 +481,10 @@ public class TeamMate {
 				Pie pie = null;
 				try
 				{
-				pie= new Pie(teamResults);
+					Team aTeam=new Team();
+					aTeam.setTeamName(teamName);
+					aTeam.setTeamMembers(results);
+				pie= new Pie(aTeam);
 				}
 				catch (Exception e)
 				{

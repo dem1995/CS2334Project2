@@ -68,7 +68,7 @@ public class Pie extends JComponent {
 	}
 	
 	/**
-	 * @param team Creates a Pie chart from a person object
+	 * @param team Creates a Pie chart from a personlist object
 	 */
 	public Pie(PersonList personList)
 	{
