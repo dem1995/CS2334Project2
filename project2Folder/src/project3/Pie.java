@@ -24,7 +24,7 @@ public class Pie extends JComponent {
 	 * The total weight of the pie (the sum of the pie's sectors' weights)
 	 */
 	private int weightSum=0;
-	
+	private int ageArray[]= new int[120];
 	/**
 	 * The pieces of the pie chart
 	 */
@@ -73,10 +73,32 @@ public class Pie extends JComponent {
 	public Pie(PersonList personList)
 	{
 		ArrayList<Person> personArrayList=personList.getPeople();
-		Set<Integer> setOfAges=new TreeSet<Integer>();
 		for (Person person: personArrayList)
 		{
-			setOfAges.add(new Integer(person.getAge()));
+			ageArray[person.getAge()]=ageArray[person.getAge()]+1;
+		}
+		ageArray[100]=1;
+		for (int i=0; i<120; i++)
+		{
+			if (!(ageArray[i]==0))
+			{
+				int number=ageArray[i];
+				String aName=(""+number);
+				Sector aSector=new Sector(aName, number);
+				sectors.add(aSector);
+			}
+		}
+		
+		for(Sector sector: sectors)
+		{
+			weightSum+=sector.getWeight();
+		}
+		for(Sector sector: sectors)
+		{
+			sector.setAngleExtent(((double)sector.getWeight())/weightSum*360);
+			//TODO delete this print statement after verifying the operation above worked as expected.
+			System.out.print(sector.getAngleExtent());
+			sector.setColor(new Color((int)(Math.random() * 0x1000000)));
 		}
 	}
 	

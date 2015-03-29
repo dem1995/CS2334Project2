@@ -57,6 +57,8 @@ public class Country {
 		name=name.toLowerCase();
 		for (State state: states)
 		{
+			System.out.println(name+" "+state.getName());
+			System.out.println(name.equalsIgnoreCase(state.getName()));
 			if (state.getName().toLowerCase().equalsIgnoreCase(name))
 				return state;
 		}
@@ -85,7 +87,9 @@ public class Country {
 		Team team=null;
 		for (State state: getStates())
 			for (City city: state.getCities())
-				team=city.getTeams().getTeam(teamName);
+				if(!(city.getTeams().get(teamName)==null)){
+				team=city.getTeams().get(teamName);
+				}
 		if (team==null)
 			throw new Exception();
 		else
@@ -107,12 +111,12 @@ public class Country {
 	 * @param team The team to be added
 	 * @throws Exception if team is null
 	 */
-	public void addTeam(Team team) throws Exception
+	public void addTeam(Team team)
 	{
-		if (team==null)
-			throw new Exception();
-		this.findStateOrAdd(team.getStateName()).findCityOrAdd(team.getCityName()).addTeam(team);
-		
+		assert (team!=null);
+	    State theState=this.findStateOrAdd(team.getStateName());
+	    City theCity=theState.findCityOrAdd(team.getCityName());
+	    theCity.addTeam(team);	
 	}
 
 	/**
@@ -122,11 +126,15 @@ public class Country {
 	public void addTeams(ArrayList<Team> teams)
 	{
 		for (Team team: teams)
+		{
 			try
 		{
 			this.addTeam(team);
 		}catch (Exception e)
 		{
+			System.out.println("AddTeams Error");
+			e.printStackTrace();
+		}
 		}
 	}
 	

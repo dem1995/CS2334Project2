@@ -81,6 +81,8 @@ public class TeamMate {
 				continueLoop=true;
 			}
 		}
+		//Attempts to convert the ArrayList<String> personStrings to a Country object
+		country=convertStringListToCountry(personStrings);
 		continueLoop = true;
 		while (continueLoop)
 		{
@@ -128,8 +130,7 @@ public class TeamMate {
 				continueLoop=false;
 			}
 		}
-		//Attempts to convert the ArrayList<String> personStrings to a Country object
-		country=convertStringListToCountry(personStrings);
+
 		country.sort();
 		System.out.println(country);
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
@@ -172,27 +173,19 @@ public class TeamMate {
 	public static Team convertStringToTeam(String line)
 	{
 		Team team= new Team();
-		try
-		{
 	
 		String[] teamParts = line.split(";");
 		team.teamName	= teamParts[0].trim();
 		team.cityName	= teamParts[1].trim();
 		team.stateName	= teamParts[2].trim();
 		PersonList personList	= new PersonList();
-		for(int i = 3; i<teamParts.length;i++)
+		for(int i = 3; i<teamParts.length-3;i++)
 		{
 			Person person	= new Person(teamParts[i].trim());
 			personList.addPerson(person);
 		}
 		team.setTeamMembers(personList);
-		}
-		catch (Exception e)
-		{
-			team.teamName="empty";
-			team.cityName="empty";
-			team.stateName="empty";
-		}
+		
 		return team;
 	}
 	/**

@@ -115,10 +115,8 @@ public class City implements Comparable<City> {
 	 * @param team the Team to be added
 	 * @throws Exception exception if team is null
 	 */
-	public void addTeam(Team team) throws Exception
+	public void addTeam(Team team)
 	{
-		if (team==null)
-			throw new Exception();
 		teams.addTeam(team);
 	}
 	

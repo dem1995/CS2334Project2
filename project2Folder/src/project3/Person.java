@@ -139,6 +139,7 @@ public class Person implements Comparable<Person> {
 			else if (i==names.length-1)
 				this.lastName=names[i];
 		}			
+		//age = getAge(this.birthDate, null);
 	}
 
 	
@@ -274,6 +275,8 @@ public class Person implements Comparable<Person> {
 		{
 			long age = (death.getTime()-birth.getTime())/(1000*60*60*24*365); // from ms to seconds to minutes to hours to days to years
 		}
+		System.out.println(age);
+		
 		
 		return (int) age;
 		
