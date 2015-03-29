@@ -64,7 +64,14 @@ public class Pie extends JComponent {
 	 */
 	public Pie(Team team)
 	{
-		PersonList personList=team.getTeamMembers();
+		this(team.getTeamMembers());
+	}
+	
+	/**
+	 * @param team Creates a Pie chart from a person object
+	 */
+	public Pie(PersonList personList)
+	{
 		ArrayList<Person> personArrayList=personList.getPeople();
 		Set<Integer> setOfAges=new TreeSet<Integer>();
 		for (Person person: personArrayList)

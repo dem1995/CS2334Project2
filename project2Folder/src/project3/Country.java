@@ -86,7 +86,7 @@ public class Country {
 		for (State state: getStates())
 			for (City city: state.getCities())
 				team=city.getTeams().getTeam(teamName);
-		if (team!=null)
+		if (team==null)
 			throw new Exception();
 		else
 			return team;

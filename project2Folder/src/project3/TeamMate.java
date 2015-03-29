@@ -74,8 +74,9 @@ public class TeamMate {
 					continueLoop=false;
 				}
 			}
-			catch (IOException e)
+			catch (Exception e)
 			{
+				System.out.println(e.getMessage());
 				System.out.println("There was a problem reading in the CSV file, or the file was not found");
 				continueLoop=true;
 			}
@@ -93,11 +94,13 @@ public class TeamMate {
 				}
 				else
 				{
-					country.addTeams(convertStringListToArrayListOfTeams(convertCSVToStringList(fileName)));
+					ArrayList<Team> teamList=new ArrayList<Team>();
+					teamList=convertStringListToArrayListOfTeams(convertCSVToStringList(fileName));
+					country.addTeams(teamList);
 					continueLoop=false;
 				}
 			}
-			catch (IOException e)
+			catch (Exception e)
 			{
 				System.out.println("There was a problem reading in the CSV file, or the file was not found");
 				continueLoop=true;
@@ -144,15 +147,20 @@ public class TeamMate {
 	 * @return an ArrayList of the Strings, each of which was a line of the CSV file
 	 * @throws IOException due to use of BufferedReader
 	 */
-	public static ArrayList<String> convertCSVToStringList(String fileName) throws IOException
+	public static ArrayList<String> convertCSVToStringList(String fileName) throws Exception
 	{
 		ArrayList<String> stringList = new ArrayList<String>();
 		BufferedReader br=new BufferedReader(new FileReader(fileName));
 		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
 		{
+			if(lineOfCSV!="")
 			stringList.add(lineOfCSV);
 		}
 		br.close();
+		if (stringList.isEmpty())
+			{
+			throw new Exception("CSV File was empty");
+			}
 		return stringList;
 	}
 	
@@ -168,13 +176,13 @@ public class TeamMate {
 		{
 	
 		String[] teamParts = line.split(";");
-		team.teamName	= teamParts[0];
-		team.cityName	= teamParts[1];
-		team.stateName	= teamParts[2];
+		team.teamName	= teamParts[0].trim();
+		team.cityName	= teamParts[1].trim();
+		team.stateName	= teamParts[2].trim();
 		PersonList personList	= new PersonList();
 		for(int i = 3; i<teamParts.length;i++)
 		{
-			Person person	= new Person(teamParts[i]);
+			Person person	= new Person(teamParts[i].trim());
 			personList.addPerson(person);
 		}
 		team.setTeamMembers(personList);
