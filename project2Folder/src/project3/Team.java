@@ -1,8 +1,6 @@
 package project3;
 
 import java.io.Serializable;
-import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * Project #3
@@ -37,6 +35,7 @@ public class Team implements Comparable<Team>, Serializable{
 	
 	/**
 	 * Creates a Team object
+	 * @param line The line from which the team will draw its data
 	 */
 	public Team(String line)
 	{

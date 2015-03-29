@@ -8,11 +8,6 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.swing.JComponent;
 
@@ -26,6 +21,10 @@ public class Pie extends JComponent {
 	 */
 	private int weightSum=0;
 	
+	/**
+	 * The name of the team whose members' ages are being plotted
+	 */
+	private String teamName="";
 	
 	/**
 	 * The ages of the members of the pie chart
@@ -42,7 +41,7 @@ public class Pie extends JComponent {
 	 */
 	public Pie()
 	{
-		this.setPreferredSize(new Dimension (1024, 1024));
+		this.setPreferredSize(new Dimension (1000, 1000));
 	}
 	
 	/**
@@ -50,16 +49,18 @@ public class Pie extends JComponent {
 	 */
 	public Pie(Team team)
 	{
-		this(team.getTeamMembers());
+		this(team.getTeamMembers(), team.getTeamName());
 	}
 	
 	/**
 	 * Creates a Pie chart from a personlist object
 	 * @param personList the personList to construct the pie chart from
+	 * @param teamName The name of the team that holds the personList. If this is just a general personList (i.e., not exclusively part of exclusively one team), then this value should be an empty String
 	 */
-	public Pie(PersonList personList)
+	public Pie(PersonList personList, String teamName)
 	{
 		this();
+		this.teamName=teamName;
 		ArrayList<Person> personArrayList=personList.getPeople();
 		for (Person person: personArrayList)
 		{
@@ -84,8 +85,6 @@ public class Pie extends JComponent {
 		for(Sector sector: sectors)
 		{
 			sector.setAngleExtent(((double)sector.getWeight())/weightSum*360);
-			//TODO delete this print statement after verifying the operation above worked as expected.
-			System.out.print(sector.getAngleExtent());
 			sector.setColor(new Color((int)(Math.random() * 0x1000000)));
 		}
 	}
@@ -116,7 +115,7 @@ public class Pie extends JComponent {
 			double xChordMidpoint= (sector.getEndPoint().getX()+sector.getStartPoint().getX())/2.0;
 			double yChordMidpoint= (sector.getEndPoint().getY()+sector.getStartPoint().getY())/2.0;
 			if ((int)sector.getAngleExtent()==360)
-				yChordMidpoint-=20;
+				xChordMidpoint-= getParent().getWidth()/2;
 			if ((int)sector.getAngleExtent()==180)
 			{
 				if (sector.contains(xChordMidpoint, yChordMidpoint-10))
@@ -129,6 +128,8 @@ public class Pie extends JComponent {
 			g2D.drawString("Age: "+ sector.getName()+". Count: "+sector.getWeight()+"", (int)xChordMidpoint, (int)yChordMidpoint);
 			else
 				g2D.drawString("Age: Unknown"+". Count: "+sector.getWeight()+"", (int)xChordMidpoint, (int)yChordMidpoint);
+			//if (teamName!="")
+			g2D.drawString("The age data for the team of "+teamName, getParent().getWidth()/2, 20);
 		}
 	}
 }

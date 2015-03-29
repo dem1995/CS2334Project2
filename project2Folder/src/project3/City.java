@@ -57,6 +57,10 @@ public class City implements Comparable<City> {
 		return personList;
 	}
 	
+	/**
+	 * Getter method for this City's Teams
+	 * @return The teams that are based in this city
+	 */
 	public TeamLinkedHashMap getTeams()
 	{
 		return teams;
@@ -113,7 +117,6 @@ public class City implements Comparable<City> {
 	/**
 	 * Adds a Team to this City's TeamLinkedHashMap
 	 * @param team the Team to be added
-	 * @throws Exception exception if team is null
 	 */
 	public void addTeam(Team team)
 	{

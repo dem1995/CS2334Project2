@@ -34,7 +34,7 @@ public class PieTest2 {
 		personList.addPerson(new Person("harold", "cobra", d2));
 		try
 		{
-			pie= new Pie(personList);
+			pie= new Pie(personList, "test");
 		}
 		catch (Exception e)
 		{

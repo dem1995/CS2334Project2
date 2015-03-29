@@ -24,7 +24,7 @@ public class PersonTest {
 		{
 			System.out.println("parse error");
 		}
-		System.out.println(d.getYear());
+		//System.out.println(d.getYear());
 		Person person=(new Person("fred", "smith", null));
 	}
 

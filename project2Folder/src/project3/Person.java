@@ -275,6 +275,13 @@ public class Person implements Comparable<Person> {
 		}
 	}
 	
+	/**
+	 * Returns the age of the person at death, if they are dead. If deathDate is null, returns their current age (assumes person is still alive). If both birthDate and deathDate are unknown, returns 0.
+	 * @param birth The birth Date of this person
+	 * @param death The death Date of this person
+	 * @return The age of the person at death, if they are dead. If deathDate is null, their current age (assumes person is still alive). If both birthDate and deathDate are unknown, 0.
+	 */
+	@SuppressWarnings("deprecation")
 	public int getAge(Date birth, Date death)
 	{
 		if(birth!=null)
@@ -289,7 +296,7 @@ public class Person implements Comparable<Person> {
 				age=death.getYear()-birth.getYear();
 				//long age = (death.getTime()-birth.getTime())/(1000*60*60*24*365); // from ms to seconds to minutes to hours to days to years
 			}
-			System.out.println(age);
+			//System.out.println(age);
 		
 		
 			return (int) age;

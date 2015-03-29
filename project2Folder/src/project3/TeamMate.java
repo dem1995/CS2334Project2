@@ -76,6 +76,8 @@ public class TeamMate {
 			}
 			catch (Exception e)
 			{
+				if(fileName=="exit")
+					System.exit(0);
 				System.out.println(e.getMessage());
 				System.out.println("There was a problem reading in the CSV file, or the file was not found");
 				continueLoop=true;
@@ -111,6 +113,8 @@ public class TeamMate {
 			}
 			catch (Exception e)
 			{
+				if(fileName=="exit")
+					System.exit(0);
 				System.out.println("There was a problem reading in the CSV file, or the file was not found");
 				continueLoop=true;
 			}
@@ -132,6 +136,8 @@ public class TeamMate {
 					}
 				catch (Exception e)
 				{
+					if(fileName=="exit")
+						System.exit(0);
 					errors+=e.getStackTrace()+"/n";
 				}
 				continueLoop=false;
@@ -153,6 +159,7 @@ public class TeamMate {
 	 * Method for converting a CSV file to a list of String objects in the form "Name, birthDate, birthCity, birthState" or "Name, birthDate, birthCity, birthState"
 	 * @param fileName name of the CSV file to grab text from
 	 * @return an ArrayList of the Strings, each of which was a line of the CSV file
+	 * @throws Exception 
 	 * @throws IOException due to use of BufferedReader
 	 */
 	public static ArrayList<String> convertCSVToStringList(String fileName) throws Exception
@@ -250,7 +257,7 @@ public class TeamMate {
 	/**
 	 * Builds a country from personStrings
 	 * @param personStrings The strings from which the Person objects will be constructed
-	 * @return A country made from the arrayList of personStrings
+	 * @param country The Country to which the PersonList created from the personStrings will be added
 	 */
 	public static void addStringListToCountry(ArrayList<String> personStrings, Country country)
 	{
@@ -270,8 +277,8 @@ public class TeamMate {
 	
 	/**
 	 * Converts an ArrayList of Strings to an ArrayList of Teams
-	 * @param teamStrings
-	 * @return
+	 * @param teamStrings The ArrayList of Strings from which to form the ArrayList of Teams
+	 * @return ArrayList of Teams formed from the ArrayList of Strings
 	 */
 	public static ArrayList<Team> convertStringListToArrayListOfTeams(ArrayList<String> teamStrings)
 	{
@@ -282,7 +289,9 @@ public class TeamMate {
 	}
 
 	/**
-	 * @throws IOException 
+	 * 
+	 * @param fileName 
+	 * @throws Exception
 	 * 
 	 */
 	public static void convertToCSV(String fileName) throws Exception
@@ -475,6 +484,7 @@ public class TeamMate {
 						FileWriter outfile = new FileWriter("output.txt");
 						BufferedWriter bw = new BufferedWriter(outfile);
 						bw.write(teamName);
+						bw.newLine();
 						bw.write(results.toString());
 						bw.newLine();
 						bw.close();

@@ -23,6 +23,9 @@ public class Country {
 	
 	
 
+	/**
+	 * Lets you know if this Country's treeMap of people (basically a quick way to search for people if you don't know their city or state) needs to be updated due to changes to this Country.
+	 */
 	public boolean treeMapNeedsBuilding=true;
 	
 	/**
@@ -67,8 +70,8 @@ public class Country {
 		name=name.toLowerCase();
 		for (State state: states)
 		{
-			System.out.println(name+" "+state.getName());
-			System.out.println(name.equalsIgnoreCase(state.getName()));
+			//System.out.println(name+" "+state.getName());
+			//System.out.println(name.equalsIgnoreCase(state.getName()));
 			if (state.getName().toLowerCase().equalsIgnoreCase(name))
 				return state;
 		}
@@ -92,6 +95,12 @@ public class Country {
 		return null;
 	}
 	
+	/**
+	 * Searches this country for a Team of a given name
+	 * @param teamName The name of the Team that this object looks for
+	 * @return The Team matching the name given in the parameters
+	 * @throws Exception Thrown if team is null
+	 */
 	public Team findTeam(String teamName) throws Exception
 	{
 		Team team=null;
@@ -106,6 +115,11 @@ public class Country {
 			return team;
 	}
 	
+	/**
+	 * Searches this Country for a Person. Only to be used if the State and City of the Person are unknown
+	 * @param personName The name of the Person this method is searching for
+	 * @return A Person with the name given via this method's parameters
+	 */
 	public Person findPerson(String personName)
 	{
 		if(treeMapNeedsBuilding)
@@ -140,7 +154,6 @@ public class Country {
 	/**
 	 * Adds a <code>Team</code> to the TeamLinkedHashMap of one of the Cities held by one of the States in this Country
 	 * @param team The team to be added
-	 * @throws Exception if team is null
 	 */
 	public void addTeam(Team team)
 	{
