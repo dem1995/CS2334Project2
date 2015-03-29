@@ -2,6 +2,7 @@ package project3;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.TreeMap;
 
 /**
  * Project #3
@@ -19,6 +20,15 @@ public class Country {
 	 * The <code>State</code>s contained by this <code>Country</code>
 	 */
 	private ArrayList<State> states;
+	
+	
+
+	public boolean treeMapNeedsBuilding=true;
+	
+	/**
+	 * A treemap of players. Used to assign birthdates to players
+	 */
+	private TreeMap<String, Person> treeMap=new TreeMap<String, Person>();
 	
 	//Instance methods	
 	/**
@@ -96,7 +106,28 @@ public class Country {
 			return team;
 	}
 	
+	public Person findPerson(String personName)
+	{
+		if(treeMapNeedsBuilding)
+		{
+			for (Person person: this.toPersonList().getPeople())
+				treeMap.put(person.getFullName(), person);
+		}
+		treeMapNeedsBuilding=false;
+		return (treeMap.get(personName));
+	}
+	
 	//Adder methods
+	
+	/**
+	 * Method for adding a person to this country
+	 * @param aPerson The person to be added
+	 */
+	public void addPerson(Person aPerson)
+	{
+		findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
+		treeMapNeedsBuilding=true;
+	}
 	/**
 	 * Adds a <code>State</code> to <code>states</code>
 	 * @param state The State to be added to states
@@ -114,9 +145,13 @@ public class Country {
 	public void addTeam(Team team)
 	{
 		assert (team!=null);
+		for (Person person: team.getTeamMembers().getPeople())
+		{
+			person=this.findPerson(person.getFullName());
+		}
 	    State theState=this.findStateOrAdd(team.getStateName());
 	    City theCity=theState.findCityOrAdd(team.getCityName());
-	    theCity.addTeam(team);	
+	    theCity.addTeam(team);
 	}
 
 	/**

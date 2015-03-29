@@ -35,8 +35,13 @@ public class Pie extends JComponent {
 	 * @param map
 	 */
 	
+	public Pie()
+	{
+		this.setSize(1024, 1024);
+	}
 	public Pie(TreeMap<String, AtomicInteger> map)
 	{
+		this();
 		for (Entry<String, AtomicInteger> entry : map.entrySet())
 		{
 			System.out.println(entry.getKey()+"||"+entry.getValue());
@@ -72,18 +77,19 @@ public class Pie extends JComponent {
 	 */
 	public Pie(PersonList personList)
 	{
+		this();
 		ArrayList<Person> personArrayList=personList.getPeople();
 		for (Person person: personArrayList)
 		{
 			ageArray[person.getAge()]=ageArray[person.getAge()]+1;
 		}
-		ageArray[100]=1;
-		for (int i=0; i<120; i++)
+		//ageArray[100]=1;
+		for (int i=0; i<ageArray.length; i++)
 		{
 			if (!(ageArray[i]==0))
 			{
 				int number=ageArray[i];
-				String aName=(""+number);
+				String aName=(""+i);
 				Sector aSector=new Sector(aName, number);
 				sectors.add(aSector);
 			}
@@ -125,6 +131,19 @@ public class Pie extends JComponent {
 			currentAngle+=sector.getAngleExtent();
 			g2D.setColor(sector.getColor());
 			g2D.fill(sector);
+			double xChordMidpoint= (sector.getEndPoint().getX()+sector.getStartPoint().getX())/2.0;
+			double yChordMidpoint= (sector.getEndPoint().getY()+sector.getStartPoint().getY())/2.0;
+			if ((int)sector.getAngleExtent()==360)
+				yChordMidpoint-=20;
+			if ((int)sector.getAngleExtent()==180)
+			{
+				if (sector.contains(xChordMidpoint, yChordMidpoint-10))
+						yChordMidpoint-=10.0;
+				else
+					yChordMidpoint+=10.0;
+			}
+			g2D.setColor(Color.BLACK);
+			g2D.drawString("Age: "+ sector.getName()+". Count: "+sector.getWeight()+"", (int)xChordMidpoint, (int)yChordMidpoint);
 		}
 	}
 }

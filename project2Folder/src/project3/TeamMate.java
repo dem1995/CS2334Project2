@@ -53,7 +53,6 @@ public class TeamMate {
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
 		boolean	continueLoop=true;	
 		Country country= new Country();
-		Country players= new Country();
 		//Welcomes the user
 		System.out.println("Hello! Welcome to TeamMate! You may enter \"quit\" at any time to");
 
@@ -71,6 +70,7 @@ public class TeamMate {
 				else
 				{
 					personStrings = convertCSVToStringList(fileName);
+					addStringListToCountry(personStrings, country);
 					continueLoop=false;
 				}
 			}
@@ -81,8 +81,6 @@ public class TeamMate {
 				continueLoop=true;
 			}
 		}
-		//Attempts to convert the ArrayList<String> personStrings to a Country object
-		country=convertStringListToCountry(personStrings);
 		continueLoop = true;
 		while (continueLoop)
 		{
@@ -98,6 +96,7 @@ public class TeamMate {
 				{
 					ArrayList<Team> teamList=new ArrayList<Team>();
 					teamList=convertStringListToArrayListOfTeams(convertCSVToStringList(fileName));
+					
 					country.addTeams(teamList);
 					continueLoop=false;
 				}
@@ -245,22 +244,20 @@ public class TeamMate {
 	 * @param personStrings The strings from which the Person objects will be constructed
 	 * @return A country made from the arrayList of personStrings
 	 */
-	public static Country convertStringListToCountry(ArrayList<String> personStrings)
+	public static void addStringListToCountry(ArrayList<String> personStrings, Country country)
 	{
-		Country country=new Country();
 		for (String personString: personStrings)
 		{
 			try
 			{
 				Person aPerson=convertStringToPerson(personString, formatter);
-				country.findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
+				country.addPerson(aPerson);
 			}
 			catch (Exception e)
 			{
 				errors+=(e.getMessage()+"\n");
 			}
 		}
-		return country;
 	}
 	
 	/**

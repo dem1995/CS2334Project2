@@ -1,5 +1,6 @@
 package project3;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -12,7 +13,7 @@ import java.util.Comparator;
  * </p>
  * @version 1.0
  */
-public class Team implements Comparable<Team> {
+public class Team implements Comparable<Team>, Serializable{
 
 	/**
 	 * The name of the state in which this team is based

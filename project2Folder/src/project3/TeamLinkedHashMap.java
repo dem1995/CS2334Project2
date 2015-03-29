@@ -1,5 +1,6 @@
 package project3;
 
+import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
@@ -13,7 +14,7 @@ import java.util.TreeMap;
  * </p>
  * @version 1.0
  */
-public class TeamLinkedHashMap extends LinkedHashMap<String, Team>{
+public class TeamLinkedHashMap extends LinkedHashMap<String, Team> implements Serializable{
 
 	/**
 	 * Default constructor for TeamLinkedHashMap
