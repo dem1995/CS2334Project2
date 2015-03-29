@@ -2,6 +2,7 @@ package project3;
 
 import static org.junit.Assert.*;
 
+import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
@@ -30,10 +31,10 @@ public class PieTest2 {
 		PersonList personList=new PersonList();
 		personList.addPerson(new Person("fred", "smith", d, d3));
 		personList.addPerson(new Person("george", "zebra", d, d2));
-		personList.addPerson(new Person("harold", "cobra", d2, d3));
+		personList.addPerson(new Person("harold", "cobra", d2));
 		try
 		{
-		pie= new Pie(personList);
+			pie= new Pie(personList);
 		}
 		catch (Exception e)
 		{
@@ -42,6 +43,7 @@ public class PieTest2 {
 		System.out.println(personList.getPerson(0).getAge());
 		System.out.println(personList);
 		JFrame jFrame=new JFrame();
+		//jFrame.setPreferredSize(new Dimension(1024, 1024));
 		jFrame.add(pie);
 		jFrame.pack();
 		jFrame.setVisible(true);

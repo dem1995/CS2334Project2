@@ -96,7 +96,15 @@ public class TeamMate {
 				{
 					ArrayList<Team> teamList=new ArrayList<Team>();
 					teamList=convertStringListToArrayListOfTeams(convertCSVToStringList(fileName));
-					
+//					for (int i=0; i<teamList.size(); i++)
+//					{
+//						for (int j=0; j<teamList.get(i).getTeamMembers().getPeople().size(); j++)
+//							try{
+//							teamList.get(i).getTeamMembers().getPeople().set(j,country.findPerson(teamList.get(i).getTeamMembers().getPeople().get(j).getFullName()));
+//							}
+//						catch (Exception e)
+//						{};
+//					}
 					country.addTeams(teamList);
 					continueLoop=false;
 				}
@@ -314,11 +322,12 @@ public class TeamMate {
 			
 			if(answer.equalsIgnoreCase("Team"))
 			{
+//If the user wants to search for a team
 				Team teamFound=null;
 				System.out.println("What's the name of the team?");
 				answer = reader.readLine();
 				try{
-					teamFound=country.findTeam(answer.toLowerCase());
+					teamFound=country.findTeam(answer);
 				}
 				catch(Exception e)
 				{
@@ -460,10 +469,12 @@ public class TeamMate {
 				System.out.println("Would you like to save this to a file? Enter y/n");
 				answer=reader.readLine();
 				if(answer.contains("y")||answer.contains("Y"))
+//Runs if user wants to save file
 				{
 					try{
 						FileWriter outfile = new FileWriter("output.txt");
 						BufferedWriter bw = new BufferedWriter(outfile);
+						bw.write(teamName);
 						bw.write(results.toString());
 						bw.newLine();
 						bw.close();
@@ -495,7 +506,9 @@ public class TeamMate {
 				{
 					e.printStackTrace();
 				}
+				//Sets up JFrame
 				JFrame jFrame=new JFrame();
+				//Adds the pie chart of ages to it
 				jFrame.add(pie);
 				jFrame.pack();
 				jFrame.setVisible(true);

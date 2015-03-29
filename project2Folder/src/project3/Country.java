@@ -145,9 +145,10 @@ public class Country {
 	public void addTeam(Team team)
 	{
 		assert (team!=null);
-		for (Person person: team.getTeamMembers().getPeople())
+		for (int i=0; i<team.getTeamMembers().getPeople().size(); i++)
 		{
-			person=this.findPerson(person.getFullName());
+			if(this.findPerson(team.getTeamMembers().getPeople().get(i).getFullName())!=null)
+			team.getTeamMembers().getPeople().set(i,this.findPerson(team.getTeamMembers().getPeople().get(i).getFullName()));
 		}
 	    State theState=this.findStateOrAdd(team.getStateName());
 	    City theCity=theState.findCityOrAdd(team.getCityName());

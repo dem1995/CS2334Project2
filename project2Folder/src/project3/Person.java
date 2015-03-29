@@ -260,38 +260,45 @@ public class Person implements Comparable<Person> {
 	{
 		if(getDeathDate()==null)
 		{
-		if(getBirthDate() == null)
-		{
-			return getFullName()+","+getCityName()+","+getStateName();
+			if(getBirthDate() == null)
+			{
+				return getFullName()+","+getCityName()+","+getStateName();
+			}
+			else
+			{
+				return getFullName()+", "+getCityName()+", "+getStateName() +", "+getBirthDate() + ", " +getAge()+ " years old";
+			}
 		}
 		else
 		{
-			return getFullName()+", "+getCityName()+", "+getStateName() +", "+getBirthDate() + ", " +getAge()+ " years old";
+			return getFullName()+", "+getCityName()+", "+getStateName() +", "+getBirthDate() + ", " + getDeathDate() + ", " + getAge()+ " years old";
 		}
-		}
-		else
-		return getFullName()+", "+getCityName()+", "+getStateName() +", "+getBirthDate() + ", " + getDeathDate() + ", " + getAge()+ " years old";
-		
 	}
 	
 	public int getAge(Date birth, Date death)
 	{
-		if(death ==null)
+		if(birth!=null)
 		{
-			age=new Date().getYear()-birth.getYear();
-			//long age = (birth.getTime())/(1000*60*60*24*365);	
+			if(death ==null)
+			{
+				age=new Date().getYear()-birth.getYear();
+				//long age = (birth.getTime())/(1000*60*60*24*365);	
+			}
+			else
+			{
+				age=death.getYear()-birth.getYear();
+				//long age = (death.getTime()-birth.getTime())/(1000*60*60*24*365); // from ms to seconds to minutes to hours to days to years
+			}
+			System.out.println(age);
+		
+		
+			return (int) age;
 		}
 		else
-		{
-			age=death.getYear()-birth.getYear();
-			//long age = (death.getTime()-birth.getTime())/(1000*60*60*24*365); // from ms to seconds to minutes to hours to days to years
-		}
-		System.out.println(age);
-		
-		
-		return (int) age;
+			return 0;
 		
 	}
+	
 	
 	//Interface-required Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	public int compareTo(Person otherPerson) {

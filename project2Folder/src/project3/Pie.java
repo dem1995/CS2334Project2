@@ -1,5 +1,6 @@
 package project3;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -24,44 +25,24 @@ public class Pie extends JComponent {
 	 * The total weight of the pie (the sum of the pie's sectors' weights)
 	 */
 	private int weightSum=0;
+	
+	
+	/**
+	 * The ages of the members of the pie chart
+	 */
 	private int ageArray[]= new int[120];
+	
 	/**
 	 * The pieces of the pie chart
 	 */
 	private ArrayList<Sector> sectors=new ArrayList<Sector>();
-
-	/**
-	 * Creates a new pie chart using a TreeMap of data
-	 * @param map
-	 */
 	
+	/**
+	 * The default constructor for Pie charts. Sets the pie chart's size to 1024x1024
+	 */
 	public Pie()
 	{
-		this.setSize(1024, 1024);
-	}
-	public Pie(TreeMap<String, AtomicInteger> map)
-	{
-		this();
-		for (Entry<String, AtomicInteger> entry : map.entrySet())
-		{
-			System.out.println(entry.getKey()+"||"+entry.getValue());
-			
-		    sectors.add(new Sector(entry.getKey(), entry.getValue().get()));
-		    System.out.println(entry.getKey()+" added");
-
-		}
-		
-		for(Sector sector: sectors)
-		{
-			weightSum+=sector.getWeight();
-		}
-		for(Sector sector: sectors)
-		{
-			sector.setAngleExtent(((double)sector.getWeight())/weightSum*360);
-			//TODO delete this print statement after verifying the operation above worked as expected.
-			System.out.print(sector.getAngleExtent());
-			sector.setColor(new Color((int)(Math.random() * 0x1000000)));
-		}
+		this.setPreferredSize(new Dimension (1024, 1024));
 	}
 	
 	/**
@@ -73,7 +54,8 @@ public class Pie extends JComponent {
 	}
 	
 	/**
-	 * @param team Creates a Pie chart from a personlist object
+	 * Creates a Pie chart from a personlist object
+	 * @param personList the personList to construct the pie chart from
 	 */
 	public Pie(PersonList personList)
 	{
@@ -143,7 +125,10 @@ public class Pie extends JComponent {
 					yChordMidpoint+=10.0;
 			}
 			g2D.setColor(Color.BLACK);
+			if(!sector.getName().equals("0"))
 			g2D.drawString("Age: "+ sector.getName()+". Count: "+sector.getWeight()+"", (int)xChordMidpoint, (int)yChordMidpoint);
+			else
+				g2D.drawString("Age: Unknown"+". Count: "+sector.getWeight()+"", (int)xChordMidpoint, (int)yChordMidpoint);
 		}
 	}
 }
