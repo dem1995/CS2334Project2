@@ -42,9 +42,9 @@ public class Team implements Comparable<Team> {
 		try
 		{
 		String[] teamParts = line.split(";");
-		this.teamName	= teamParts[0];
-		this.cityName	= teamParts[1];
-		this.stateName	= teamParts[2];
+		this.teamName.equalsIgnoreCase(teamParts[0]);
+		this.cityName.equalsIgnoreCase(teamParts[1]);
+		this.stateName.equalsIgnoreCase(teamParts[2]);
 		PersonList personList	= new PersonList();
 		for(int i = 3; i<teamParts.length;i++)
 		{

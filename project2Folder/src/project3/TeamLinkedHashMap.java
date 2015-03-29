@@ -66,6 +66,10 @@ public class TeamLinkedHashMap{
 		return personList;
 	}
 	
+	/**
+	 * @param	teamName	the name of the team wanted
+	 * @return	the team that was asked for
+	 */
 	public Team getTeam(String teamName)
 	{
 		return hashMap.get(teamName);
