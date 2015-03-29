@@ -131,7 +131,7 @@ public class TeamMate {
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
 		country=convertStringListToCountry(personStrings);
 		country.sort();
-		System.out.println(country);
+		//System.out.println(country);
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
 			System.out.println("Errors: "+errors);
@@ -328,7 +328,7 @@ public class TeamMate {
 				System.out.println("What's the name of the team?");
 				answer = reader.readLine();
 				try{
-					teamFound=country.findTeam(answer);
+					teamFound=country.findTeam(answer.toLowerCase());
 				}
 				catch(Exception e)
 				{

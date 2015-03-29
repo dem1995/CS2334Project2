@@ -40,8 +40,8 @@ public class TeamLinkedHashMap{
 	public TeamLinkedHashMap(Team team,String teamName)
 	{
 		this.team		=	team;
-		this.teamName	=	teamName;
-		hashMap.put(teamName, team);
+		this.teamName	=	teamName.toLowerCase();
+		hashMap.put(teamName.toLowerCase(), team);
 	}
 
 	/**
