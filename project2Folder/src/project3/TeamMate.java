@@ -106,24 +106,23 @@ public class TeamMate {
 		continueLoop = true;
 		while (continueLoop)
 		{
-			System.out.println("Enter the fileName that has the name of the cities and the longitude and the latitude");
-			String fileName=reader.readLine();
-			try
+		System.out.println("Enter the fileName that has the name of the cities and the longitude and the latitude");
+		String fileName=reader.readLine();
+			if (fileName.length() == 0)
 			{
-				if (fileName.length() == 0)
-				{
-					System.out.println("You did not enter a FileName");
-				}
-				else
-				{
-					convertToCSV(fileName);
-					continueLoop=false;
-				}
+				System.out.println("You did not enter a FileName");
 			}
-			catch (IOException e)
+			else
 			{
-				System.out.println("There was a problem reading in the CSV file, or the file was not found");
-				continueLoop=true;
+				try
+					{
+				convertToCSV(fileName);
+					}
+				catch (Exception e)
+				{
+					errors+=e.getStackTrace()+"/n";
+				}
+				continueLoop=false;
 			}
 		}
 		//Attempts to convert the ArrayList<String> personStrings to a Country object
@@ -280,7 +279,7 @@ public class TeamMate {
 	 * @throws IOException 
 	 * 
 	 */
-	public static void convertToCSV(String fileName) throws IOException
+	public static void convertToCSV(String fileName) throws Exception
 	{
 		Country country = new Country();
 		ArrayList<String> stringList = new ArrayList<String>();

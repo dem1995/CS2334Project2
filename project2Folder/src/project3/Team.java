@@ -152,11 +152,4 @@ public class Team implements Comparable<Team> {
 		return this.getTeamName().compareToIgnoreCase(o.getTeamName());
 	}
 	
-	
-	public Team exactSearchFor(String name)
-	{
-		//TODO make the search method
-		return null;
-		
-	}
 }
