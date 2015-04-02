@@ -1,13 +1,229 @@
-Milwaukee BucksAndrew Michael Bogut,,
-Jonathan Rodney Brockman, Snohomish, WA, Fri Mar 20 00:00:00 CST 1987, 28 years old
-Andrew Melvin Gooden, Oakland, CA, Thu Sep 24 00:00:00 CDT 1981, 34 years old
+
+John Earl Simmons, Birmingham, AL, Mon Jul 07 00:00:00 CDT 1924, Fri Aug 01 00:00:00 CDT 2008, 84 years old
+Alfonso Johnson, Birmingham, AL, Fri Jan 03 00:00:00 CST 1964, 51 years old
+Nate Johnston, Birmingham, AL, Sun Dec 18 00:00:00 CST 1966, 49 years old
+Johnny Harold High, Birmingham, AL, Thu Apr 25 00:00:00 CST 1957, Sat Jun 13 00:00:00 CDT 1987, 30 years old
+John David Douglas, Town Creek, AL, Tue Jun 12 00:00:00 CDT 1956, 59 years old
+Kenneth H. Johnson, Tuskegee, AL, Wed Nov 07 00:00:00 CST 1962, 53 years old
+John Edward Drew, Vredenburgh, AL, Thu Sep 30 00:00:00 CST 1954, 61 years old
+Joe Marcus Johnson, Little Rock, AR, Wed Jul 29 00:00:00 CDT 1981, 34 years old
+John Dickson, Searcy, AR, Sun Nov 18 00:00:00 CST 1945, 70 years old
+Lee Johnson, Plummerville, AR, Sun Jun 16 00:00:00 CDT 1957, 58 years old
+John William Block, Los Angeles, CA, Sun Apr 16 00:00:00 CDT 1944, 71 years old
+John P. Berberich, Los Angeles, CA, Fri Apr 08 00:00:00 CST 1938, Wed Jun 19 00:00:00 CDT 2002, 64 years old
+John Garfield Bailey, Los Angeles, CA, Wed Nov 19 00:00:00 CST 1975, 40 years old
+John Sam Williams, Los Angeles, CA, Wed Oct 26 00:00:00 CDT 1966, 49 years old
+John J. Mandic, Los Angeles, CA, Fri Oct 03 00:00:00 CDT 1919, Sun Jun 22 00:00:00 CDT 2003, 84 years old
+John Jay Humphries, Los Angeles, CA, Wed Oct 17 00:00:00 CDT 1962, 53 years old
+Amir Jalla Johnson, Los Angeles, CA, Fri May 01 00:00:00 CDT 1987, 28 years old
+John Joseph McNamee, San Francisco, CA, Fri Sep 24 00:00:00 CDT 1926, Sat Jul 16 00:00:00 CDT 2011, 85 years old
+Kevin Maurice Johnson, Sacramento, CA, Fri Mar 04 00:00:00 CST 1966, 49 years old
+John W. Greig, Sacramento, CA, Fri Apr 28 00:00:00 CST 1961, 54 years old
+John Arec Gianelli, Stockton, CA, Sat Jun 10 00:00:00 CDT 1950, 65 years old
+John Edward Lambert, Berkeley, CA, Wed Jan 14 00:00:00 CST 1953, 62 years old
+John S. Palmer, Hollywood, CA, Wed Sep 14 00:00:00 CDT 1921, 94 years old
+John Mark Tschogl, Chula Vista, CA, Tue Apr 25 00:00:00 CST 1950, 65 years old
+John Russell Fairchild, Encinitas, CA, Wed Apr 28 00:00:00 CDT 1943, 72 years old
+Dennis Wayne Johnson, San Pedro, CA, Sat Sep 18 00:00:00 CDT 1954, Thu Feb 22 00:00:00 CST 2007, 53 years old
+John Crawford Toomay, Ontario, CA, Wed Aug 09 00:00:00 CDT 1922, Tue Mar 11 00:00:00 CDT 2008, 86 years old
+John Bernard Rogers, Fullerton, CA, Mon Dec 30 00:00:00 CST 1963, 52 years old
+John Douglas Coughran, Pittsburg, CA, Wed Sep 12 00:00:00 CDT 1951, 64 years old
+John Rudometkin, Santa Maria, CA, Thu Jun 06 00:00:00 CDT 1940, 75 years old
+John Edward Bagley, Bridgeport, CT, Sat Apr 23 00:00:00 CST 1960, 55 years old
+John Brasker Garris, Bridgeport, CT, Sat Jun 06 00:00:00 CDT 1959, 56 years old
+John Gabriel Pinone, Hartford, CT, Sun Feb 19 00:00:00 CST 1961, 54 years old
+John Francis Egan, Hartford, CT, Tue Jan 31 00:00:00 CST 1939, 76 years old
+John Lee Williamson, New Haven, CT, Sat Nov 10 00:00:00 CST 1951, Sat Nov 30 00:00:00 CST 1996, 45 years old
+Bruce John Kuczenski, Bristol, CT, Fri Feb 03 00:00:00 CST 1961, 54 years old
+James Robert Johnstone, New Canaan, CT, Tue Sep 20 00:00:00 CDT 1960, 55 years old
+John Thomas Duren, Washington, DC, Thu Oct 30 00:00:00 CST 1958, 57 years old
+John Harding Lucas, Washington, DC, Sun Nov 21 00:00:00 CST 1982, 33 years old
+John B. Tresvant, Washington, DC, Mon Nov 06 00:00:00 CST 1939, 76 years old
+John Jones, Washington, DC, Fri Mar 12 00:00:00 CDT 1943, 72 years old
+Chris Johnson, Washington, DC, Mon Jul 15 00:00:00 CDT 1985, 30 years old
+Johnny Earl Dawkins, Washington, DC, Sat Sep 28 00:00:00 CDT 1963, 52 years old
+DerMarr Miles Johnson, Washington, DC, Mon May 05 00:00:00 CDT 1980, 35 years old
+John F. Sullivan, Washington, DC, Sat Jul 27 00:00:00 CDT 1935, Thu Sep 16 00:00:00 CDT 2010, 75 years old
+John Sidney Battle, Washington, DC, Fri Nov 09 00:00:00 CST 1962, 53 years old
+John L. Turner, Washington, DC, Thu Nov 30 00:00:00 CST 1967, 48 years old
+Michael John Smith, Washington, DC, Tue Mar 28 00:00:00 CST 1972, 43 years old
+John W. Austin, Washington, DC, Thu Aug 31 00:00:00 CDT 1944, 71 years old
+John R. Thompson, Washington, DC, Tue Sep 02 00:00:00 CDT 1941, 74 years old
+John R. Hummer, Washington, DC, Tue May 04 00:00:00 CDT 1948, 67 years old
+Udonis Johneal Haslem, Miami, FL, Mon Jun 09 00:00:00 CDT 1980, 35 years old
+Edward Johnson, Ocala, FL, Thu Feb 24 00:00:00 CST 1955, 60 years old
+Clemon James Johnson, Monticello, FL, Wed Sep 12 00:00:00 CDT 1956, 59 years old
+Franklin Lenard Johnson, Weirsdale, FL, Sun Nov 23 00:00:00 CST 1958, 57 years old
+Alexander Canterell Johnson, Albany, GA, Tue Feb 08 00:00:00 CST 1983, 32 years old
+Reginald Johnson, Atlanta, GA, Tue Jun 25 00:00:00 CDT 1957, 58 years old
+Ed L. Johnson, Atlanta, GA, Sat Jun 17 00:00:00 CDT 1944, 71 years old
+John Turley Dillon, Savannah, GA, Tue Jan 08 00:00:00 CST 1924, Sun Jan 18 00:00:00 CST 2004, 80 years old
+Johnny C. Mathis, Eastman, GA, Wed Jul 14 00:00:00 CDT 1943, 72 years old
+John Warren, Sparta, GA, Mon Jul 07 00:00:00 CDT 1947, 68 years old
+John F Dee, Cedar Rapids, IA, Wed Sep 12 00:00:00 CDT 1923, 92 years old
+Nicholas John Collison, Orange City, IA, Sun Oct 26 00:00:00 CDT 1980, 35 years old
+John Francis Stephens, Chicago, IL, Thu May 18 00:00:00 CDT 1933, Wed Aug 31 00:00:00 CDT 2011, 78 years old
+Edwin John Kachan, Chicago, IL, Tue Sep 15 00:00:00 CDT 1925, Sun Mar 07 00:00:00 CST 1993, 68 years old
+John Graham Kerr, Chicago, IL, Wed Aug 17 00:00:00 CDT 1932, Thu Feb 26 00:00:00 CST 2009, 77 years old
+John Edward Phelan, Chicago, IL, Fri Nov 06 00:00:00 CST 1925, 90 years old
+Armon Deshawn Johnson, Chicago, IL, Thu Feb 23 00:00:00 CST 1989, 26 years old
+Linton Johnson, Chicago, IL, Fri Jun 13 00:00:00 CDT 1980, 35 years old
+Wallace Edgar Johnson, Chicago, IL, Sun Aug 31 00:00:00 CDT 1952, 63 years old
+Edward Arnet Johnson, Chicago, IL, Fri May 01 00:00:00 CDT 1959, 56 years old
+John J. Jorgensen, Chicago, IL, Wed Dec 28 00:00:00 CST 1921, Fri Jan 19 00:00:00 CST 1973, 52 years old
+John M. Wessels, Rockford, IL, Sun Feb 13 00:00:00 CST 1938, Sat Dec 03 00:00:00 CST 1994, 56 years old
+John William Rennicke, Aurora, IL, Sun Aug 11 00:00:00 CDT 1929, Sun Dec 09 00:00:00 CST 2007, 78 years old
+Jeffrey John Hornacek, Elmhurst, IL, Fri May 03 00:00:00 CDT 1963, 52 years old
+Marko John Todorovich, Zeigler, IL, Mon Jun 11 00:00:00 CDT 1923, Sat Jun 24 00:00:00 CDT 2000, 77 years old
+John B. Hoekstra, Wichert, IL, Wed Nov 07 00:00:00 CST 1917, Wed Oct 25 00:00:00 CDT 2006, 89 years old
+David John Corzine, Arlington Heights, IL, Wed Apr 25 00:00:00 CST 1956, 59 years old
+John H. Burmaster, Elgin, IL, Thu Dec 23 00:00:00 CST 1926, Wed Sep 28 00:00:00 CDT 2005, 79 years old
+John Laskowski, South Bend, IN, Sun Jun 07 00:00:00 CDT 1953, 62 years old
+David John Magley, South Bend, IN, Tue Nov 24 00:00:00 CST 1959, 56 years old
+JaJuan Markeis Johnson, Indianapolis, IN, Wed Feb 08 00:00:00 CST 1989, 26 years old
+John Frederick Townsend, Indianapolis, IN, Wed Sep 20 00:00:00 CST 1916, Tue Dec 04 00:00:00 CST 2001, 85 years old
+Forest John Weber, Rushville, IN, Mon Mar 18 00:00:00 CST 1918, Sat Jan 06 00:00:00 CST 1990, 72 years old
+John Arnold Logan, Richmond, IN, Sat Jan 01 00:00:00 CST 1921, Fri Sep 02 00:00:00 CDT 1977, 56 years old
+John Anthony Barnhill, Evansville, IN, Sun Mar 20 00:00:00 CST 1938, 77 years old
+John Robert Wooden, Centerton, IN, Fri Oct 14 00:00:00 CST 1910, Fri Jun 04 00:00:00 CDT 2010, 100 years old
+John M. Orr, Yale, KS, Fri Jun 10 00:00:00 CDT 1927, 88 years old
+Larry Johnson, Morganfield, KY, Sun Nov 28 00:00:00 CST 1954, 61 years old
+John O. Oldham, Beaver Dam, KY, Fri Jun 22 00:00:00 CDT 1923, 92 years old
+John Givens, McHenry, KY, Wed May 12 00:00:00 CDT 1926, Tue Dec 08 00:00:00 CST 2009, 83 years old
+Johnny W. Cox, Neon, KY, Sun Nov 01 00:00:00 CST 1936, 79 years old
+Robert John Pack, New Orleans, LA, Mon Feb 03 00:00:00 CST 1969, 46 years old
+Ervin Johnson, New Orleans, LA, Thu Dec 21 00:00:00 CST 1967, 48 years old
+Carldell Johnson, New Orleans, LA, Fri Jan 28 00:00:00 CST 1983, 32 years old
+Avery Johnson, New Orleans, LA, Thu Mar 25 00:00:00 CST 1965, 50 years old
+Richard Lewis Johnson, New Orleans, LA, Wed Dec 18 00:00:00 CST 1946, Wed Jun 15 00:00:00 CDT 1994, 48 years old
+John Roosevelt Comeaux, Lafayette, LA, Wed Sep 15 00:00:00 CDT 1943, 72 years old
+Marques Kevin Johnson, Nachitoches, LA, Wed Feb 08 00:00:00 CST 1956, 59 years old
+Dave M. Johnson, Morgan City, LA, Mon Nov 16 00:00:00 CST 1970, 45 years old
+John Williams, Sorrento, LA, Thu Aug 09 00:00:00 CDT 1962, 53 years old
+John William Rudd, DeRidder, LA, Sun Aug 07 00:00:00 CDT 1955, 60 years old
+John R. McConathy, Gibsland, LA, Wed Apr 09 00:00:00 CST 1930, 85 years old
+John E. Foley, Worcester, MA, Wed Apr 19 00:00:00 CST 1939, 76 years old
+John Ekwugha Amaechi, Boston, MA, Thu Nov 26 00:00:00 CST 1970, 45 years old
+Daniel John Willard Ferry, Hyattsville, MD, Mon Oct 17 00:00:00 CDT 1966, 49 years old
+Kenyatta Allen Johnson, Detroit, MI, Wed Feb 01 00:00:00 CST 1978, 37 years old
+John Quincy Trapp, Detroit, MI, Tue Oct 02 00:00:00 CST 1945, 70 years old
+Johnny Reginald Davis, Detroit, MI, Fri Oct 21 00:00:00 CDT 1955, 60 years old
+John Brisker, Detroit, MI, Sun Jun 15 00:00:00 CDT 1947, 68 years old
+Neil A. Johnson, Jackson, MI, Sat Apr 17 00:00:00 CDT 1943, 72 years old
+John Eddie Long, Romulus, MI, Tue Aug 28 00:00:00 CDT 1956, 59 years old
+Darryl Damone Johnson, Flint, MI, Tue Oct 26 00:00:00 CDT 1965, 50 years old
+Earvin Johnson, Lansing, MI, Fri Aug 14 00:00:00 CDT 1959, 56 years old
+John Paul Shasky, Birmingham, MI, Fri Jul 31 00:00:00 CDT 1964, 51 years old
+Andrew Johnson, Kalamazoo, MI, Tue Nov 08 00:00:00 CST 1932, Fri Aug 30 00:00:00 CDT 2002, 70 years old
+John D. Pritchard, Minneapolis, MN, Sun Jan 23 00:00:00 CST 1927, 88 years old
+John G. Thomas, Minneapolis, MN, Mon Sep 08 00:00:00 CDT 1975, 40 years old
+John Richard Clawson, Duluth, MN, Mon May 15 00:00:00 CDT 1944, 71 years old
+Arnitz L. Johnson, Gonvick, MN, Mon May 17 00:00:00 CST 1920, 95 years old
+John A. Norlander, Virginia, MN, Sat Mar 05 00:00:00 CST 1921, Wed Mar 06 00:00:00 CST 2002, 81 years old
+Clinton Johnson, Jackson, MS, Thu Aug 30 00:00:00 CDT 1984, 31 years old
+Clayton H. Johnson, Yazoo City, MS, Wed Jul 18 00:00:00 CDT 1956, 59 years old
+John Howard Getty Johnson, Carthage, MS, Sat Oct 18 00:00:00 CST 1947, 68 years old
+John Busby Stroud, New Albany, MS, Tue Oct 29 00:00:00 CST 1957, 58 years old
+John Smith, Columbus, MS, Wed May 24 00:00:00 CDT 1944, 71 years old
+George Thomas Johnson, Tylertown, MS, Sat Dec 18 00:00:00 CST 1948, 67 years old
+John Bradley Holland, Billings, MT, Thu Dec 06 00:00:00 CST 1956, 59 years old
+Johnathan Hildred Wall, Raleigh, NC, Thu Sep 06 00:00:00 CDT 1990, 25 years old
+DeMarco Antonio Johnson, Charlotte, NC, Mon Oct 06 00:00:00 CDT 1975, 40 years old
+John Harding Lucas, Durham, NC, Sat Oct 31 00:00:00 CST 1953, 62 years old
+John Russell Morrison, Roselle Park, NJ, Wed May 02 00:00:00 CDT 1945, 70 years old
+John E. Mahnken, Jersey City, NJ, Fri Jun 16 00:00:00 CDT 1922, Thu Dec 14 00:00:00 CST 2000, 78 years old
+John G. Hewson, Waldwick, NJ, Sun Sep 07 00:00:00 CDT 1924, 91 years old
+John Kevin Crotty, Orange, NJ, Tue Jul 15 00:00:00 CDT 1969, 46 years old
+John Michael Roche, New York, NY, Mon Sep 26 00:00:00 CST 1949, 66 years old
+Edward John Bartels, New York, NY, Thu Oct 08 00:00:00 CST 1925, Sun Nov 04 00:00:00 CDT 2007, 82 years old
+Lynbert Rich Johnson, New York, NY, Sat Sep 07 00:00:00 CDT 1957, 58 years old
+John Sigred Thompson, New York, NY, Tue Mar 26 00:00:00 CST 1946, 69 years old
+John Jardyne Wiggers, Brooklyn, NY, Mon Aug 06 00:00:00 CST 1917, Wed Mar 14 00:00:00 CDT 2007, 90 years old
+John William Bach, Brooklyn, NY, Thu Jul 10 00:00:00 CDT 1924, 91 years old
+John Joseph McMahon, Brooklyn, NY, Mon Dec 03 00:00:00 CST 1928, Sun Jun 11 00:00:00 CDT 1989, 61 years old
+William John Cunningham, Brooklyn, NY, Thu Jun 03 00:00:00 CDT 1943, 72 years old
+Eric Johnson, Brooklyn, NY, Mon Feb 07 00:00:00 CST 1966, 49 years old
+John Thomas Salley, Brooklyn, NY, Tue Jun 16 00:00:00 CDT 1964, 51 years old
+George Lee Johnson, Brooklyn, NY, Sat Dec 08 00:00:00 CST 1956, 59 years old
+Vincent Johnson, Brooklyn, NY, Sat Sep 01 00:00:00 CDT 1956, 59 years old
+John Alexander Gee, Syracuse, NY, Tue Dec 07 00:00:00 CST 1915, Sat Jan 23 00:00:00 CST 1988, 73 years old
+John D. Meehan, Syracuse, NY, Tue Jan 09 00:00:00 CST 1917, Fri Apr 09 00:00:00 CDT 2004, 87 years old
+John Morton, Bronx, NY, Thu May 18 00:00:00 CDT 1967, 48 years old
+Michael John Smith, Rochester, NY, Wed May 19 00:00:00 CDT 1965, 50 years old
+John Wallace, Rochester, NY, Sat Feb 09 00:00:00 CDT 1974, 41 years old
+John Joseph McCarthy, Buffalo, NY, Wed Apr 25 00:00:00 CST 1934, 81 years old
+Marcus John Iavaroni, Jamaica, NY, Sat Sep 15 00:00:00 CDT 1956, 59 years old
+John Melvin Thurston, Lockport, NY, Thu Jan 16 00:00:00 CST 1919, Wed Oct 08 00:00:00 CDT 1997, 78 years old
+William John Donovan, Rockville Centre, NY, Sun May 30 00:00:00 CDT 1965, 50 years old
+John Elwood Schweitz, Waterloo, NY, Tue Apr 19 00:00:00 CST 1960, 55 years old
+Tony John Windis, Woodside, NY, Fri Jan 27 00:00:00 CST 1933, 82 years old
+Wesley John Bialosuknia, Poughkeepsie, NY, Fri Jun 08 00:00:00 CDT 1945, 70 years old
 Tobias John Harris, Islip, NY, Wed Jul 15 00:00:00 CDT 1992, 23 years old
-Darington O'Neal Hobson, Las Vegas, NV, Tue Sep 29 00:00:00 CDT 1987, 28 years old
-Ersan Ilyasova,,
-Brandon Jennings, Compton, CA, Sat Sep 23 00:00:00 CDT 1989, 26 years old
-Jon Leuer, Long Lake, MN, Sun May 14 00:00:00 CDT 1989, 26 years old
-Shaun Livingston, Peoria, IL, Wed Sep 11 00:00:00 CDT 1985, 30 years old
-Luc Richard Mbah a Moute,,
-Ekpedeme Friday Udoh, Edmond, OK, Wed May 20 00:00:00 CDT 1987, 28 years old
-Beno Udrih,,
+John Albert Wiethe, Cincinnati, OH, Thu Oct 17 00:00:00 CST 1912, Wed May 03 00:00:00 CDT 1989, 77 years old
+Kannard Johnson, Cincinnati, OH, Thu Jun 24 00:00:00 CDT 1965, 50 years old
+Gus Johnson, Akron, OH, Fri Dec 13 00:00:00 CST 1935, Wed Apr 29 00:00:00 CDT 1987, 52 years old
+Clarence Stephen Johnson, Akron, OH, Sun Nov 03 00:00:00 CST 1957, 58 years old
+John P. McCullough, Lima, OH, Fri Oct 05 00:00:00 CDT 1956, 59 years old
+John T. Malokas, Cleveland, OH, Tue Aug 01 00:00:00 CST 1916, Sun Apr 16 00:00:00 CDT 2000, 84 years old
+Donald John May, Dayton, OH, Thu Jan 03 00:00:00 CST 1946, 69 years old
+John M. Green, Dayton, OH, Fri Dec 08 00:00:00 CST 1933, 82 years old
+John MacBeth Paxson, Dayton, OH, Thu Sep 29 00:00:00 CDT 1960, 55 years old
+John Barry Clemens, Dayton, OH, Sat May 01 00:00:00 CDT 1943, 72 years old
+Alex John Groza, Martins Ferry, OH, Thu Oct 07 00:00:00 CST 1926, Sat Jan 21 00:00:00 CST 1995, 69 years old
+John J. Havlicek, Martins Ferry, OH, Mon Apr 08 00:00:00 CST 1940, 75 years old
+John Payak, Rossford, OH, Sat Nov 20 00:00:00 CST 1926, Fri Feb 27 00:00:00 CST 2009, 83 years old
+Donald Neil Johnston, Chillicothe, OH, Mon Feb 04 00:00:00 CST 1929, Thu Sep 28 00:00:00 CDT 1978, 49 years old
+John Edwards, Hudson, OH, Fri Jul 31 00:00:00 CDT 1981, 34 years old
+John Levell Starks, Tulsa, OK, Tue Aug 10 00:00:00 CDT 1965, 50 years old
+John Rashall Salmons, Philadelphia, PA, Wed Dec 12 00:00:00 CST 1979, 36 years old
+John Postley, Philadelphia, PA, Thu May 30 00:00:00 CDT 1940, 75 years old
+John Raymond Scott, Philadelphia, PA, Tue Jul 12 00:00:00 CDT 1938, 77 years old
+Ollie Johnson, Philadelphia, PA, Wed May 11 00:00:00 CDT 1949, 66 years old
+John Arthur Cox, Philadelphia, PA, Thu Dec 29 00:00:00 CST 1955, 60 years old
+John Olive, Philadelphia, PA, Tue Mar 01 00:00:00 CST 1955, 60 years old
+John Baum, Philadelphia, PA, Mon Jun 17 00:00:00 CDT 1946, 69 years old
+John William McCloskey, Mahanoy City, PA, Sat Sep 19 00:00:00 CDT 1925, 90 years old
+Andrew John Panko, Harrisburg, PA, Tue Nov 29 00:00:00 CST 1977, 38 years old
+John Abramovic, Etna, PA, Sun Feb 09 00:00:00 CST 1919, Fri Jun 09 00:00:00 CDT 2000, 81 years old
+David John Kennedy, Pittsburgh, PA, Sun Nov 05 00:00:00 CST 1989, 26 years old
+John Richard Dugger, Pittsburgh, PA, Sat Jan 13 00:00:00 CST 1923, Tue Feb 23 00:00:00 CST 1988, 65 years old
+Matthew John Carroll, Pittsburgh, PA, Thu Aug 28 00:00:00 CDT 1980, 35 years old
+John Kennedy Twyman, Pittsburgh, PA, Fri May 11 00:00:00 CDT 1934, Wed May 30 00:00:00 CDT 2012, 78 years old
+John Pawk, Butler, PA, Fri Dec 23 00:00:00 CST 1910, Tue Dec 28 00:00:00 CST 2004, 94 years old
+John Warren Marin, Sharon, PA, Thu Oct 12 00:00:00 CDT 1944, 71 years old
+Zigmund John Mihalik, Ford City, PA, Fri Sep 22 00:00:00 CST 1916, Wed Sep 25 00:00:00 CDT 1996, 80 years old
+John Novotny, Braddock, PA, Tue Jan 29 00:00:00 CST 1918, Fri Jul 14 00:00:00 CDT 2006, 88 years old
+John Brian Moore, Altoona, PA, Mon Mar 03 00:00:00 CST 1958, 57 years old
+John Edwin George, Swissvale, PA, Tue Nov 13 00:00:00 CST 1928, Mon Jan 30 00:00:00 CST 1989, 61 years old
+Stewart Johnson, Clairton, PA, Sat Aug 19 00:00:00 CDT 1944, 71 years old
+Dave John Twardzik, Hershey, PA, Wed Sep 20 00:00:00 CDT 1950, 65 years old
+John H. Shumate, Greenville, SC, Sun Apr 06 00:00:00 CST 1952, 63 years old
+Anthony Mark Johnson, Charleston, SC, Thu Oct 10 00:00:00 CDT 1974, 41 years old
+Johnny Antonio Taylor, Chattanooga, TN, Tue Jun 04 00:00:00 CDT 1974, 41 years old
+Johnny Neumann, Memphis, TN, Tue Sep 11 00:00:00 CDT 1951, 64 years old
+John Thomas Marshall, Coldwater, TN, Tue Jan 06 00:00:00 CST 1931, 84 years old
+John Kenneth Spain, Houston, TX, Sun Oct 06 00:00:00 CST 1946, Mon Oct 15 00:00:00 CDT 1990, 44 years old
+John Celestand, Houston, TX, Sun Mar 06 00:00:00 CST 1977, 38 years old
+John Michael Beasley, Texarkana, TX, Sat Feb 05 00:00:00 CDT 1944, 71 years old
+Wesley JaMarr Johnson, Corsicana, TX, Sat Jul 11 00:00:00 CDT 1987, 28 years old
+Ivan W. Johnson, San Antonio, TX, Tue Apr 10 00:00:00 CST 1984, 31 years old
+Larry Demetric Johnson, Tyler, TX, Fri Mar 14 00:00:00 CST 1969, 46 years old
+John Arlington Hargis, Nacogdoches, TX, Fri Aug 20 00:00:00 CDT 1920, Thu Jan 02 00:00:00 CST 1986, 66 years old
+Charles Johnson, Corpus Christi, TX, Thu Mar 31 00:00:00 CST 1949, Fri Jun 01 00:00:00 CDT 2007, 58 years old
+Steffond O'Shea Johnson, Longview, TX, Sun Nov 04 00:00:00 CST 1962, 53 years old
+George E. Johnson, Herleton, TX, Thu Jun 19 00:00:00 CDT 1947, 68 years old
+Britton Weaver Johnsen, Salt Lake City, UT, Sun Jul 08 00:00:00 CDT 1979, 36 years old
+John Dewitt Kuester, Richmond, VA, Sun Feb 06 00:00:00 CST 1955, 60 years old
+John Sylvester Newman, Danville, VA, Thu Nov 28 00:00:00 CST 1963, 52 years old
+John Francis Wetzel, Waynesboro, VA, Sun Oct 22 00:00:00 CDT 1944, 71 years old
+John Houston Stockton, Spokane, WA, Mon Mar 26 00:00:00 CST 1962, 53 years old
+John Stroeder, Bremerton, WA, Thu Jul 24 00:00:00 CDT 1958, 57 years old
+John Michael Coker, Richland, WA, Thu Oct 28 00:00:00 CDT 1971, 44 years old
+John P. Mengelt, Lacrosse, WI, Sun Oct 16 00:00:00 CST 1949, 66 years old
+John Kotz, Rhinelander, WI, Thu Mar 27 00:00:00 CST 1919, Sat May 08 00:00:00 CDT 1999, 80 years old
+John David Jamerson, Clarksburg, WV, Sun Aug 13 00:00:00 CDT 1967, 48 years old
+John Lee Phares, Elkins, WV, Fri Dec 31 00:00:00 CST 1915, Fri Aug 16 00:00:00 CDT 1974, 59 years old
+John A. Pilch, Sheridan, WY, Tue Aug 11 00:00:00 CDT 1925, Fri Jun 14 00:00:00 CDT 1991, 66 years old
+Adam John Morrison, Casper, WY, Thu Jul 19 00:00:00 CDT 1984, 31 years old
+James Patrick Johnson, Cheyenne, WY, Fri Feb 20 00:00:00 CST 1987, 28 years old
 
