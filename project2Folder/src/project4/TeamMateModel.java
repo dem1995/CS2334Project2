@@ -11,7 +11,7 @@ public class TeamMateModel extends TeamMate {
 	public TeamMateModel()
 	{
 		super();
-		//TODO
+		//TODO TeamMateModel constructor method
 	}
 	
 	/**
@@ -20,7 +20,43 @@ public class TeamMateModel extends TeamMate {
 	 */
 	public synchronized void addActionListener (ActionListener actionListener)
 	{
-		//TODO
+		//TODO addActionListener to TeamMateModel method
+	}
+	
+	/**
+	 * Method for adding a team
+	 * @param team The Team to be added
+	 */
+	public void addTeam (Team team)
+	{
+		//TODO addTeam method
+	}
+	
+	/**
+	 * Method for adding a State
+	 * @param state The State to be added
+	 */
+	public void addState(State state)
+	{
+		//TODO addState method
+	}
+	
+	/**
+	 * Method for adding a person. Places them in State/City based on their attributes
+	 * @param person The person to be added
+	 */
+	public void addPerson(Person person)
+	{
+		//TODO addPerson method
+	}
+	
+	/**
+	 * Method for finding a Person based on their name
+	 * @param name The name of the Person this method searches for
+	 */
+	public void findPerson(String name)
+	{
+		//TODO findPerosn method
 	}
 	
 	/**
@@ -29,7 +65,7 @@ public class TeamMateModel extends TeamMate {
 	 */
 	public synchronized void removeActionListener(ActionListener actionListener)
 	{
-		//TODO
+		//TODO removeActionListener method from TeamMateModel method
 	}
 	
 	
@@ -39,8 +75,9 @@ public class TeamMateModel extends TeamMate {
 	 */
 	private void processEvent(ActionEvent e)
 	{
-		//TODO
+		//TODO processEvent method from TeamMateModel
 	}
+	
 	
 
 }
