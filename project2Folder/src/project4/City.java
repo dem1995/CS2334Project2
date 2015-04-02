@@ -27,6 +27,7 @@ public class City implements Comparable<City> {
 	/**
 	 * The teams based in this city
 	 */
+	//TODO Change this variable to a LinkedHashMap<Integer, TeamLinkedHashMap> to add support for years.
 	private TeamLinkedHashMap teams=new TeamLinkedHashMap();
 	/**
 	 * the latitude of this city
@@ -120,6 +121,7 @@ public class City implements Comparable<City> {
 	 */
 	public void addTeam(Team team)
 	{
+		//TODO change this method to take in a year
 		teams.addTeam(team);
 	}
 	
