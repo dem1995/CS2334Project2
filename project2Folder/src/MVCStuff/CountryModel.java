@@ -24,13 +24,25 @@ public class CountryModel extends Country {
 		//TODO CountryModel constructor
 	}
 	
+	//Adder methods
+	
 	/**
 	 * Adds a View to this model
 	 * @param view The View to be added
 	 */
-	public synchronized void addView (View view)
+	public synchronized void addActionListener (View view)
 	{
 		views.add(view);
+	}
+	
+	/**
+	 * Method for adding a person. Places them in State/City based on their attributes
+	 * @param person The person to be added
+	 */
+	public void addPerson(Person person)
+	{
+		super.addPerson(person);
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "person added"));
 	}
 	
 	/**
@@ -66,15 +78,7 @@ public class CountryModel extends Country {
 		return foundState;
 	}
 	
-	/**
-	 * Method for adding a person. Places them in State/City based on their attributes
-	 * @param person The person to be added
-	 */
-	public void addPerson(Person person)
-	{
-		super.addPerson(person);
-		//TODO addPerson method
-	}
+
 	
 	
 	/**
