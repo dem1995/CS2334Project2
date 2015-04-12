@@ -1,11 +1,16 @@
 package project4;
+//Version 1.1 Final. Date April 12, 2015. 3:20 AM
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 
-public class View extends JFrame implements ActionListener 
+/**
+ * 
+ *The basic View class that contains the methods/components that any View class should have. Abstract so as to prevent it being mistakenly used as a view with complete functionality.
+ */
+public abstract class View extends JFrame implements ActionListener 
 {
 	
 	/**
@@ -15,16 +20,19 @@ public class View extends JFrame implements ActionListener
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO	
+		repaint();
 	}
 	
 	/**
 	 * Sets the TeamMateModel to be used by this view
-	 * @param teamMateModel the TeamMateModel to be used by this view
+	 * @param modelParam the TeamMateModel to be used by this view
 	 */
-	public void setModel(TeamMateModel teamMateModel)
+	public void setModel(TeamMateModel modelParam)
 	{
-		//TODO
+		teamMateModel=modelParam;
+		if (teamMateModel!=null)
+			teamMateModel.addActionListener(this); //registers this view as an actionListener for its model teamMateModel
+		repaint();
 	}
 	
 	/**
@@ -33,8 +41,7 @@ public class View extends JFrame implements ActionListener
 	 */
 	public TeamMateModel getModel()
 	{
-		//TODO
-		return null;
+		return teamMateModel;
 	}
 
 }
