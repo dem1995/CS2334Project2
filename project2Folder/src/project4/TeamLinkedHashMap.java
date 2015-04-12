@@ -27,7 +27,7 @@ public class TeamLinkedHashMap extends LinkedHashMap<String, Team> implements Se
 	 * Adds a Team to this TeamLinkedHashMap
 	 * @param team the Team to be added to this TeamLinkedHashMap
 	 */
-	public void addTeam(Team team)
+	void addTeam(Team team)
 	{
 		assert(team!=null);
 		this.put(team.getTeamName(), team);
@@ -36,7 +36,7 @@ public class TeamLinkedHashMap extends LinkedHashMap<String, Team> implements Se
 	/**
 	 * Sorts this TeamLinkedHashMap by Team name by putting it into a treeMap and bringing it back
 	 */
-	public void sort()
+	void sort()
 	{
 		TreeMap<String, Team> treeMap=new TreeMap<String, Team>(this);
 		this.putAll((treeMap));

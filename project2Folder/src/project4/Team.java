@@ -101,7 +101,7 @@ public class Team implements Comparable<Team>, Serializable{
 	 * Setter method for cityName
 	 * @param cityName The name of the city in which this team is based
 	 */
-	public void setCityName(String cityName)
+	void setCityName(String cityName)
 	{
 		this.cityName=cityName;
 	}
@@ -110,7 +110,7 @@ public class Team implements Comparable<Team>, Serializable{
 	 * Setter method for stateName
 	 * @param stateName The name of the state in which this team is based
 	 */
-	public void setStateName(String stateName)
+	void setStateName(String stateName)
 	{
 		this.stateName=stateName;
 	}
@@ -142,7 +142,7 @@ public class Team implements Comparable<Team>, Serializable{
 	 * Setter method for teamName
 	 * @param teamName The name of the team
 	 */
-	public void setTeamName(String teamName)
+	void setTeamName(String teamName)
 	{
 		this.teamName=teamName;
 	}
