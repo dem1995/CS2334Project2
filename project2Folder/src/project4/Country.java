@@ -19,14 +19,14 @@ public class Country {
 	/**
 	 * The <code>State</code>s contained by this <code>Country</code>
 	 */
-	private ArrayList<State> states;
+	protected ArrayList<State> states;
 	
 	
 
 	/**
 	 * Lets you know if this Country's treeMap of people (basically a quick way to search for people if you don't know their city or state) needs to be updated due to changes to this Country.
 	 */
-	public boolean treeMapNeedsBuilding=true;
+	private boolean treeMapNeedsBuilding=true;
 	
 	/**
 	 * A treemap of players. Used to assign birthdates to players
@@ -65,7 +65,7 @@ public class Country {
 	 * @param name The name of the State to be found
 	 * @return The State that was found
 	 */
-	public State findStateOrAdd(String name)
+	protected State findStateOrAdd(String name)
 	{
 		name=name.toLowerCase();
 		for (State state: states)
@@ -137,25 +137,32 @@ public class Country {
 	 * Method for adding a person to this country
 	 * @param aPerson The person to be added
 	 */
-	public void addPerson(Person aPerson)
+	protected void addPerson(Person aPerson)
 	{
 		findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
 		treeMapNeedsBuilding=true;
 	}
+	
 	/**
 	 * Adds a <code>State</code> to <code>states</code>
 	 * @param state The State to be added to states
 	 */
-	public void addState(State state)
+	protected void addState(State state)
 	{
 		states.add(state);
 	}
+	
+	protected void addCity(State state, City city)
+	{
+		state.addCity(city);
+	}
+	
 //WARNING: Use the below methods to add teams to cities, don't use the addTeam method found in City
 	/**
 	 * Adds a <code>Team</code> to the TeamLinkedHashMap of one of the Cities held by one of the States in this Country
 	 * @param team The team to be added
 	 */
-	public void addTeam(Team team)
+	protected void addTeam(Team team)
 	{
 		assert (team!=null);
 		for (int i=0; i<team.getTeamMembers().getPeople().size(); i++)
@@ -172,7 +179,7 @@ public class Country {
 	 * Adds <code>Team</code>s to the TeamLinkedHashMaps of one of the Cities held by the States in this Country
 	 * @param teams
 	 */
-	public void addTeams(ArrayList<Team> teams)
+	protected void addTeams(ArrayList<Team> teams)
 	{
 		for (Team team: teams)
 		{

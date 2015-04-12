@@ -1,0 +1,89 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   project2Folder/src/project3/Pie.java
+#	new file:   project2Folder/src/project3/PieTest.java
+#	new file:   project2Folder/src/project3/Sector.java
+#
+# Changes not staged for commit:
+#	modified:   .metadata/.log
+#	modified:   .metadata/.mylyn/.tasks.xml.zip
+#	modified:   .metadata/.mylyn/tasks.xml.zip
+#	deleted:    .metadata/.plugins/org.eclipse.core.resources/.projects/project2Folder/.indexes/e4/c7/history.index
+#	modified:   .metadata/.plugins/org.eclipse.core.resources/.projects/project2Folder/.markers
+#	modified:   .metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+#	modified:   .metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
+#	modified:   .metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs
+#	modified:   .metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml
+#	modified:   .metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/1028199574.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/1065832147.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/1574318262.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/1604200090.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/1832949699.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/1877021558.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/1947431546.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/2136909644.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/2193799835.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/2338776811.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/2486087126.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/2743915309.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/2884404493.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/3095963708.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/3454125809.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/3598813974.index
+#	modified:   .metadata/.plugins/org.eclipse.jdt.core/3687841122.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/3991718231.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/4004133052.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/828133061.index
+#	deleted:    .metadata/.plugins/org.eclipse.jdt.core/834584462.index
+#	modified:   .metadata/.plugins/org.eclipse.jdt.core/externalFilesCache
+#	modified:   .metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+#	modified:   .metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache
+#	modified:   .metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
+#	modified:   .metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
+#	modified:   .metadata/.plugins/org.eclipse.jdt.launching/.install.xml
+#	modified:   .metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml
+#	modified:   .metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml
+#	modified:   .metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml
+#	modified:   .metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml
+#	modified:   .metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
+#	modified:   .metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml
+#	modified:   .metadata/version.ini
+#	modified:   .recommenders/caches/identified-project-coordinates.json
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.fdt
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.fdx
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.fnm
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.frq
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.nrm
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.prx
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.tii
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_8.tis
+#	modified:   .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments.gen
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_9
+#	deleted:    .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/write.lock
+#	modified:   .recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/resolver-status.properties
+#	modified:   .recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/org/eclipse/recommenders/index/0.0.0-SNAPSHOT/resolver-status.properties
+#
+# Untracked files:
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.fdt
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.fdx
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.fnm
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.frq
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.nrm
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.prx
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.tii
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_9.tis
+#	.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_a
+#
+
