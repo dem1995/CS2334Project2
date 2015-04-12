@@ -20,3 +20,7 @@
 .recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/org/eclipse/recommenders/index/0.0.0-SNAPSHOT/maven-metadata-models.xml
 *.repositories
 .recommenders/caches/manual-mappings.json
+.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_i
+*.fdx
+*.frq
+*.prx
