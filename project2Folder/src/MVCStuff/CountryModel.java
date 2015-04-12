@@ -72,6 +72,7 @@ public class CountryModel extends Country {
 	 */
 	public void addPerson(Person person)
 	{
+		super.addPerson(person);
 		//TODO addPerson method
 	}
 	

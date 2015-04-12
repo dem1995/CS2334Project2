@@ -1,2 +1,22 @@
 #Hopefully ignores metadata
 .metadata
+.recommenders/caches/identified-project-coordinates.json
+.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments.gen
+*.lock
+.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_g.fdx
+*.fdt
+.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_g.frq
+*.fnm
+.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_h
+*.nrm
+.recommenders/index/http___download_eclipse_org_recommenders_models_luna_/_g.prx
+*.tii
+*.tis
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/jre-1.0.0-20140604.182326-1-call.zip
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/maven-metadata-models.xml
+*.properties
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/_remote.repositories
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/org/eclipse/recommenders/index/0.0.0-SNAPSHOT/index-0.0.0-20140605.014212-1.zip
+.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/org/eclipse/recommenders/index/0.0.0-SNAPSHOT/maven-metadata-models.xml
+*.repositories
+.recommenders/caches/manual-mappings.json

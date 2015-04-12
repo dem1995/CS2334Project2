@@ -80,7 +80,7 @@ public class PersonList {
 	 * Sorts <code>people</code> using <code>comparator</code>. If <code>comparator</code> is <code>null</code>, uses natural ordering. Changes <code>currentlySortedBy</code>.
 	 * @param comparator How people should be sorted
 	 */
-	public void sortUsing(Comparator<Person> comparator)
+	void sortUsing(Comparator<Person> comparator)
 	{
 		Collections.sort(people, comparator);
 		if (comparator==null)
@@ -94,7 +94,7 @@ public class PersonList {
 	 * @param comparator How people should be sorted
 	 * @return This object after it has been sorted
 	 */
-	public PersonList returnAfterSortingUsing(Comparator<Person> comparator)
+	PersonList returnAfterSortingUsing(Comparator<Person> comparator)
 	{
 		Collections.sort(people, comparator);
 		if (comparator==null)
@@ -158,7 +158,7 @@ public class PersonList {
 	 * @param person The Person to be merged with the Person this is called on.
 	 * @return a combination of the PersonList that the combineWith method was called for and the PersonList the combineWith method was sent
 	 */
-	public PersonList combineWith(PersonList person)
+	PersonList combineWith(PersonList person)
 	{
 		people.addAll(person.people);
 		return this;
@@ -168,7 +168,7 @@ public class PersonList {
 	 * A method for adding a <code>Person</code> to <code>people</code>
 	 * @param person The person to be added to People
 	 */
-	public void addPerson(Person person)
+	void addPerson(Person person)
 	{
 		people.add(person);		
 	}

@@ -93,7 +93,7 @@ public class State implements Comparable<State>{
 	 * @param cityName The exact name of the city to be found
 	 * @return A City with a name that exactly matches the search parameter if one is found, otherwise add that city and return it.
 	 */
-	public City findCityOrAdd(String cityName)
+	City findCityOrAdd(String cityName)
 	{
 		cityName=cityName.toLowerCase();
 		for (City city: cities)
@@ -112,7 +112,7 @@ public class State implements Comparable<State>{
 	 * Adds <code>city</code> to <code>cities</code>. Sets <code>isSorted</code> to false
 	 * @param city The City to be added
 	 */
-	public void addCity(City city)
+	void addCity(City city)
 	{
 		this.cities.add(city);
 		isSorted=false;
@@ -121,7 +121,7 @@ public class State implements Comparable<State>{
 	/**
 	 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
 	 */
-	public void sort()
+	void sort()
 	{
 		Collections.sort(cities);
 		isSorted=true;
