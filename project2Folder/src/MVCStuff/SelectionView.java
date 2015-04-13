@@ -6,7 +6,9 @@ public class SelectionView extends View {
 	
 	public SelectionView()
 	{
-		//TODO
+		setSize(500,200);
+		setLocation(400, 200);
+		setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent e)
