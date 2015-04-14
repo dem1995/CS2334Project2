@@ -54,6 +54,8 @@ public class CountryModel extends Country {
 	{
 		super.addTeam(team);
 		
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "team added"));
+		
 		//TODO addTeam method
 	}
 	

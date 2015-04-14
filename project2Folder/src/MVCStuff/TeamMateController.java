@@ -18,5 +18,6 @@ public class TeamMateController {
 	
     public void addView(View view)
 	{
+    	
 	}
 }
