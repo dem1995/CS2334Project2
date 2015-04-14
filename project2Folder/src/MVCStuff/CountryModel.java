@@ -87,7 +87,7 @@ public class CountryModel extends Country {
 	 * Removes a view from this model
 	 * @param view The View to be removed
 	 */
-	public synchronized void removeView(View view)
+	public synchronized void removeActionListener(View view)
 	{
 		//TODO removeActionListener method from TeamMateModel method
 	}

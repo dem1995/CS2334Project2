@@ -9,21 +9,26 @@ public class Driver {
 	/**
 	 * The country from which the rest of the classes will derive their information from
 	 */
-	private CountryModel countryModel=new CountryModel();
+	private CountryModel model=new CountryModel();
 	
 	/**
 	 * The first view to show up.
 	 */
 	private SelectionView selectionView=new SelectionView();
 	
+	/**
+	 * The controller
+	 */
+	private TeamMateController controller= new TeamMateController();
 	
 	/**
-	 * Constructor method for driver. Views should be added to models here, and models should be set for views here.
+	 * Constructor method for driver. Views and models should be set for controllers here, and models should be set for views here.
 	 */
 	public Driver()
 	{
-		selectionView.setModel(countryModel);
-		countryModel.addActionListener(selectionView);
+		selectionView.setModel(model);
+		controller.setModel(model);
+		controller.setSelectionView(selectionView);
 	}
 	
 	/**

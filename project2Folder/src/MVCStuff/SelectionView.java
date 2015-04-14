@@ -56,31 +56,43 @@ public class SelectionView extends View {
 		graphMenu.add(pieChartMenuItem);
 		graphMenu.add(mapMenuItem);
 		
-		//Set the names for the actions to happen when the JMenuItems are clicked
-		loadMenuItem.setActionCommand("load");
-		saveMenuItem.setActionCommand("save");
-		importMenuItem.setActionCommand("import");
-		exportMenuItem.setActionCommand("export");
-		pieChartMenuItem.setActionCommand("pie");
-		mapMenuItem.setActionCommand("map");
-		
-		
-		//Have this view listen to the menuItems for actionEvents
-		loadMenuItem.addActionListener(this);
-		saveMenuItem.addActionListener(this);
-		importMenuItem.addActionListener(this);
-		exportMenuItem.addActionListener(this);
-		pieChartMenuItem.addActionListener(this);
-		mapMenuItem.addActionListener(this);
-		
 		
 		setSize(500,200);
 		setLocation(400, 200);
 		setVisible(true);
 	}
 	
+	//Getter methods for JMenuItem
+	
+	public JMenuItem getLoadMenuItem() {
+		return loadMenuItem;
+	}
+
+	public JMenuItem getSaveMenuItem() {
+		return saveMenuItem;
+	}
+
+	public JMenuItem getImportMenuItem() {
+		return importMenuItem;
+	}
+
+	public JMenuItem getExportMenuItem() {
+		return exportMenuItem;
+	}
+
+	public JMenuItem getPieChartMenuItem() {
+		return pieChartMenuItem;
+	}
+
+	public JMenuItem getMapMenuItem() {
+		return mapMenuItem;
+	}
+
+
 	public void actionPerformed(ActionEvent e)
 	{
 		//TODO
 	}
+	
+	
 }
