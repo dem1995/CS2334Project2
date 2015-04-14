@@ -8,7 +8,10 @@ import javax.swing.JFrame;
 
 /**
  * 
- *The basic View class that contains the methods/components that any View class should have. Abstract so as to prevent it being mistakenly used as a view with complete functionality. All classes that extend this should override actionPerformed and make a super call to this classes actionPerformed in that method.
+ *The basic View class that contains the methods/components that any View class should have. 
+ *Abstract so as to prevent it being mistakenly used as a view with complete functionality. All 
+ *classes that extend this should override actionPerformed and make a super call to this classes 
+ *actionPerformed in that method.
  */
 public abstract class View extends JFrame implements ActionListener 
 {
