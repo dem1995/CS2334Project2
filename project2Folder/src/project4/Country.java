@@ -19,7 +19,7 @@ public class Country {
 	/**
 	 * The <code>State</code>s contained by this <code>Country</code>
 	 */
-	protected ArrayList<State> states;
+	private ArrayList<State> states;
 	
 	
 

@@ -132,6 +132,11 @@ public class State implements Comparable<State>{
 		return this.getName().compareToIgnoreCase(s.getName());
 	}
 	
+	public String toString()
+	{
+		return this.getName();
+	}
+	
 	
 	
 }
