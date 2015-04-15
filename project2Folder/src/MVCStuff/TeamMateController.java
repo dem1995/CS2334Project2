@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import otherClasses.HelperMethods;
+
 public class TeamMateController {
 	
 	private CountryModel countryModel;
@@ -33,7 +35,15 @@ public class TeamMateController {
     	{	
     		selectionView.getLoadMenuItem().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    					//TODO Load method
+    					//TODO Load method. The method below is not what the instructions want, and is only for testing purposes so please prepare a proper file searcher.
+    				try{
+    				ArrayList<String> csvStrings= HelperMethods.convertCSVToStringList("Players.csv");
+    				countryModel.addStringList(csvStrings);
+    				System.out.println("File loaded");
+    				}catch (Exception f)
+    				{
+    					System.out.println("An error occurred");
+    				}
     			}
     		});
     		

@@ -78,7 +78,7 @@ public class TeamMate {
 				}
 				else
 				{
-					personStrings = convertCSVToStringList(fileName);
+					personStrings = HelperMethods.convertCSVToStringList(fileName);
 					Country.addStringListToCountry(personStrings, country);
 					continueLoop=false;
 				}
@@ -106,7 +106,7 @@ public class TeamMate {
 				else
 				{
 					ArrayList<Team> teamList=new ArrayList<Team>();
-					teamList=convertStringListToArrayListOfTeams(convertCSVToStringList(fileName));
+					teamList=convertStringListToArrayListOfTeams(HelperMethods.convertCSVToStringList(fileName));
 //					for (int i=0; i<teamList.size(); i++)
 //					{
 //						for (int j=0; j<teamList.get(i).getTeamMembers().getPeople().size(); j++)
@@ -164,29 +164,7 @@ public class TeamMate {
 
 	}
 
-	/**
-	 * Method for converting a CSV file to a list of String objects in the form "Name, birthDate, birthCity, birthState" or "Name, birthDate, birthCity, birthState"
-	 * @param fileName name of the CSV file to grab text from
-	 * @return an ArrayList of the Strings, each of which was a line of the CSV file
-	 * @throws Exception 
-	 * @throws IOException due to use of BufferedReader
-	 */
-	public static ArrayList<String> convertCSVToStringList(String fileName) throws Exception
-	{
-		ArrayList<String> stringList = new ArrayList<String>();
-		BufferedReader br=new BufferedReader(new FileReader(fileName));
-		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
-		{
-			if(lineOfCSV!="")
-			stringList.add(lineOfCSV);
-		}
-		br.close();
-		if (stringList.isEmpty())
-			{
-			throw new Exception("CSV File was empty");
-			}
-		return stringList;
-	}
+
 	
 	
 	

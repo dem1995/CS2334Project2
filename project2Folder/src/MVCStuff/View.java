@@ -45,7 +45,7 @@ public abstract class View extends JFrame implements ActionListener
 	{
 		countryModel=modelParam;
 		if (countryModel!=null)
-			countryModel.addActionListener(this); //registers this view as an actionListener for its model teamMateModel
+			countryModel.addActionListener(this); //registers this view as an actionListener for its model countryModel
 		repaint();
 	}
 	
@@ -57,5 +57,4 @@ public abstract class View extends JFrame implements ActionListener
 	{
 		return countryModel;
 	}
-
 }

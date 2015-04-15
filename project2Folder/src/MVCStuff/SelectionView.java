@@ -56,7 +56,7 @@ public class SelectionView extends View {
 	private JList<City> placesList= new JList(placesListModel);
 	private JList<Person> peopleList=new JList();
 	private JList<Team> teamList= new JList();
-	private JScrollPane placesScrollPane= new JScrollPane();
+	private JScrollPane placesScrollPane= new JScrollPane(placesList);
 	private JScrollPane peopleScrollPane= new JScrollPane();
 	private JScrollPane teamsScrollPane=  new JScrollPane();
 	
@@ -147,6 +147,7 @@ public class SelectionView extends View {
 
 	public void setModel(CountryModel countryModel)
 	{
+		super.setModel(countryModel);
 		this.countryModel=countryModel;
 		if (countryModel!=null)
 		{
@@ -159,13 +160,40 @@ public class SelectionView extends View {
 					
 			}
 		}
+		placesList=new JList(placesListModel);
 	}
 	public void actionPerformed(ActionEvent e)
 	{
+		
 		super.actionPerformed(e);
+		if (countryModel!=null)
+		{
+			updatePlaceList(placesListModel, countryModel);
+			System.out.println("updatedPlaceList");
+		}
+		System.out.println("Model fired an action");
 		
 		
 	}
 	
+	/**
+	 * Updates the placesListModel of placesList
+	 * @param theList
+	 * @param theModel
+	 */
+	private void updatePlaceList(DefaultListModel<City> theList, CountryModel theModel)
+	{
+		ArrayList<State> theStates= countryModel.getStates();
+		for (int i=0; i<theStates.size()&&i<5; i++)
+		{
+			ArrayList<City> theCities= theStates.get(i).getCities();
+			for (int j=0; j<theCities.size()&&j<5; j++)
+				placesListModel.addElement(theCities.get(j));
+		}
+		placesListModel.addElement(new City("Fred", new State("FredState")));
+		System.out.println("we got to this marker");
+		validate();		
+		
+	}
 	
 }

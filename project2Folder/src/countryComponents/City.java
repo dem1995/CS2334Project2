@@ -148,5 +148,9 @@ public class City implements Comparable<City> {
 		return this.getName().compareTo(city.getName());
 	}
 	
+	public String toString()
+	{
+		return this.getName();
+	}
 	
 }
