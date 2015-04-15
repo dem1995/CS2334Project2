@@ -25,6 +25,12 @@ public class State implements Comparable<State>{
 	 */
 	private ArrayList<City> cities;
 	
+	
+	/**
+	 * An ArrayList with references to all the Person objects in this State
+	 */
+	private ArrayList<Person> allThePeopleInTheState=new ArrayList<Person>();
+	
 	/**
 	 * The name of the state
 	 */
@@ -51,23 +57,23 @@ public class State implements Comparable<State>{
 	}
 	
 	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-		/**
-		 * A getter method for <code>stateName</code>
-		 * @return stateName
-		 */
-		public String getName()
-		{
-			return stateName;
-		}
-		
-		/**
-		 * getter method for <code>cities</code>
-		 * @return the arrayList of Cities held by this State
-		 */
-		public ArrayList<City> getCities()
-		{
-			return cities;
-		}
+	/**
+	 * A getter method for <code>stateName</code>
+	 * @return stateName
+	 */
+	public String getName()
+	{
+		return stateName;
+	}
+	
+	/**
+	 * getter method for <code>cities</code>
+	 * @return the arrayList of Cities held by this State
+	 */
+	public ArrayList<City> getCities()
+	{
+		return cities;
+	}
 		
 	
 	
@@ -87,26 +93,7 @@ public class State implements Comparable<State>{
 		}
 		return null;
 	}
-	
-	/**
-	 * Searches for and returns a <code>City</code> with a name that exactly matches <code>cityName</code>.
-	 * @param cityName The exact name of the city to be found
-	 * @return A City with a name that exactly matches the search parameter if one is found, otherwise add that city and return it.
-	 */
-	City findCityOrAdd(String cityName)
-	{
-		cityName=cityName.toLowerCase();
-		for (City city: cities)
-		{
-			if (city.getName().toLowerCase().equalsIgnoreCase(cityName))
-				return city;
-		}
-		City newCity=new City(cityName, this);
-		cities.add(newCity);
-		return newCity;
-	}
-	
-	
+
 	//Adder methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/** 
 	 * Adds <code>city</code> to <code>cities</code>. Sets <code>isSorted</code> to false
@@ -116,6 +103,18 @@ public class State implements Comparable<State>{
 	{
 		this.cities.add(city);
 		isSorted=false;
+	}
+
+	/**
+	 * Adds a person to this state. THE ONLY CLASS THAT SHOULD CALL THIS METHOD IS COUNTRY
+	 * @param person
+	 */
+	void addPerson(Person person)
+	{
+		allThePeopleInTheState.add(person);
+		City foundCity=findCity(person.getCityName());
+		assert(foundCity!=null);
+		foundCity.addPerson(person);
 	}
 	
 	/**

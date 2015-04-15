@@ -27,6 +27,8 @@ public class Country {
 	
 	private ArrayList<Person> allThePeople= new ArrayList<Person>();
 	
+	private ArrayList<Team> allTheTeams= new ArrayList<Team>();
+	
 	/**
 	 * Lets you know if this Country's treeMap of people (basically a quick way to search for people if you don't know their city or state) needs to be updated due to changes to this Country.
 	 */
@@ -57,52 +59,42 @@ public class Country {
 	/**
 	 * @return this <code>country</code>'s states
 	 */
+	/**
+	 * Returns all the states in this country. THE RETURNED OBJECT SHOULD NOT HAVE ITS CONTENTS MODIFIED DIRECTLY
+	 * @return all the states in this country.
+	 */
 	public ArrayList<State> getStates()
 	{
 		return this.states;
 	}
 	
-
-	//Search methods
 	/**
-	 * Finds and returns a <code>State</code> matching the <code>name</code>
-	 * @param name The name of the State to be found
-	 * @return The State that was found
+	 * Returns all the cities in this country. THE RETURNED OBJECT SHOULD NOT HAVE ITS CONTENTS MODIFIED DIRECTLY
+	 * @return all the cities in this country.
 	 */
-	protected State findStateOrAdd(String name)
+	public ArrayList<City> getCities()
 	{
-		name=name.toLowerCase();
-		for (State state: states)
-		{
-			//System.out.println(name+" "+state.getName());
-			//System.out.println(name.equalsIgnoreCase(state.getName()));
-			if (state.getName().toLowerCase().equalsIgnoreCase(name))
-				return state;
-		}
-		State newState=new State(name);
-		states.add(newState);
-		return newState;
+		return allTheCities;
 	}
 	
-	protected City findCityOrAdd(State state, City city)
+	/**
+	 * Returns all the people in this country. THE RETURNED OBJECT SHOULD NOT HAVE ITS CONTENTS MODIFIED DIRECTLY
+	 * @return all the people in this country.
+	 */
+	public ArrayList<Person> getPeople()
 	{
-		ArrayList<City> cities = state.getCities();
-		
-		for (int i=0; i<cities.size(); i++)
-		{
-			if (cities.get(i).getName().equalsIgnoreCase(city.getName()))
-				return cities.get(i);
-		}
-		this.addCity(state, city);
-		
-			
+		return allThePeople;
 	}
+	
+
+	//Search methods
+
 	
 	/**
 	 * Method for finding a city.
 	 * @param state
 	 * @param name The city to be found.
-	 * @return
+	 * @return the found city with the given name in the given state. Returns null if there are no matches.
 	 */
 	public City findCity(State state, String name)
 	{
@@ -116,10 +108,9 @@ public class Country {
 	 */
 	public State findState(String name)
 	{
-		name=name.toLowerCase();
 		for (State state: states)
 		{
-			if (state.getName().toLowerCase().equalsIgnoreCase(name))
+			if (state.getName().equalsIgnoreCase(name))
 				return state;
 		}
 		return null;
@@ -169,14 +160,18 @@ public class Country {
 	 */
 	protected void addPerson(Person aPerson)
 	{
-		findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
+		State foundState=findStateOrAdd(aPerson.getStateName());
+		City foundCity= findCityOrAdd(foundState, aPerson.getCityName());
+		foundState.addPerson(aPerson);
 		allThePeople.add(aPerson);
+		//allTheCities.add(foundCity);
 		treeMapNeedsBuilding=true;
 	}
 	
-	protected void addCity(City city)
+	protected void addCity(State state, City city)
 	{
-		
+		state.addCity(city);
+		allTheCities.add(city);
 	}
 	
 	/**
@@ -189,6 +184,44 @@ public class Country {
 		this.sortStates();
 	}
 	
+	/**
+	 * Finds and returns a <code>State</code> matching the <code>name</code>. Calls this.addState(name) and returns a new State(name) if no matches are found.
+	 * @param name The name of the State to be found
+	 * @return The State that was found
+	 */
+	protected State findStateOrAdd(String name)
+	{
+		for (State state: states)
+		{
+			//System.out.println(name+" "+state.getName());
+			//System.out.println(name.equalsIgnoreCase(state.getName()));
+			if (state.getName().equalsIgnoreCase(name))
+				return state;
+		}
+		State newState=new State(name);
+		states.add(newState);
+		return newState;
+	}
+	
+	/**
+	 * Finds and returns a City matching the name. Calls this.addCity(state, city) and returns a new City(name) if no matches are found.
+	 * @param state the state the city will be in
+	 * @param cityName 
+	 * @return
+	 */
+	protected City findCityOrAdd(State state, String name)
+	{
+		ArrayList<City> cities = state.getCities();
+		
+		for (int i=0; i<cities.size(); i++)
+		{
+			if (cities.get(i).getName().equalsIgnoreCase(name))
+				return cities.get(i);
+		}
+		City newCity = new City(name, state);
+		this.addCity(state, newCity);
+		return newCity;			
+	}
 	
 //WARNING: Use the below methods to add teams to cities, don't use the addTeam method found in City
 	/**
@@ -203,9 +236,10 @@ public class Country {
 			if(this.findPerson(team.getTeamMembers().getPeople().get(i).getFullName())!=null)
 			team.getTeamMembers().getPeople().set(i,this.findPerson(team.getTeamMembers().getPeople().get(i).getFullName()));
 		}
-	    State theState=this.findStateOrAdd(team.getStateName());
-	    City theCity=theState.findCityOrAdd(team.getCityName());
-	    theCity.addTeam(team);
+	    State foundState=this.findStateOrAdd(team.getStateName());
+	    City foundCity=findCityOrAdd(foundState, team.getCityName());
+	    foundCity.addTeam(team);
+	    allTheTeams.add(team);
 	}
 
 	/**
@@ -285,28 +319,6 @@ public class Country {
 		return errors;
 	}
 
-	/**
-	 * 
-	 * @param fileName 
-	 * @throws Exception
-	 * 
-	 */
-	public static void convertToCSV(String fileName) throws Exception
-	{
-		Country country = new Country();
-		ArrayList<String> stringList = new ArrayList<String>();
-		BufferedReader br=new BufferedReader(new FileReader(fileName));
-		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
-		{
-			stringList.add(lineOfCSV);
-		}
-		br.close();
-		for(int i=0; i < stringList.size();i++)
-		{
-			String[] fileParts = stringList.get(i).split(";");
-			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[2]));
-			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[3]));
-		}
-	}
+	
 
 }

@@ -141,7 +141,7 @@ public class TeamMate {
 			{
 				try
 					{
-				Country.convertToCSV(fileName);
+				//TODO make a method for reading in cities' longitudes and latitudes.
 					}
 				catch (Exception e)
 				{

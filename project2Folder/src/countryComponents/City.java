@@ -141,6 +141,15 @@ public class City implements Comparable<City> {
 		teams.addTeam(team);
 	}
 	
+	/**
+	 * Adds a person to this City. THE ONLY CLASS THAT SHOULD CALL THIS METHOD IS STATE
+	 * @param person
+	 */
+	void addPerson(Person person)
+	{
+		personList.addPerson(person);
+	}
+	
 
 	
 	//Interface-required methods

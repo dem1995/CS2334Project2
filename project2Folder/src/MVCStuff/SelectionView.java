@@ -151,15 +151,9 @@ public class SelectionView extends View {
 		this.countryModel=countryModel;
 		if (countryModel!=null)
 		{
-			ArrayList<State> theStates= countryModel.getStates();
-			for (int i=0; i<theStates.size(); i++)
-			{
-				ArrayList<City> theCities= theStates.get(i).getCities();
-				for (int j=0; j<theCities.size(); j++)
-					placesListModel.addElement(theCities.get(j));
-					
-			}
+			updatePlaceList();
 		}
+		else
 		placesList=new JList(placesListModel);
 	}
 	public void actionPerformed(ActionEvent e)
@@ -168,7 +162,7 @@ public class SelectionView extends View {
 		super.actionPerformed(e);
 		if (countryModel!=null)
 		{
-			updatePlaceList(placesListModel, countryModel);
+			updatePlaceList();
 			System.out.println("updatedPlaceList");
 		}
 		System.out.println("Model fired an action");
@@ -178,21 +172,17 @@ public class SelectionView extends View {
 	
 	/**
 	 * Updates the placesListModel of placesList
-	 * @param theList
-	 * @param theModel
 	 */
-	private void updatePlaceList(DefaultListModel<City> theList, CountryModel theModel)
+	private void updatePlaceList()
 	{
-		placesListModel=new DefaultListModel<City>();
-		placesList.setModel(placesListModel);
-		ArrayList<State> theStates= countryModel.getStates();
-		for (int i=0; i<theStates.size()&&i<5; i++)
+		ArrayList<City> cityList=countryModel.getCities();
+		if (cityList.size()!=placesListModel.getSize())
 		{
-			ArrayList<City> theCities= theStates.get(i).getCities();
-			for (int j=0; j<theCities.size()&&j<5; j++)
-				placesListModel.addElement(theCities.get(j));
-		}	
-		
+			for (int i=0; i<cityList.size(); i++)
+				if (!placesListModel.contains(cityList.get(i)))
+				placesListModel.addElement(cityList.get(i));
+		}
+
 	}
 	
 }
