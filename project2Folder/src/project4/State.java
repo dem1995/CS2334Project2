@@ -101,7 +101,7 @@ public class State implements Comparable<State>{
 			if (city.getName().toLowerCase().equalsIgnoreCase(cityName))
 				return city;
 		}
-		City newCity=new City(cityName);
+		City newCity=new City(cityName, this);
 		cities.add(newCity);
 		return newCity;
 	}

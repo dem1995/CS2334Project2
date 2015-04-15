@@ -5,10 +5,13 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
+
+import project4.City;
 
 /**
  *	The view that appears when the user starts the program. It has a menu bar with a file menu and a graph menu.
@@ -39,7 +42,8 @@ public class SelectionView extends View {
 	private JMenuItem pieChartMenuItem= new JMenuItem("Pie Chart");
 	private JMenuItem mapMenuItem= new JMenuItem("Map");
 	
-	//The contentPane's JScrollPanes
+	//The contentPane's JScrollPanes and JLists
+	private JList<City> placesList= new JList();
 	private JScrollPane placesScrollPane= new JScrollPane();
 	private JScrollPane peopleScrollPane= new JScrollPane();
 	private JScrollPane teamsScrollPane=  new JScrollPane();
@@ -116,6 +120,8 @@ public class SelectionView extends View {
 	public JMenuItem getMapMenuItem() {
 		return mapMenuItem;
 	}
+	
+	public J
 
 
 	public void actionPerformed(ActionEvent e)

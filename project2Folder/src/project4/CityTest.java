@@ -10,8 +10,8 @@ public class CityTest {
 
 	@Test
 	public void test() {
-		City city= new City("Los Angeles");
-		City city2=new City("St. Louis");
+		City city= new City("Los Angeles", new State("H"));
+		City city2=new City("St. Louis", new State("I"));
 		int firstComparison=city.compareTo(city2);
 		assertEquals(firstComparison/Math.abs(firstComparison), -1);
 		int oppositeComparison=city2.compareTo(city);

@@ -9,9 +9,9 @@ public class StateTest {
 	@Test
 	public void test() {
 		State state=new State("Missouri");
-		City city= new City("Town and Country");
-		City city2=new City("St. Louis City");
-		City city3=new City("Ballwin");
+		City city= new City("Town and Country", state);
+		City city2=new City("St. Louis City", state);
+		City city3=new City("Ballwin", state);
 		state.addCity(city);
 		state.addCity(city2);
 		state.addCity(city3);

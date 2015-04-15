@@ -25,6 +25,11 @@ public class City implements Comparable<City> {
 	private String cityName;
 	
 	/**
+	 * The State that the city's in
+	 */
+	private State theState;
+	
+	/**
 	 * The teams based in this city
 	 */
 	//TODO Change this variable to a LinkedHashMap<Integer, TeamLinkedHashMap> to add support for years.
@@ -37,12 +42,15 @@ public class City implements Comparable<City> {
 	 * the longitude of this city
 	 */
 	private double longitude;
+	
+	
 	//Instance method
 	/**
 	 * Creates a <code>City</code> with the name <code>cityName</code> and an empty <code>PersonList</code>
 	 * @param cityName The name of the city
+	 * @param state The state the city's in.
 	 */
-	public City(String cityName)
+	public City(String cityName, State state)
 	{
 		this.cityName=cityName;
 		this.personList=new PersonList();
@@ -83,6 +91,14 @@ public class City implements Comparable<City> {
 	public Point2D getCoordinate()
 	{
 		return new Point2D.Double(latitude, longitude);
+	}
+	
+	/**
+	 * @return the name of the state that the city's in
+	 */
+	public State getState()
+	{
+		return theState;
 	}
 	
 	//Setter methods
