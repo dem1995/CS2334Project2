@@ -17,11 +17,6 @@ public class Driver {
 	private SelectionView selectionView=new SelectionView();
 	
 	/**
-	 * The view for selecting states when adding places or people
-	 */
-	private StateSelectionView stateSelectionView=new StateSelectionView();
-	
-	/**
 	 * The controller
 	 */
 	private TeamMateController controller= new TeamMateController();
@@ -32,10 +27,8 @@ public class Driver {
 	public Driver()
 	{
 		selectionView.setModel(model);
-		stateSelectionView.setModel(model);
 		controller.setModel(model);
 		controller.setSelectionView(selectionView);
-		controller.setStateSelectionView(stateSelectionView);
 	}
 	
 	/**

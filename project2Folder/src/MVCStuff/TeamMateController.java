@@ -67,6 +67,24 @@ public class TeamMateController {
     			}
     		});
     		
+    		selectionView.getAddPlaceButton().addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent e){
+    					setStateSelectionView(new StateSelectionView());
+    			}
+    		});
+    		
+    		selectionView.getAddPersonButton().addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent e){
+    					//TODO Map Method
+    			}
+    		});
+    		
+    		selectionView.getAddTeamButton().addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent e){
+    					//TODO Map Method
+    			}
+    		});
+    		
     	}
     		
     		
@@ -74,9 +92,6 @@ public class TeamMateController {
     public void setStateSelectionView(StateSelectionView stateSelectionView)
     {
     	this.stateSelectionView=stateSelectionView;
-    	if(stateSelectionView!=null)
-    	{
-    		//TODO register listeners with StateSelectionView components.
-    	}
+    	stateSelectionView.setModel(countryModel);    	
     }
 }

@@ -132,7 +132,18 @@ public class SelectionView extends View {
 	public JMenuItem getMapMenuItem() {
 		return mapMenuItem;
 	}
+	
+	public JButton getAddPlaceButton(){
+		return addPlaceButton;
+	}
 
+	public JButton getAddPersonButton(){
+		return addPlaceButton;
+	}
+	
+	public JButton getAddTeamButton(){
+		return addPlaceButton;
+	}
 
 	public void setModel(CountryModel countryModel)
 	{
@@ -151,7 +162,9 @@ public class SelectionView extends View {
 	}
 	public void actionPerformed(ActionEvent e)
 	{
-		//TODO
+		super.actionPerformed(e);
+		
+		
 	}
 	
 	
