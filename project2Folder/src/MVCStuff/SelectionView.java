@@ -1,10 +1,14 @@
 package MVCStuff;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
 
 /**
  *	The view that appears when the user starts the program. It has a menu bar with a file menu and a graph menu.
@@ -35,6 +39,15 @@ public class SelectionView extends View {
 	private JMenuItem pieChartMenuItem= new JMenuItem("Pie Chart");
 	private JMenuItem mapMenuItem= new JMenuItem("Map");
 	
+	//The contentPane's JScrollPanes
+	private JScrollPane placesScrollPane= new JScrollPane();
+	private JScrollPane peopleScrollPane= new JScrollPane();
+	private JScrollPane teamsScrollPane=  new JScrollPane();
+	
+	//The contentPane's buttons
+	private JButton addPlaceButton= new JButton("Add");
+	private JButton addPersonButton= new JButton("Add");
+	private JButton addTeamButton= new JButton ("Add");
 	
 	/**
 	 * The constructor method for SelectionView
@@ -42,6 +55,10 @@ public class SelectionView extends View {
 	public SelectionView()
 	{	
 		super();
+		
+		//Set the layout for the JFrame
+		this.setLayout(new GridLayout(3,3));
+		
 		//Set up the menu bar
 		setJMenuBar(new JMenuBar());
 
@@ -56,6 +73,21 @@ public class SelectionView extends View {
 		fileMenu.add(exportMenuItem);
 		graphMenu.add(pieChartMenuItem);
 		graphMenu.add(mapMenuItem);
+		
+		//Add titles to the columns for the frame
+		this.add(new JLabel("Places"));
+		this.add(new JLabel("People"));
+		this.add(new JLabel("Teams"));
+		
+		//Add ScrollableLists to the Frame
+		this.add(placesScrollPane);
+		this.add(peopleScrollPane);
+		this.add(teamsScrollPane);
+			
+		//Add JButtons to the Frame
+		this.add(addPlaceButton);
+		this.add(addPersonButton);
+		this.add(addTeamButton);
 		
 	}
 	
