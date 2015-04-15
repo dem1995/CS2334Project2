@@ -83,6 +83,32 @@ public class Country {
 		states.add(newState);
 		return newState;
 	}
+	
+	protected City findCityOrAdd(State state, City city)
+	{
+		ArrayList<City> cities = state.getCities();
+		
+		for (int i=0; i<cities.size(); i++)
+		{
+			if (cities.get(i).getName().equalsIgnoreCase(city.getName()))
+				return cities.get(i);
+		}
+		this.addCity(state, city);
+		
+			
+	}
+	
+	/**
+	 * Method for finding a city.
+	 * @param state
+	 * @param name The city to be found.
+	 * @return
+	 */
+	public City findCity(State state, String name)
+	{
+		return state.findCity(name);
+	}
+	
 	/**
 	 * Finds and returns a <code>State</code> matching the <code>name</code> without adding any extra states
 	 * @param name The name of the State to be found
@@ -146,6 +172,11 @@ public class Country {
 		findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
 		allThePeople.add(aPerson);
 		treeMapNeedsBuilding=true;
+	}
+	
+	protected void addCity(City city)
+	{
+		
 	}
 	
 	/**

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import countryComponents.Country;
+import countryComponents.DateFormatter;
 import countryComponents.Person;
 import countryComponents.State;
 import countryComponents.Team;
@@ -55,7 +56,41 @@ public class CountryModel extends Country {
 	public void addPerson(Person person)
 	{
 		super.addPerson(person);
-		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "person added"));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.PERSON_ADDED));
+	}
+	
+	/**
+	 * Method for adding a person without triggering an ActionEvent.
+	 * @param aPerson The person to be added
+	 */
+	private void addPersonWithoutTriggeringEvent(Person aPerson)
+	{
+		super.addPerson(aPerson);
+	}
+	
+	/**
+	 * Builds a country from personStrings
+	 * @param personStrings The strings from which the Person objects will be constructed
+	 * @param country The Country to which the PersonList created from the personStrings will be added
+	 * @return The error messages encountered during this
+	 */
+	public String addStringList(ArrayList<String> personStrings)
+	{
+		String errors="";
+		for (String personString: personStrings)
+		{
+			try
+			{
+				Person aPerson=Person.convertStringToPerson(personString, DateFormatter.formatter);
+				this.addPersonWithoutTriggeringEvent(aPerson);
+			}
+			catch (Exception e)
+			{
+				errors+=(e.getMessage()+"\n");
+			}
+		}
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.PERSON_ADDED));
+		return errors;
 	}
 	
 	/**
@@ -67,7 +102,7 @@ public class CountryModel extends Country {
 	{
 		super.addTeam(team);
 		
-		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "team added"));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.TEAM_ADDED));
 		
 		//TODO addTeam method
 	}
@@ -75,7 +110,6 @@ public class CountryModel extends Country {
 	public void addTeams(ArrayList<Team> teams)
 	{
 		super.addTeams(teams);	
-		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "teams added"));
 	}
 	/**
 	 * Method for adding a State
@@ -84,7 +118,7 @@ public class CountryModel extends Country {
 	public void addState(State state)
 	{
 		super.addState(state);
-		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "state added"));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.STATE_ADDED));
 		//TODO addState method in CountryModel
 	}
 	
@@ -96,7 +130,7 @@ public class CountryModel extends Country {
 	public State findStateOrAdd(String name)
 	{
 		State foundState=super.findStateOrAdd(name);
-		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "state added"));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.STATE_ADDED));
 		return foundState;
 	}
 	

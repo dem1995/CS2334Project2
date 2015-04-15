@@ -172,7 +172,7 @@ public class SelectionView extends View {
 			System.out.println("updatedPlaceList");
 		}
 		System.out.println("Model fired an action");
-		
+		System.out.println(e.paramString());
 		
 	}
 	
@@ -183,16 +183,15 @@ public class SelectionView extends View {
 	 */
 	private void updatePlaceList(DefaultListModel<City> theList, CountryModel theModel)
 	{
+		placesListModel=new DefaultListModel<City>();
+		placesList.setModel(placesListModel);
 		ArrayList<State> theStates= countryModel.getStates();
 		for (int i=0; i<theStates.size()&&i<5; i++)
 		{
 			ArrayList<City> theCities= theStates.get(i).getCities();
 			for (int j=0; j<theCities.size()&&j<5; j++)
 				placesListModel.addElement(theCities.get(j));
-		}
-		placesListModel.addElement(new City("Fred", new State("FredState")));
-		System.out.println("we got to this marker");
-		validate();		
+		}	
 		
 	}
 	
