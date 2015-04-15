@@ -4,6 +4,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -11,6 +12,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
+import javax.swing.ListModel;
 
 import countryComponents.City;
 import countryComponents.Person;
@@ -50,7 +52,8 @@ public class SelectionView extends View {
 	private JMenuItem mapMenuItem= new JMenuItem("Map");
 	
 	//The contentPane's JScrollPanes and JLists
-	private JList<City> placesList= new JList();
+	DefaultListModel<City> placesListModel=new DefaultListModel<City>();
+	private JList<City> placesList= new JList(placesListModel);
 	private JList<Person> peopleList=new JList();
 	private JList<Team> teamList= new JList();
 	private JScrollPane placesScrollPane= new JScrollPane();
@@ -140,9 +143,8 @@ public class SelectionView extends View {
 			for (int i=0; i<theStates.size(); i++)
 			{
 				ArrayList<City> theCities= theStates.get(i).getCities();
-				for (int j=0; j<theCities.get(j); j++)
-					
-					
+				for (int j=0; j<theCities.size(); j++)
+					placesListModel.addElement(theCities.get(j));
 					
 			}
 		}

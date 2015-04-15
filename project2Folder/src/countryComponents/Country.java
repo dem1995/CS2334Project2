@@ -243,7 +243,7 @@ public class Country {
 		{
 			try
 			{
-				Person aPerson=Person.convertStringToPerson(personString, dateFormatter.formatter);
+				Person aPerson=Person.convertStringToPerson(personString, DateFormatter.formatter);
 				country.addPerson(aPerson);
 			}
 			catch (Exception e)
