@@ -150,6 +150,7 @@ public class Country {
 	protected void addState(State state)
 	{
 		states.add(state);
+		this.sortStates();
 	}
 	
 	protected void addCity(State state, City city)
@@ -216,7 +217,7 @@ public class Country {
 	/**
 	 * Sorts the <code>State</code>s in this <code>Country</code>
 	 */
-	public void sort()
+	public void sortStates()
 	{
 		Collections.sort(states);
 	}

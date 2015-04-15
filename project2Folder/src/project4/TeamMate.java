@@ -144,7 +144,7 @@ public class TeamMate {
 			}
 		}
 
-		country.sort();
+		country.sortStates();
 		//System.out.println(country);
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
