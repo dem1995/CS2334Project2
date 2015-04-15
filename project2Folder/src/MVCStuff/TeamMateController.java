@@ -9,6 +9,8 @@ public class TeamMateController {
 	private CountryModel countryModel;
 	
 	private SelectionView selectionView;
+	
+	private StateSelectionView stateSelectionView;
 
 	/**
 	 * Instance method for TeamMateController
@@ -69,4 +71,12 @@ public class TeamMateController {
     		
     		
     }   
+    public void setStateSelectionView(StateSelectionView stateSelectionView)
+    {
+    	this.stateSelectionView=stateSelectionView;
+    	if(stateSelectionView!=null)
+    	{
+    		stateSelectionView.get
+    	}
+    }
 }

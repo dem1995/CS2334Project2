@@ -41,6 +41,7 @@ public class SelectionView extends View {
 	 */
 	public SelectionView()
 	{	
+		super();
 		//Set up the menu bar
 		setJMenuBar(new JMenuBar());
 
@@ -56,10 +57,6 @@ public class SelectionView extends View {
 		graphMenu.add(pieChartMenuItem);
 		graphMenu.add(mapMenuItem);
 		
-		
-		setSize(500,200);
-		setLocation(400, 200);
-		setVisible(true);
 	}
 	
 	//Getter methods for JMenuItem

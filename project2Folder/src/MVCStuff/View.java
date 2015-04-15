@@ -21,6 +21,17 @@ public abstract class View extends JFrame implements ActionListener
 	 */
 	private CountryModel countryModel;
 
+	
+	/**
+	 * Constructor that sets up this JFrame and makes it visible.
+	 */
+	public View()
+	{
+		setSize(500,200);
+		setLocation(400, 200);
+		setVisible(true);
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		repaint();

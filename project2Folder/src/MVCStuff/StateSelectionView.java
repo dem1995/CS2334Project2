@@ -10,7 +10,7 @@ public class StateSelectionView extends View {
 	public StateSelectionView()
 	{
 		super();
-		//TODO
+		//JList list= new JList();
 	}
 	
 	@Override
