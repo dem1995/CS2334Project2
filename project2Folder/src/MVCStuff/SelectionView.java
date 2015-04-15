@@ -2,6 +2,7 @@ package MVCStuff;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -12,6 +13,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 
 import project4.City;
+import project4.Person;
+import project4.State;
+import project4.Team;
 
 /**
  *	The view that appears when the user starts the program. It has a menu bar with a file menu and a graph menu.
@@ -19,6 +23,9 @@ import project4.City;
  	The first list shall be titled "Places"; the second, "People"; the third, "Teams".
  */
 public class SelectionView extends View {
+	
+	//The model from which this view obtains data
+	private CountryModel countryModel;
 	
 	//The menus to be added to this view's jMenuBar
 
@@ -44,6 +51,8 @@ public class SelectionView extends View {
 	
 	//The contentPane's JScrollPanes and JLists
 	private JList<City> placesList= new JList();
+	private JList<Person> peopleList=new JList();
+	private JList<Team> teamList= new JList();
 	private JScrollPane placesScrollPane= new JScrollPane();
 	private JScrollPane peopleScrollPane= new JScrollPane();
 	private JScrollPane teamsScrollPane=  new JScrollPane();
@@ -120,10 +129,22 @@ public class SelectionView extends View {
 	public JMenuItem getMapMenuItem() {
 		return mapMenuItem;
 	}
-	
-	public J
 
 
+	public void setModel(CountryModel countryModel)
+	{
+		this.countryModel=countryModel;
+		if (countryModel!=null)
+		{
+			ArrayList<State> theStates= countryModel.getStates();
+			for (int i=0; i<theStates.size(); i++)
+			{
+				ArrayList<City> theCities= theStates.get(i).getCities();
+				for (int j=0; j<theCities.get(j); j++)
+					
+			}
+		}
+	}
 	public void actionPerformed(ActionEvent e)
 	{
 		//TODO
