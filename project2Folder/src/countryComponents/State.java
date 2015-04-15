@@ -1,4 +1,4 @@
-package project4;
+package countryComponents;
 
 import java.util.ArrayList;
 import java.util.Collections;

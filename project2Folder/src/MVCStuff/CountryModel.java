@@ -8,10 +8,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import project4.Country;
-import project4.Person;
-import project4.State;
-import project4.Team;
+import countryComponents.Country;
+import countryComponents.Person;
+import countryComponents.State;
+import countryComponents.Team;
 
 public class CountryModel extends Country {
 	
@@ -72,6 +72,11 @@ public class CountryModel extends Country {
 		//TODO addTeam method
 	}
 	
+	public void addTeams(ArrayList<Team> teams)
+	{
+		super.addTeams(teams);	
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "teams added"));
+	}
 	/**
 	 * Method for adding a State
 	 * @param state The State to be added

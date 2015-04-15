@@ -2,7 +2,7 @@ package MVCStuff;
 
 import java.awt.event.ActionEvent;
 
-import project4.Pie;
+import otherClasses.Pie;
 
 public class PieChartView extends View {
 	

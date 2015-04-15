@@ -1,8 +1,10 @@
-package project4;
+package countryComponents;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import otherClasses.TeamMate;
 
 public class TeamLinkedHashMapTest {
 

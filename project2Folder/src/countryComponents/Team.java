@@ -1,4 +1,4 @@
-package project4;
+package countryComponents;
 
 import java.io.Serializable;
 
@@ -142,7 +142,7 @@ public class Team implements Comparable<Team>, Serializable{
 	 * Setter method for teamName
 	 * @param teamName The name of the team
 	 */
-	void setTeamName(String teamName)
+	public void setTeamName(String teamName)
 	{
 		this.teamName=teamName;
 	}
@@ -153,6 +153,31 @@ public class Team implements Comparable<Team>, Serializable{
 	@Override
 	public int compareTo(Team o) {
 		return this.getTeamName().compareToIgnoreCase(o.getTeamName());
+	}	
+	//Conversion methods
+	
+	/**
+	 * Converts a String to a Team object
+	 * @param line The string to be converted to a team
+	 * @return a team created from the parater string
+	 */
+	public static Team convertStringToTeam(String line)
+	{
+		Team team= new Team();
+	
+		String[] teamParts = line.split(";");
+		team.teamName	= teamParts[0].trim();
+		team.cityName	= teamParts[1].trim();
+		team.stateName	= teamParts[2].trim();
+		PersonList personList	= new PersonList();
+		for(int i = 3; i<teamParts.length-3;i++)
+		{
+			Person person	= new Person(teamParts[i].trim());
+			personList.addPerson(person);
+		}
+		team.setTeamMembers(personList);
+		
+		return team;
 	}
 	
 }

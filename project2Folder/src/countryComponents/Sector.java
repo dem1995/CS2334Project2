@@ -1,4 +1,4 @@
-package project4;
+package countryComponents;
 
 import java.awt.Color;
 import java.awt.geom.Arc2D;

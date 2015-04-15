@@ -1,4 +1,4 @@
-package project4;
+package countryComponents;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -94,7 +94,7 @@ public class PersonList {
 	 * @param comparator How people should be sorted
 	 * @return This object after it has been sorted
 	 */
-	PersonList returnAfterSortingUsing(Comparator<Person> comparator)
+	public PersonList returnAfterSortingUsing(Comparator<Person> comparator)
 	{
 		Collections.sort(people, comparator);
 		if (comparator==null)
@@ -158,11 +158,26 @@ public class PersonList {
 	 * @param person The Person to be merged with the Person this is called on.
 	 * @return a combination of the PersonList that the combineWith method was called for and the PersonList the combineWith method was sent
 	 */
-	PersonList combineWith(PersonList person)
+	private PersonList combineWith(PersonList person)
 	{
 		people.addAll(person.people);
 		return this;
 	}
+	
+	/**
+	 * Combines two PersonLists in a way that does not jeopardize the safety of City objects
+	 * @param a 
+	 * @param b
+	 * @return A PersonList made from using combineWith(a) and combineWith(b) on an empty personList;
+	 */
+	public static PersonList combineTwoPersonLists(PersonList a, PersonList b)
+	{
+		PersonList c=new PersonList();
+		c.combineWith(a);
+		c.combineWith(b);
+		return c;
+	}
+	
 	
 	/**
 	 * A method for adding a <code>Person</code> to <code>people</code>

@@ -7,7 +7,7 @@ import java.io.FileReader;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 
-import project4.State;
+import countryComponents.State;
 
 
 public class StateSelectionView extends View {

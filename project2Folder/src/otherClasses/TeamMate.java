@@ -1,4 +1,4 @@
-package project4;
+package otherClasses;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,7 +11,27 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
-public class CSVConverterMethods {
+import MVCStuff.CountryModel;
+import countryComponents.City;
+import countryComponents.Country;
+import countryComponents.CustomBufferedReader;
+import countryComponents.Person;
+import countryComponents.PersonList;
+import countryComponents.State;
+import countryComponents.Team;
+
+
+/**
+ * Project #3
+ * CS 2334, Section 010
+ * March 4, 2015
+ * <p>
+ * A class for searching through data on people, places, and teams
+ * </p>
+ * @version 1.0
+ *
+ */
+public class TeamMate {
 
 	/**
 	 * Static CustomBufferedReader to be used by all methods
@@ -41,7 +61,7 @@ public class CSVConverterMethods {
 
 		ArrayList<String> personStrings= new ArrayList<String>(); // The raw data of the people
 		boolean	continueLoop=true;	
-		Country country= new Country();
+		CountryModel country= new CountryModel();
 		//Welcomes the user
 		System.out.println("Hello! Welcome to TeamMate! You may enter \"quit\" at any time to");
 
@@ -59,7 +79,7 @@ public class CSVConverterMethods {
 				else
 				{
 					personStrings = convertCSVToStringList(fileName);
-					addStringListToCountry(personStrings, country);
+					Country.addStringListToCountry(personStrings, country);
 					continueLoop=false;
 				}
 			}
@@ -121,7 +141,7 @@ public class CSVConverterMethods {
 			{
 				try
 					{
-				convertToCSV(fileName);
+				Country.convertToCSV(fileName);
 					}
 				catch (Exception e)
 				{
@@ -168,101 +188,9 @@ public class CSVConverterMethods {
 		return stringList;
 	}
 	
-	/**
-	 * Converts a String to a Team object
-	 * @param line The string to be converted to a team
-	 * @return a team created from the parater string
-	 */
-	public static Team convertStringToTeam(String line)
-	{
-		Team team= new Team();
 	
-		String[] teamParts = line.split(";");
-		team.teamName	= teamParts[0].trim();
-		team.cityName	= teamParts[1].trim();
-		team.stateName	= teamParts[2].trim();
-		PersonList personList	= new PersonList();
-		for(int i = 3; i<teamParts.length-3;i++)
-		{
-			Person person	= new Person(teamParts[i].trim());
-			personList.addPerson(person);
-		}
-		team.setTeamMembers(personList);
-		
-		return team;
-	}
-	/**
-	 * Method for converting a String in the form of "Name, birthDate, birthCity, birthState" or ""Name, birthDate, birthCity, birthState" containing Person data to a Person object
-	 * @param personString Sting representing a person object's data
-	 * @param formatter Formats the date data
-	 * @return a Person object generated from the personString input
-	 * @throws Exception throws an exception if this method receives invalid input
-	 */
-	public static Person convertStringToPerson(String personString, SimpleDateFormat formatter) throws Exception
-	{
-		Person aPerson=null;
-		String[] personParts = personString.split(",");
-		String fullName=personParts[0];
-
-		if (personParts.length<4||personParts.length>5)
-			throw new Exception("\""+personString+"\""+"had too many/too few parts separated by commas");
-
-		try
-		{
-			if (personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if true.
-			{
-				aPerson=new Person(fullName, formatter.parse(personParts[1]));
-				aPerson.setCityName(personParts[2]);
-				aPerson.setStateName(personParts[3]);
-				if(personParts.length == 5)
-				{
-					if(personParts[4].contains("/"))
-					{
-						aPerson.setDeathDate(formatter.parse(personParts[4]));
-					}
-				}
-				
-			}
-			else if (!personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if false.
-			{
-				aPerson=new Person(fullName, null);
-				aPerson.setCityName(personParts[1]);
-				aPerson.setStateName(personParts[2]);
-				if(personParts.length == 4)
-				{
-					if(personParts[3].contains("/"))
-					{
-						aPerson.setDeathDate(formatter.parse(personParts[4]));
-					}
-				}
-			}
-		}
-		catch (ParseException e)
-		{throw new Exception("\""+personString+"\""+ "'s parts separated by commas were in the wrong formats");}
-
-		return aPerson;	
-	}
 	
-	/**
-	 * Builds a country from personStrings
-	 * @param personStrings The strings from which the Person objects will be constructed
-	 * @param country The Country to which the PersonList created from the personStrings will be added
-	 */
-	public static void addStringListToCountry(ArrayList<String> personStrings, Country country)
-	{
-		for (String personString: personStrings)
-		{
-			try
-			{
-				Person aPerson=convertStringToPerson(personString, formatter);
-				country.addPerson(aPerson);
-			}
-			catch (Exception e)
-			{
-				errors+=(e.getMessage()+"\n");
-			}
-		}
-	}
+
 	
 	/**
 	 * Converts an ArrayList of Strings to an ArrayList of Teams
@@ -273,33 +201,11 @@ public class CSVConverterMethods {
 	{
 		ArrayList<Team> arrayListOfTeams=new ArrayList<Team>();
 		for (String teamString: teamStrings)
-			arrayListOfTeams.add(convertStringToTeam(teamString));
+			arrayListOfTeams.add(Team.convertStringToTeam(teamString));
 		return arrayListOfTeams;
 	}
 
-	/**
-	 * 
-	 * @param fileName 
-	 * @throws Exception
-	 * 
-	 */
-	public static void convertToCSV(String fileName) throws Exception
-	{
-		Country country = new Country();
-		ArrayList<String> stringList = new ArrayList<String>();
-		BufferedReader br=new BufferedReader(new FileReader(fileName));
-		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
-		{
-			stringList.add(lineOfCSV);
-		}
-		br.close();
-		for(int i=0; i < stringList.size();i++)
-		{
-			String[] fileParts = stringList.get(i).split(";");
-			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[2]));
-			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[3]));
-		}
-	}
+	
 
 	/**
 	 * @param country The country that contains the lists of people with which we're doing stuff
@@ -418,7 +324,7 @@ public class CSVConverterMethods {
 //If they're searching by state
 						for(City c: stateSearchedFor.getCities())
 						{
-							results.combineWith(c.getPersonList());
+							results=PersonList.combineTwoPersonLists(results, c.getPersonList());
 						}
 					}
 					else if(answer.equalsIgnoreCase("City"))
@@ -522,5 +428,4 @@ public class CSVConverterMethods {
 	}
 
 }
-
 

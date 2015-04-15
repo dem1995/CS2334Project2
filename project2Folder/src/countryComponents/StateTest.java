@@ -1,4 +1,4 @@
-package project4;
+package countryComponents;
 
 import static org.junit.Assert.*;
 

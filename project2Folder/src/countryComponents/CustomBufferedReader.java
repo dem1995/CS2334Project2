@@ -1,4 +1,4 @@
-package project4;
+package countryComponents;
 
 import java.io.BufferedReader;
 import java.io.IOException;

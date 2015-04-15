@@ -1,8 +1,10 @@
 /**
  * 
  */
-package project4;
+package countryComponents;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -251,7 +253,7 @@ public class Person implements Comparable<Person> {
 	 * Setter method for <code>cityName</code>
 	 * @param cityName The name of the city
 	 */
-	public void setCityName(String cityName)
+	void setCityName(String cityName)
 	{
 		this.cityName=cityName;
 	}
@@ -310,6 +312,59 @@ public class Person implements Comparable<Person> {
 	//Interface-required Methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	public int compareTo(Person otherPerson) {
 		return this.getFullName().compareToIgnoreCase(otherPerson.getFullName());
+	}
+	
+	//Conversion methods
+	/**
+	 * Method for converting a String in the form of "Name, birthDate, birthCity, birthState" or ""Name, birthDate, birthCity, birthState" containing Person data to a Person object
+	 * @param personString Sting representing a person object's data
+	 * @param formatter Formats the date data
+	 * @return a Person object generated from the personString input
+	 * @throws Exception throws an exception if this method receives invalid input
+	 */
+	public static Person convertStringToPerson(String personString, SimpleDateFormat formatter) throws Exception
+	{
+		Person aPerson=null;
+		String[] personParts = personString.split(",");
+		String fullName=personParts[0];
+
+		if (personParts.length<4||personParts.length>5)
+			throw new Exception("\""+personString+"\""+"had too many/too few parts separated by commas");
+
+		try
+		{
+			if (personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if true.
+			{
+				aPerson=new Person(fullName, formatter.parse(personParts[1]));
+				aPerson.setCityName(personParts[2]);
+				aPerson.setStateName(personParts[3]);
+				if(personParts.length == 5)
+				{
+					if(personParts[4].contains("/"))
+					{
+						aPerson.setDeathDate(formatter.parse(personParts[4]));
+					}
+				}
+				
+			}
+			else if (!personParts[1].contains("/")) //Tests to see if person has a BirthDate. Runs if false.
+			{
+				aPerson=new Person(fullName, null);
+				aPerson.setCityName(personParts[1]);
+				aPerson.setStateName(personParts[2]);
+				if(personParts.length == 4)
+				{
+					if(personParts[3].contains("/"))
+					{
+						aPerson.setDeathDate(formatter.parse(personParts[4]));
+					}
+				}
+			}
+		}
+		catch (ParseException e)
+		{throw new Exception("\""+personString+"\""+ "'s parts separated by commas were in the wrong formats");}
+
+		return aPerson;	
 	}
 	
 

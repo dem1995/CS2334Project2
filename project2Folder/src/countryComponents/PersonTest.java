@@ -1,4 +1,4 @@
-package project4;
+package countryComponents;
 
 import static org.junit.Assert.*;
 
@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.junit.Test;
+
+import otherClasses.Pie;
 
 public class PersonTest {
 

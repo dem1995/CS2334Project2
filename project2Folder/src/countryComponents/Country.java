@@ -1,5 +1,7 @@
-package project4;
+package countryComponents;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.TreeMap;
@@ -21,8 +23,10 @@ public class Country {
 	 */
 	private ArrayList<State> states;
 	
+	private ArrayList<City> allTheCities= new ArrayList<City>();
 	
-
+	private ArrayList<Person> allThePeople= new ArrayList<Person>();
+	
 	/**
 	 * Lets you know if this Country's treeMap of people (basically a quick way to search for people if you don't know their city or state) needs to be updated due to changes to this Country.
 	 */
@@ -140,6 +144,7 @@ public class Country {
 	protected void addPerson(Person aPerson)
 	{
 		findStateOrAdd(aPerson.getStateName()).findCityOrAdd(aPerson.getCityName()).getPersonList().addPerson(aPerson);
+		allThePeople.add(aPerson);
 		treeMapNeedsBuilding=true;
 	}
 	
@@ -153,10 +158,6 @@ public class Country {
 		this.sortStates();
 	}
 	
-	protected void addCity(State state, City city)
-	{
-		state.addCity(city);
-	}
 	
 //WARNING: Use the below methods to add teams to cities, don't use the addTeam method found in City
 	/**
@@ -227,6 +228,54 @@ public class Country {
 	{
 		return toPersonList().toString();
 	}
+	
+	//Converter methods
+	/**
+	 * Builds a country from personStrings
+	 * @param personStrings The strings from which the Person objects will be constructed
+	 * @param country The Country to which the PersonList created from the personStrings will be added
+	 * @return The error messages encountered during this
+	 */
+	public static String addStringListToCountry(ArrayList<String> personStrings, Country country)
+	{
+		String errors="";
+		for (String personString: personStrings)
+		{
+			try
+			{
+				Person aPerson=Person.convertStringToPerson(personString, dateFormatter.formatter);
+				country.addPerson(aPerson);
+			}
+			catch (Exception e)
+			{
+				errors+=(e.getMessage()+"\n");
+			}
+		}
+		return errors;
+	}
 
+	/**
+	 * 
+	 * @param fileName 
+	 * @throws Exception
+	 * 
+	 */
+	public static void convertToCSV(String fileName) throws Exception
+	{
+		Country country = new Country();
+		ArrayList<String> stringList = new ArrayList<String>();
+		BufferedReader br=new BufferedReader(new FileReader(fileName));
+		for (String lineOfCSV=""; lineOfCSV!=(null); lineOfCSV=br.readLine())
+		{
+			stringList.add(lineOfCSV);
+		}
+		br.close();
+		for(int i=0; i < stringList.size();i++)
+		{
+			String[] fileParts = stringList.get(i).split(";");
+			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[2]));
+			((country.findStateOrAdd(fileParts[1])).findCityOrAdd(fileParts[0])).setLatitude(Integer.parseInt(fileParts[3]));
+		}
+	}
 
 }

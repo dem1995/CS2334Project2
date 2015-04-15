@@ -1,4 +1,4 @@
-package project4;
+package otherClasses;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -10,6 +10,11 @@ import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
+
+import countryComponents.Person;
+import countryComponents.PersonList;
+import countryComponents.Sector;
+import countryComponents.Team;
 
 /**
  * A Pie chart.

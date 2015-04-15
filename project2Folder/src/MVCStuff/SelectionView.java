@@ -12,10 +12,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 
-import project4.City;
-import project4.Person;
-import project4.State;
-import project4.Team;
+import countryComponents.City;
+import countryComponents.Person;
+import countryComponents.State;
+import countryComponents.Team;
 
 /**
  *	The view that appears when the user starts the program. It has a menu bar with a file menu and a graph menu.
@@ -141,6 +141,8 @@ public class SelectionView extends View {
 			{
 				ArrayList<City> theCities= theStates.get(i).getCities();
 				for (int j=0; j<theCities.get(j); j++)
+					
+					
 					
 			}
 		}

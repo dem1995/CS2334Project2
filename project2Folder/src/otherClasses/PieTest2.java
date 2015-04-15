@@ -1,4 +1,4 @@
-package project4;
+package otherClasses;
 
 import static org.junit.Assert.*;
 
@@ -10,6 +10,9 @@ import java.util.Scanner;
 import javax.swing.JFrame;
 
 import org.junit.Test;
+
+import countryComponents.Person;
+import countryComponents.PersonList;
 
 public class PieTest2 {
 
