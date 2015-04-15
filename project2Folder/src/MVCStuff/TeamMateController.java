@@ -76,7 +76,7 @@ public class TeamMateController {
     	this.stateSelectionView=stateSelectionView;
     	if(stateSelectionView!=null)
     	{
-    		stateSelectionView.get
+    		//TODO register listeners with StateSelectionView components.
     	}
     }
 }

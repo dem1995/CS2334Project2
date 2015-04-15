@@ -2,6 +2,10 @@ package MVCStuff;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import project4.Country;
@@ -21,6 +25,15 @@ public class CountryModel extends Country {
 	public CountryModel()
 	{
 		super();
+		//Prepares the 51 States of United States of America (DC is counted as a state)
+		try
+		{
+			prepareStatesFromTextFile("states.txt");
+			}catch (Exception e){
+			System.out.println("The program had trouble with using the file states.txt,or states.txt does not exist in an accessible path");
+		}
+		
+		
 		//TODO CountryModel constructor
 	}
 	
@@ -65,6 +78,8 @@ public class CountryModel extends Country {
 	 */
 	public void addState(State state)
 	{
+		super.addState(state);
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "state added"));
 		//TODO addState method in CountryModel
 	}
 	
@@ -112,6 +127,22 @@ public class CountryModel extends Country {
 		}
 	}
 	
+	
+	/**
+	 * Prepares some states for this country from a file specified by the parameter
+	 * @param fileName The name of the file
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private void prepareStatesFromTextFile(String fileName) throws FileNotFoundException, IOException
+	{
+	BufferedReader bufferedReader=new BufferedReader(new FileReader("states.txt"));
+	for (int i=0; i<51; i++)
+	{
+		this.addState(new State(bufferedReader.readLine()));
+	}
+	bufferedReader.close();	
+	}
 	
 
 }
