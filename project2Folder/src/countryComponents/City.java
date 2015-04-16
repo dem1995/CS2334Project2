@@ -3,13 +3,13 @@ package countryComponents;
 import java.awt.geom.Point2D;
 
 /**
- * Project #3
+ * Project #4
  * CS 2334, Section 010
- * March 4, 2015
+ * April 16, 2015
  * <p>
  * Holds a <code>PersonList</code> of people, emulating the population of a city
  * </p>
- * @version 1.0
+ * @version 2.0
  */
 public class City implements Comparable<City> {
 	

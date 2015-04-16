@@ -7,13 +7,13 @@ import java.util.Collections;
 import java.util.TreeMap;
 
 /**
- * Project #3
+ * Project #4
  * CS 2334, Section 010
- * Feb 18, 2015
+ * April 16, 2015
  * <p>
  *Holds a bunch of <code>State</code> objects
  *</p>
- *@version 1.0
+ *@version 2.0
  */
 public class Country {
 

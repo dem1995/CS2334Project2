@@ -3,9 +3,9 @@ package countryComponents;
 import java.io.Serializable;
 
 /**
- * Project #3
+ * Project #4
  * CS 2334, Section 010
- * March 4, 2015
+ * April 16, 2015
  * <p>
  * Holds a <code>PersonList</code> of team members, the name of the city in which they are based, and the name of the state that city is in.
  * </p>

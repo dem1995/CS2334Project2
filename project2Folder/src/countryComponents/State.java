@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Project #3
+ * Project #4
  * CS 2334, Section 010
- * Feb 18, 2015
+ * April 16, 2015
  * <p>
  * Holds an <code>ArrayList</code> of <code>Cities</code> and provides methods for searching that list
  * </p>
- * @version 1.0
+ * @version 2.0
  */
 public class State implements Comparable<State>{
 	
