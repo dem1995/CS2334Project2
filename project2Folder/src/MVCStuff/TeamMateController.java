@@ -88,7 +88,7 @@ public class TeamMateController {
     		
     		selectionView.getAddPersonButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    					//TODO Map Method
+    					//TODO Add Person
     			}
     		});
     		

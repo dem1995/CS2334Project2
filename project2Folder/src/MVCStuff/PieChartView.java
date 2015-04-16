@@ -11,6 +11,7 @@ public class PieChartView extends View {
 	
 	/**
 	 * Constructor for PieChartView
+	 * @param pie The pie to make the view for
 	 */
 	public PieChartView(Pie pie)
 	{

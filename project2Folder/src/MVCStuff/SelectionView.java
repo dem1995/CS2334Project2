@@ -21,8 +21,8 @@ import countryComponents.Team;
 
 /**
  *	The view that appears when the user starts the program. It has a menu bar with a file menu and a graph menu.
- 	Inside its content pane, there are three vertical lists side-by-side, each with its own title above it and set of buttons below it.
- 	The first list shall be titled "Places"; the second, "People"; the third, "Teams".
+ *	Inside its content pane, there are three vertical lists side-by-side, each with its own title above it and set of buttons below it.
+ *	The first list shall be titled "Places"; the second, "People"; the third, "Teams".
  */
 public class SelectionView extends View {
 	

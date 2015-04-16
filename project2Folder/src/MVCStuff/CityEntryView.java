@@ -44,7 +44,7 @@ public class CityEntryView extends View {
 	
 	/**
 	 * Constructor for CityEntryView. The created City will be in the State provided.
-	 * @param state
+	 * @param state the State from which to grab the cities
 	 */
 	public CityEntryView(State state)
 	{
@@ -86,7 +86,7 @@ public class CityEntryView extends View {
 	
 	/**
 	 * Returns a city from the selected spots on the 
-	 * @return
+	 * @return A city made from the textFields' data
 	 */
 	public City getFullCity()
 	{

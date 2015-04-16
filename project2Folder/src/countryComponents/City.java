@@ -106,7 +106,7 @@ public class City implements Comparable<City> {
 	
 	/**
 	 * Sets the State that this city is in
-	 * @param state 
+	 * @param state the state the city is in.
 	 */
 	public void setState(State state)
 	{
@@ -153,7 +153,7 @@ public class City implements Comparable<City> {
 	
 	/**
 	 * Adds a person to this City. THE ONLY CLASS THAT SHOULD CALL THIS METHOD IS STATE
-	 * @param person
+	 * @param person The person to be added
 	 */
 	void addPerson(Person person)
 	{

@@ -108,7 +108,7 @@ public class State implements Comparable<State>{
 
 	/**
 	 * Adds a person to this state. THE ONLY CLASS THAT SHOULD CALL THIS METHOD IS COUNTRY
-	 * @param person
+	 * @param person The person to be added
 	 */
 	void addPerson(Person person)
 	{

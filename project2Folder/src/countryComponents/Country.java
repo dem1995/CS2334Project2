@@ -92,7 +92,7 @@ public class Country {
 	
 	/**
 	 * Method for finding a city.
-	 * @param state
+	 * @param state the State the City to be found is in
 	 * @param name The city to be found.
 	 * @return the found city with the given name in the given state. Returns null if there are no matches.
 	 */
@@ -170,8 +170,8 @@ public class Country {
 	
 	/**
 	 * Adds a given City to a given State and sets that State as the city's state
-	 * @param state
-	 * @param city
+	 * @param state The state to add the city to
+	 * @param city The city to add
 	 */
 	protected void addCity(State state, City city)
 	{
@@ -212,8 +212,8 @@ public class Country {
 	/**
 	 * Finds and returns a City matching the name. Calls this.addCity(state, city) and returns a new City(name) if no matches are found.
 	 * @param state the state the city will be in
-	 * @param cityName 
-	 * @return
+	 * @param name the city to add the state to
+	 * @return The found city, or a new city with the given name.
 	 */
 	protected City findCityOrAdd(State state, String name)
 	{
@@ -250,7 +250,7 @@ public class Country {
 
 	/**
 	 * Adds <code>Team</code>s to the TeamLinkedHashMaps of one of the Cities held by the States in this Country
-	 * @param teams
+	 * @param teams the teams to be added.
 	 */
 	protected void addTeams(ArrayList<Team> teams)
 	{

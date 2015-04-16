@@ -25,8 +25,8 @@ public class Sector extends Arc2D.Double{
 	
 	/**
 	 * Constructor for this <code>Sector</code> that assigns the following arguments to this <code>Sector</code>'s <code>name</code> and <code>weight</code>. 
-	 * @param name
-	 * @param weight
+	 * @param name The name of the group this sector represents
+	 * @param weight Corresponds to amount of the the pie occupied
 	 */
 	public Sector(String name, int weight)
 	{

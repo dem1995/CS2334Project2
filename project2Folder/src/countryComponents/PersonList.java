@@ -166,8 +166,8 @@ public class PersonList {
 	
 	/**
 	 * Combines two PersonLists in a way that does not jeopardize the safety of City objects
-	 * @param a 
-	 * @param b
+	 * @param a a PersonList
+	 * @param b a PersonList
 	 * @return A PersonList made from using combineWith(a) and combineWith(b) on an empty personList;
 	 */
 	public static PersonList combineTwoPersonLists(PersonList a, PersonList b)

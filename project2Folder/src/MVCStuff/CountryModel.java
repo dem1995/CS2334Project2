@@ -180,8 +180,8 @@ public class CountryModel extends Country {
 	/**
 	 * Prepares some states for this country from a file specified by the parameter
 	 * @param fileName The name of the file
-	 * @throws FileNotFoundException
-	 * @throws IOException
+	 * @throws FileNotFoundException thrown if file not found
+	 * @throws IOException thrown sometimes. This is very descriptive.
 	 */
 	private void prepareStatesFromTextFile(String fileName) throws FileNotFoundException, IOException
 	{
