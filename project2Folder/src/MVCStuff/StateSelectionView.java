@@ -1,15 +1,20 @@
 package MVCStuff;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.io.BufferedReader;
-import java.io.FileReader;
 
+import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 
 import countryComponents.State;
 
 
+/**
+ * View for selecting the State to which to add a new City
+ */
 public class StateSelectionView extends View {
 	
 	private CountryModel countryModel;
@@ -19,12 +24,10 @@ public class StateSelectionView extends View {
 	 */
 	JList<State> stateJList= new JList<State>();
 	
-	//State state1= new State("fredState");
-	//State state2= new State("halState");
-	//State[] statesTester= {state1, state2};
-	//String[] strings= {"fred", "hal"};
-	
-	//JList<State> stateJList= new JList<State>(statesTester);
+	/**
+	 * The button for choosing the selected state
+	 */
+	JButton enterButton= new JButton("Enter");
 
 	/**
 	 * Constructor for PieChartView
@@ -37,9 +40,11 @@ public class StateSelectionView extends View {
 	public void setModel(CountryModel countryModel)
 	{
 		super.setModel(countryModel);
+		setLayout(new GridLayout(2,1));
 		stateJList= new JList<State>((State[]) countryModel.getStates().toArray(new State[0]));
 		JScrollPane scrollableStates = new JScrollPane(stateJList);
-		this.getContentPane().add(scrollableStates);
+		this.add(scrollableStates);
+		this.add(enterButton);
 		this.validate();
 	}
 

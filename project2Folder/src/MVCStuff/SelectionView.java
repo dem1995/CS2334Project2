@@ -104,7 +104,7 @@ public class SelectionView extends View {
 		this.add(addPlaceButton);
 		this.add(addPersonButton);
 		this.add(addTeamButton);
-		
+		validate();
 	}
 	
 	//Getter methods for JMenuItem

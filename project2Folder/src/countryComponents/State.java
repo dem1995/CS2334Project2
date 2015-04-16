@@ -102,6 +102,7 @@ public class State implements Comparable<State>{
 	void addCity(City city)
 	{
 		this.cities.add(city);
+		city.setState(this);
 		isSorted=false;
 	}
 

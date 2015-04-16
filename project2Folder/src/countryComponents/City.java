@@ -102,6 +102,15 @@ public class City implements Comparable<City> {
 	}
 	
 	//Setter methods
+	
+	/**
+	 * Sets the State that this city is in
+	 * @param state 
+	 */
+	public void setState(State state)
+	{
+		theState=state;
+	}
 	/**
 	 * Adjusts the y-value of this city's geographic location
 	 * @param latitude the y-value of this city's geographic location
@@ -159,7 +168,10 @@ public class City implements Comparable<City> {
 	
 	public String toString()
 	{
-		return this.getName();
+		if (this.getState()!=null)
+			return this.getName()+", "+this.getState().getName();
+		else
+			return this.getName();
 	}
 	
 }

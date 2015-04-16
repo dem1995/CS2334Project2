@@ -71,7 +71,6 @@ public class CountryModel extends Country {
 	/**
 	 * Builds a country from personStrings
 	 * @param personStrings The strings from which the Person objects will be constructed
-	 * @param country The Country to which the PersonList created from the personStrings will be added
 	 * @return The error messages encountered during this
 	 */
 	public String addStringList(ArrayList<String> personStrings)

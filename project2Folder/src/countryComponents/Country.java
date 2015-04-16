@@ -168,8 +168,14 @@ public class Country {
 		treeMapNeedsBuilding=true;
 	}
 	
+	/**
+	 * Adds a given City to a given State and sets that State as the city's state
+	 * @param state
+	 * @param city
+	 */
 	protected void addCity(State state, City city)
 	{
+		city.setState(state);
 		state.addCity(city);
 		allTheCities.add(city);
 	}
