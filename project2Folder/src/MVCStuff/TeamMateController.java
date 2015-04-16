@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import countryComponents.City;
 import otherClasses.HelperMethods;
 
 public class TeamMateController {
@@ -110,8 +111,7 @@ public class TeamMateController {
     		stateSelectionView.getEnterButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
     				setCityEntryView(new CityEntryView(stateSelectionView.getSelectedState()));
-    			}
-    		
+    			}	
     		});
     	}
     }
@@ -122,6 +122,13 @@ public class TeamMateController {
     	cityEntryView.setModel(countryModel);
     	if (countryModel!=null)
     	{
+    		cityEntryView.getEnterButton().addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent e)
+    			{
+    				City cityToAdd= cityEntryView.getFullCity();
+    				countryModel.addCity(cityToAdd.getState(), cityToAdd);
+    			}
+    		});
     	}
     }
 }

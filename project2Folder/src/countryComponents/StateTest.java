@@ -8,7 +8,7 @@ public class StateTest {
 
 	@Test
 	public void test() {
-		State state=new State("Missouri");
+		State state=new State("Missouri");z
 		City city= new City("Town and Country", state);
 		City city2=new City("St. Louis City", state);
 		City city3=new City("Ballwin", state);

@@ -52,6 +52,7 @@ public class City implements Comparable<City> {
 	 */
 	public City(String cityName, State state)
 	{
+		this.theState=state;
 		this.cityName=cityName;
 		this.personList=new PersonList();
 	}
@@ -94,7 +95,7 @@ public class City implements Comparable<City> {
 	}
 	
 	/**
-	 * @return the name of the state that the city's in
+	 * @return the state that the city's in
 	 */
 	public State getState()
 	{

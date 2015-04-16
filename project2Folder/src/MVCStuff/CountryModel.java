@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import countryComponents.City;
 import countryComponents.Country;
 import countryComponents.DateFormatter;
 import countryComponents.Person;
@@ -110,6 +111,18 @@ public class CountryModel extends Country {
 	{
 		super.addTeams(teams);	
 	}
+	
+	/**
+	 * Method for adding a City
+	 * @param state the State the City is in
+	 * @param city the City being added
+	 */
+	public void addCity(State state, City city)
+	{
+		super.addCity(state, city);
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.CITY_ADDED));
+	}
+	
 	/**
 	 * Method for adding a State
 	 * @param state The State to be added
@@ -132,8 +145,6 @@ public class CountryModel extends Country {
 		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.STATE_ADDED));
 		return foundState;
 	}
-	
-
 	
 	
 	/**

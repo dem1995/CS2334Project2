@@ -49,6 +49,7 @@ public class CityEntryView extends View {
 	public CityEntryView(State state)
 	{
 		super();
+		this.state=state;
 		setLayout(new GridBagLayout());
 		GridBagConstraints constraints=new GridBagConstraints();
 		constraints.fill=GridBagConstraints.HORIZONTAL;
