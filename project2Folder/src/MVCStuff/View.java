@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 /**
  * 
@@ -27,6 +28,7 @@ public abstract class View extends JFrame implements ActionListener
 	 */
 	public View()
 	{
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setSize(500,200);
 		setLocation(400, 200);
 		setVisible(true);

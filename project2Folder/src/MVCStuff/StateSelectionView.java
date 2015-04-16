@@ -17,17 +17,20 @@ import countryComponents.State;
  */
 public class StateSelectionView extends View {
 	
+	/**
+	 * The model for this view
+	 */
 	private CountryModel countryModel;
 	
 	/**
 	 * A JList of the list of states in the CountryModel
 	 */
-	JList<State> stateJList= new JList<State>();
+	private JList<State> stateJList= new JList<State>();
 	
 	/**
 	 * The button for choosing the selected state
 	 */
-	JButton enterButton= new JButton("Enter");
+	private JButton enterButton= new JButton("Enter");
 
 	/**
 	 * Constructor for PieChartView
@@ -40,12 +43,23 @@ public class StateSelectionView extends View {
 	public void setModel(CountryModel countryModel)
 	{
 		super.setModel(countryModel);
-		setLayout(new GridLayout(2,1));
+		this.countryModel=countryModel;
+		setLayout(new GridLayout(2,1)); 
 		stateJList= new JList<State>((State[]) countryModel.getStates().toArray(new State[0]));
 		JScrollPane scrollableStates = new JScrollPane(stateJList);
 		this.add(scrollableStates);
 		this.add(enterButton);
 		this.validate();
+	}
+	
+	public JButton getEnterButton()
+	{
+		return enterButton;
+	}
+	
+	public State getSelectedState()
+	{
+		return stateJList.getSelectedValue();
 	}
 
 	@Override

@@ -13,6 +13,8 @@ public class TeamMateController {
 	private SelectionView selectionView;
 	
 	private StateSelectionView stateSelectionView;
+	
+	private CityEntryView cityEntryView;
 
 	/**
 	 * Instance method for TeamMateController
@@ -102,6 +104,24 @@ public class TeamMateController {
     public void setStateSelectionView(StateSelectionView stateSelectionView)
     {
     	this.stateSelectionView=stateSelectionView;
-    	stateSelectionView.setModel(countryModel);    	
+    	stateSelectionView.setModel(countryModel);    
+    	if (countryModel!=null)
+    	{
+    		stateSelectionView.getEnterButton().addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent e){
+    				setCityEntryView(new CityEntryView(stateSelectionView.getSelectedState()));
+    			}
+    		
+    		});
+    	}
+    }
+    
+    public void setCityEntryView(CityEntryView cityEntryView)
+    {
+    	this.cityEntryView=cityEntryView;
+    	cityEntryView.setModel(countryModel);
+    	if (countryModel!=null)
+    	{
+    	}
     }
 }

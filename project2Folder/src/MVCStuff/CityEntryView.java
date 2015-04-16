@@ -4,11 +4,13 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import countryComponents.City;
 import countryComponents.State;
 
 /**
@@ -16,6 +18,10 @@ import countryComponents.State;
  */
 public class CityEntryView extends View {
 	
+	/**
+	 * The State of which the created City will be a part of.
+	 */
+	private State state;
 	/**
 	 * The field in which a user will enter the name of the city to be created
 	 */
@@ -75,6 +81,26 @@ public class CityEntryView extends View {
 	public JButton getEnterButton()
 	{
 		return enterButton;
+	}
+	
+	/**
+	 * Returns a city from the selected spots on the 
+	 * @return
+	 */
+	public City getFullCity()
+	{
+		City city= new City(cityEntryJTextField.getText(), state);
+		city.setLatitude(Integer.parseInt(latitudeEntryJTextField.getText()));
+		city.setLongitude(Integer.parseInt(longitudeEntryJTextField.getText()));
+		return city;
+	}
+	
+	/**
+	 * Closes this view.
+	 */
+	public void closeWindow()
+	{
+		this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
 	}
 	
 	@Override
