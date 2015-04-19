@@ -28,7 +28,7 @@ public abstract class View extends JFrame implements ActionListener
 	 */
 	public View()
 	{
-		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		setSize(500,200);
 		setLocation(400, 200);
 		setVisible(true);
