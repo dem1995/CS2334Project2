@@ -1,5 +1,6 @@
 package MVCStuff;
 
+import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -73,8 +74,15 @@ public class SelectionView extends View {
 	{	
 		super();
 		
+		
+		//Keeps this window from always being on top.
+		this.setAlwaysOnTop(false);
+		
 		//Makes it so that when this window closes, the whole program closes
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		
+		//Makes this window fill the whole screen
+		this.setExtendedState(Frame.MAXIMIZED_BOTH);
 		
 		//Set the layout for the JFrame
 		this.setLayout(new GridLayout(3,3));

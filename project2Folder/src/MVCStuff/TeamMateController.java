@@ -102,6 +102,8 @@ public class TeamMateController {
     		
     		
     }   
+    
+
     public void setStateSelectionView(StateSelectionView stateSelectionView)
     {
     	this.stateSelectionView=stateSelectionView;

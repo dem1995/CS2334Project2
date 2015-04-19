@@ -46,6 +46,7 @@ public class StateSelectionView extends View {
 		this.countryModel=countryModel;
 		setLayout(new GridLayout(2,1)); 
 		stateJList= new JList<State>((State[]) countryModel.getStates().toArray(new State[0]));
+		stateJList.setSelectedIndex(0);
 		JScrollPane scrollableStates = new JScrollPane(stateJList);
 		this.add(scrollableStates);
 		this.add(enterButton);

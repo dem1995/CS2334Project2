@@ -22,6 +22,10 @@ public abstract class View extends JFrame implements ActionListener
 	 */
 	private CountryModel countryModel;
 
+	/**
+	 * The title of this window.
+	 */
+	private String windowTitle;
 	
 	/**
 	 * Constructor that sets up this JFrame and makes it visible.
@@ -29,6 +33,8 @@ public abstract class View extends JFrame implements ActionListener
 	public View()
 	{
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		this.setTitle(windowTitle);
+		this.setAlwaysOnTop(true);
 		setSize(500,200);
 		setLocation(400, 200);
 		setVisible(true);
