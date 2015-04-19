@@ -115,7 +115,9 @@ public class SelectionView extends View {
 		//Add JButtons to the Frame
 		this.add(addPlaceButton);
 		this.add(addPersonButton);
+		addPersonButton.setEnabled(false);
 		this.add(addTeamButton);
+		addTeamButton.setEnabled(false);
 		validate();
 	}
 	
@@ -194,6 +196,11 @@ public class SelectionView extends View {
 				if (!placesListModel.contains(cityList.get(i)))
 				placesListModel.addElement(cityList.get(i));
 		}
+		if (cityList.size()!=0)
+		{
+			addPersonButton.setEnabled(true);
+		}
+			
 
 	}
 	
