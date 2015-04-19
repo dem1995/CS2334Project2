@@ -111,6 +111,8 @@ public class TeamMateController {
     		stateSelectionView.getEnterButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
     				setCityEntryView(new CityEntryView(stateSelectionView.getSelectedState()));
+    		    	stateSelectionView.setVisible(false);
+    		    	stateSelectionView.dispose();
     			}	
     		});
     	}
@@ -127,6 +129,8 @@ public class TeamMateController {
     			{
     				City cityToAdd= cityEntryView.getFullCity();
     				countryModel.addCity(cityToAdd.getState(), cityToAdd);
+    				cityEntryView.setVisible(false);
+    				cityEntryView.dispose();
     			}
     		});
     	}

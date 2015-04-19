@@ -72,7 +72,10 @@ public class SelectionView extends View {
 	public SelectionView()
 	{	
 		super();
+		
+		//Makes it so that when this window closes, the whole program closes
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		
 		//Set the layout for the JFrame
 		this.setLayout(new GridLayout(3,3));
 		
