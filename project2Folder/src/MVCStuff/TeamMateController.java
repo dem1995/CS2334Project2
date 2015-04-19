@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import countryComponents.City;
 import otherClasses.HelperMethods;
 
@@ -129,10 +131,16 @@ public class TeamMateController {
     		cityEntryView.getEnterButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e)
     			{
+    				try
+    				{
     				City cityToAdd= cityEntryView.getFullCity();
     				countryModel.addCity(cityToAdd.getState(), cityToAdd);
     				cityEntryView.setVisible(false);
     				cityEntryView.dispose();
+    				}catch (Exception f)
+    				{
+    					JOptionPane.showMessageDialog(cityEntryView, "Something went wrong with the creation of the city. Please try again.");
+    				}
     			}
     		});
     	}
