@@ -13,6 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.ListModel;
+import javax.swing.WindowConstants;
 
 import countryComponents.City;
 import countryComponents.Person;
@@ -71,7 +72,7 @@ public class SelectionView extends View {
 	public SelectionView()
 	{	
 		super();
-		
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		//Set the layout for the JFrame
 		this.setLayout(new GridLayout(3,3));
 		
