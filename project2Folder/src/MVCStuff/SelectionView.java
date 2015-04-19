@@ -14,6 +14,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.ListModel;
+import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 import countryComponents.City;
@@ -103,9 +104,9 @@ public class SelectionView extends View {
 		graphMenu.add(mapMenuItem);
 		
 		//Add titles to the columns for the frame
-		this.add(new JLabel("Places"));
-		this.add(new JLabel("People"));
-		this.add(new JLabel("Teams"));
+		this.add(new JLabel("Places", SwingConstants.CENTER));
+		this.add(new JLabel("People", SwingConstants.CENTER));
+		this.add(new JLabel("Teams", SwingConstants.CENTER));
 		
 		//Add ScrollableLists to the Frame
 		this.add(placesScrollPane);

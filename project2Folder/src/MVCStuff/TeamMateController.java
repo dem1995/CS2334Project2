@@ -18,6 +18,8 @@ public class TeamMateController {
 	private StateSelectionView stateSelectionView;
 	
 	private CityEntryView cityEntryView;
+	
+	private PersonEntryView personEntryView;
 
 	/**
 	 * Instance method for TeamMateController
@@ -145,4 +147,6 @@ public class TeamMateController {
     		});
     	}
     }
+    
+
 }
