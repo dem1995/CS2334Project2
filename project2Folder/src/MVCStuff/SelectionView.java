@@ -55,8 +55,7 @@ public class SelectionView extends View {
 	private JMenuItem mapMenuItem= new JMenuItem("Map");
 	
 	//The contentPane's JScrollPanes and JLists
-	DefaultListModel<City> placesListModel=new DefaultListModel<City>();
-	private JList<City> placesList= new JList(placesListModel);
+	private JList<City> placesList= new JList();
 	DefaultListModel<Person> personListModel=new DefaultListModel<Person>();
 	private JList<Person> peopleList=new JList(personListModel);
 	private JList<Team> teamList= new JList();
@@ -173,8 +172,6 @@ public class SelectionView extends View {
 		{
 			updatePlaceList();
 		}
-		else
-		placesList=new JList(placesListModel);
 	}
 	
 	public JList<City> getJList()
@@ -208,11 +205,9 @@ public class SelectionView extends View {
 	private void updatePlaceList()
 	{
 		ArrayList<City> cityList=countryModel.getCities();
-		if (cityList.size()!=placesListModel.size())
+		if (cityList.size()!=placesList.getModel().getSize())
 		{
-			for (int i=0; i<cityList.size(); i++)
-				if (!placesListModel.contains(cityList.get(i)))
-				placesListModel.addElement(cityList.get(i));
+			placesList.setListData(cityList.toArray(new City[0]));
 		}
 		if (cityList.size()!=0)
 		{
