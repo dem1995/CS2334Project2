@@ -60,6 +60,11 @@ public class CountryModel extends Country {
 		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.PERSON_ADDED));
 	}
 	
+	public void addPerson(City city, Person person)
+	{
+		super.addPerson(city, person);
+	}
+	
 	/**
 	 * Method for adding a person without triggering an ActionEvent.
 	 * @param aPerson The person to be added

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import countryComponents.City;
+import countryComponents.Person;
 import otherClasses.HelperMethods;
 
 public class TeamMateController {
@@ -153,7 +154,21 @@ public class TeamMateController {
     	this.personEntryView=personEntryView;
     	personEntryView.setModel(countryModel);
     	if (personEntryView!=null)
-    	{}
+    	{
+    		personEntryView.getEnterButton().addActionListener(new ActionListener(){
+    			public void actionPerformed(ActionEvent e)
+    			{
+    				try
+    				{
+    					Person personToAdd=personEntryView.getFullPerson();
+    					countryModel.addPerson(personEntryView.getCity(), personEntryView.getFullPerson());
+    				}catch (Exception f)
+    				{
+    					JOptionPane.showMessageDialog(personEntryView, f.getMessage());
+    				}
+    			}
+    		});
+    	}
     		//TODO
     }
 }

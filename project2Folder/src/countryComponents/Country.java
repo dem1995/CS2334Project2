@@ -154,6 +154,7 @@ public class Country {
 	
 	//Adder methods
 	
+	
 	/**
 	 * Method for adding a person to this country
 	 * @param aPerson The person to be added
@@ -166,6 +167,13 @@ public class Country {
 		allThePeople.add(aPerson);
 		//allTheCities.add(foundCity);
 		treeMapNeedsBuilding=true;
+	}
+	
+	protected void addPerson(City city, Person aPerson)
+	{
+		aPerson.setStateName(city.getState().getName());
+		aPerson.setCityName(city.getName());
+		addPerson(aPerson);
 	}
 	
 	/**

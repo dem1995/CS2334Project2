@@ -236,7 +236,7 @@ public class Person implements Comparable<Person> {
 	 * Setter method for <code>stateName</code>
 	 * @param stateName	The name of the state
 	 */
-	public void setStateName(String stateName)
+	void setStateName(String stateName)
 	{
 		this.stateName=stateName;
 	}
