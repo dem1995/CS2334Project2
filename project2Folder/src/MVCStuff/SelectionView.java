@@ -191,6 +191,10 @@ public class SelectionView extends View {
 		{
 			updatePersonList();
 		}
+		if (countryModel!=null&&(e.getActionCommand()==Constants.TEAM_ADDED||e.getActionCommand()==Constants.SEASON_ADDED))
+		{
+			updateSeasonList();
+		}
 
 		//if ()
 		System.out.println("Model fired an action");
@@ -212,6 +216,7 @@ public class SelectionView extends View {
 		{
 			addPersonButton.setEnabled(true);
 		}
+		
 			
 	}
 

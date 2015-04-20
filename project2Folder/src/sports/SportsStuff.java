@@ -15,18 +15,18 @@ public class SportsStuff{
 	/**
 	 * A HashMap where the keys are String team IDs and the values are Teams
 	 */
-	static TreeMap<String, Team> teams;
+	TreeMap<String, Team> teams;
 	
 	
 	/**
 	 *All of the teamSeasons (for rendering to JList)
 	 */
-	static ArrayList<TeamSeason> teamSeasons;
+	ArrayList<TeamSeason> teamSeasons;
 	
 	/**
 	 * All of the SportsYears in this object
 	 */
-	static TreeMap<Integer, SportsYear> sportsYears;
+	TreeMap<Integer, SportsYear> sportsYears;
 	
 	
 	public SportsStuff(){
@@ -61,9 +61,15 @@ public class SportsStuff{
 		}
 	}
 	
-	public void prepareFromCSV(String fileName) throws Exception
+	public void prepareFromCSV(String fileName)
 	{
-		ArrayList<String> strings=HelperMethods.convertCSVToStringList("teams2.csv");
+		ArrayList<String> strings= new ArrayList<String>();
+		try{
+		strings=HelperMethods.convertCSVToStringList("teams2.csv");
+		}catch (Exception e)
+		{
+			System.out.println("Could not grab from "+fileName);
+		}
 		String ID="";
 		SportsYear sportsYear;
 		TeamSeason teamSeason;
@@ -93,7 +99,7 @@ public class SportsStuff{
 			
 			sportsYear=findOrAddSportsYearFromInt(year);
 			teamSeason=new TeamSeason(name, ID, sportsYear);
-			
+			teamSeasons.add(teamSeason);
 			}
 			catch (Exception e)
 			{
