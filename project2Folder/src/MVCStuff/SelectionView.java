@@ -56,11 +56,10 @@ public class SelectionView extends View {
 	
 	//The contentPane's JScrollPanes and JLists
 	private JList<City> placesList= new JList();
-	DefaultListModel<Person> personListModel=new DefaultListModel<Person>();
-	private JList<Person> peopleList=new JList(personListModel);
+	private JList<Person> peopleList=new JList();
 	private JList<Team> teamList= new JList();
 	private JScrollPane placesScrollPane= new JScrollPane(placesList);
-	private JScrollPane peopleScrollPane= new JScrollPane();
+	private JScrollPane peopleScrollPane= new JScrollPane(peopleList);
 	private JScrollPane teamsScrollPane=  new JScrollPane();
 	
 	//The contentPane's buttons
@@ -219,9 +218,9 @@ public class SelectionView extends View {
 	private void updatePersonList()
 	{
 		ArrayList<Person> personList=countryModel.getPeople();
-		if (personListModel.size()!=personList.size())
+		if (personList.size()!=peopleList.getModel().getSize())
 		{
-			//TODO
+			peopleList.setListData(personList.toArray(new Person[0]));
 		}
 	}
 	

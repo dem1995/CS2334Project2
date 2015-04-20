@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.JFrame;
 
@@ -153,7 +154,7 @@ public class TeamMate {
 			}
 		}
 
-		country.sortStates();
+		Collections.sort(country.getStates());
 		//System.out.println(country);
 		//Outputs the errors to the screen as a JMessageDialog if errors has had data added to it since the beginning
 		if (!errors.equals(""))
