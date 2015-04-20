@@ -162,6 +162,8 @@ public class TeamMateController {
     				{
     					Person personToAdd=personEntryView.getFullPerson();
     					countryModel.addPerson(personEntryView.getCity(), personEntryView.getFullPerson());
+    					personEntryView.setVisible(false);
+    					personEntryView.dispose();
     				}catch (Exception f)
     				{
     					JOptionPane.showMessageDialog(personEntryView, f.getMessage());
