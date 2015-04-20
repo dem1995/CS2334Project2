@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import countryComponents.City;
 import countryComponents.Person;
 import otherClasses.HelperMethods;
+import sports.SportsStuff;
 
 public class TeamMateController {
 	
@@ -53,6 +54,14 @@ public class TeamMateController {
     				}catch (Exception f)
     				{
     					System.out.println("An error occurred");
+    				}
+    				try{
+    					SportsStuff tempSportsStuff=new SportsStuff();
+    					tempSportsStuff.prepareFromCSV("teams2.csv");
+    					countryModel.setSportsStuff(tempSportsStuff);
+    				}catch(Exception f)
+    				{
+    					System.out.println("Team loading failed");
     				}
     			}
     		});

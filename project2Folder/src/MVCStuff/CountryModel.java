@@ -7,6 +7,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import sports.SportsStuff;
+import sports.Team;
+import sports.TeamSeason;
 import countryComponents.City;
 import countryComponents.Country;
 import countryComponents.DateFormatter;
@@ -110,6 +113,7 @@ public class CountryModel extends Country {
 		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.CITY_ADDED));
 	}
 	
+	
 	/**
 	 * Method for adding a State
 	 * @param state The State to be added
@@ -133,6 +137,27 @@ public class CountryModel extends Country {
 		return foundState;
 	}
 	
+	//Team addition methods
+	
+	public void addTeam(String ID, Team team)
+	{
+		super.addTeam(ID, team);
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.TEAM_ADDED));
+	}
+	
+	public void addTeamSeason(String ID, TeamSeason teamSeason, int year)
+	{
+		super.addTeamSeason(ID, teamSeason, year);
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.SEASON_ADDED));
+	}
+	
+	public void setSportsStuff(SportsStuff sportsStuff)
+	{
+		super.setSportsStuff(sportsStuff);
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.TEAM_ADDED));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.SEASON_ADDED));
+		
+	}
 	
 	/**
 	 * Removes a view from this model

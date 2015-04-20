@@ -122,5 +122,9 @@ public class SportsStuff{
 			return sportsYears.get(new Integer(i));
 	}
 	
+	public ArrayList<TeamSeason> getTeamSeasons()
+	{
+		return teamSeasons;
+	}
 	
 }

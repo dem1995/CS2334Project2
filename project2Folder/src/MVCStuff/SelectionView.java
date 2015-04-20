@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 import sports.Team;
+import sports.TeamSeason;
 import countryComponents.City;
 import countryComponents.Person;
 import countryComponents.State;
@@ -57,15 +58,15 @@ public class SelectionView extends View {
 	//The contentPane's JScrollPanes and JLists
 	private JList<City> placesList= new JList();
 	private JList<Person> peopleList=new JList();
-	private JList<Team> teamList= new JList();
+	private JList<TeamSeason> seasonList= new JList();
 	private JScrollPane placesScrollPane= new JScrollPane(placesList);
 	private JScrollPane peopleScrollPane= new JScrollPane(peopleList);
-	private JScrollPane teamsScrollPane=  new JScrollPane();
+	private JScrollPane teamsScrollPane=  new JScrollPane(seasonList);
 	
 	//The contentPane's buttons
 	private JButton addPlaceButton= new JButton("Add");
 	private JButton addPersonButton= new JButton("Add");
-	private JButton addTeamButton= new JButton ("Add");
+	private JButton addSeasonButton= new JButton ("Add");
 	
 	/**
 	 * The constructor method for SelectionView
@@ -105,7 +106,7 @@ public class SelectionView extends View {
 		//Add titles to the columns for the frame
 		this.add(new JLabel("Places", SwingConstants.CENTER));
 		this.add(new JLabel("People", SwingConstants.CENTER));
-		this.add(new JLabel("Teams", SwingConstants.CENTER));
+		this.add(new JLabel("Seasons", SwingConstants.CENTER));
 		
 		//Add ScrollableLists to the Frame
 		this.add(placesScrollPane);
@@ -116,11 +117,10 @@ public class SelectionView extends View {
 		this.add(addPlaceButton);
 		this.add(addPersonButton);
 		addPersonButton.setEnabled(false);
-		this.add(addTeamButton);
-		addTeamButton.setEnabled(false);
+		this.add(addSeasonButton);
+		addSeasonButton.setEnabled(false);
 		
-		
-		
+	
 		validate();
 	}
 	
@@ -159,7 +159,7 @@ public class SelectionView extends View {
 	}
 	
 	public JButton getAddTeamButton(){
-		return addTeamButton;
+		return addSeasonButton;
 	}
 	
 
@@ -224,6 +224,10 @@ public class SelectionView extends View {
 		}
 	}
 	
+	private void updateSeasonList()
+	{
+		seasonList.setListData(countryModel.getSportsStuff().getTeamSeasons().toArray(new TeamSeason[0]));
+	}
 	
 	
 }
