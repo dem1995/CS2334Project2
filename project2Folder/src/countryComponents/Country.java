@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.TreeMap;
 
+import sports.SportsStuff;
+import sports.Team;
+import sports.TeamSeason;
+
 /**
  * Project #4
  * CS 2334, Section 010
@@ -27,6 +31,7 @@ public class Country {
 	
 	private ArrayList<Person> allThePeople= new ArrayList<Person>();
 	
+	private SportsStuff sportsStuff= new SportsStuff();
 	
 	/**
 	 * Lets you know if this Country's treeMap of people (basically a quick way to search for people if you don't know their city or state) needs to be updated due to changes to this Country.
@@ -83,6 +88,12 @@ public class Country {
 	public ArrayList<Person> getPeople()
 	{
 		return allThePeople;
+	}
+	
+
+	public SportsStuff getSportsStuff()
+	{
+		return sportsStuff;
 	}
 	
 
@@ -200,6 +211,16 @@ public class Country {
 		return newState;
 	}
 	
+	protected void addTeam(String ID, Team team)
+	{
+		sportsStuff.addTeam(ID, team);
+	}
+	
+	protected void addTeamSeason(String ID, TeamSeason teamSeason, int year)
+	{
+		sportsStuff.addTeamSeason(ID, teamSeason, year);
+	}
+	
 	/**
 	 * Finds and returns a City matching the name. Calls this.addCity(state, city) and returns a new City(name) if no matches are found.
 	 * @param state the state the city will be in
@@ -218,6 +239,11 @@ public class Country {
 		City newCity = new City(name, state);
 		this.addCity(state, newCity);
 		return newCity;			
+	}
+	
+	protected void setSportsStuff(SportsStuff sportsStuff)
+	{
+		this.sportsStuff=sportsStuff;
 	}
 	
 	
@@ -271,6 +297,7 @@ public class Country {
 		}
 		return errors;
 	}
+	
 
 	
 
