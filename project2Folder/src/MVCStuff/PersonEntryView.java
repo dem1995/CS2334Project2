@@ -30,8 +30,6 @@ public class PersonEntryView extends View {
 	
 	JTextField birthDate = new JTextField();
 	
-	JTextField birthPlace= new JTextField();
-	
 	JTextField deathDate = new JTextField();
 	
 	/**
@@ -55,11 +53,9 @@ public class PersonEntryView extends View {
 		constraints.gridx=0;
 		this.add(new JLabel("Person Name", SwingConstants.CENTER), constraints);
 		constraints.gridx=1;
-		this.add(new JLabel("Birth Date", SwingConstants.CENTER), constraints);
+		this.add(new JLabel("Birth Date, format: dd/mm/yyyy", SwingConstants.CENTER), constraints);
 		constraints.gridx=2;
-		this.add(new JLabel("Birth Place", SwingConstants.CENTER), constraints);
-		constraints.gridx=3;
-		this.add(new JLabel("Death Date", SwingConstants.CENTER), constraints);
+		this.add(new JLabel("Death Date, optional, format: dd/mm/yyyy", SwingConstants.CENTER), constraints);
 		
 		//Adds the text fields
 		constraints.gridy=1;
@@ -68,8 +64,6 @@ public class PersonEntryView extends View {
 		constraints.gridx=1;
 		this.add(birthDate, constraints);
 		constraints.gridx=2;
-		this.add(birthPlace, constraints);
-		constraints.gridx=3;
 		this.add(deathDate, constraints);
 		
 		//Adds the enter button
@@ -88,13 +82,12 @@ public class PersonEntryView extends View {
 	{
 		String nameText=personName.getText();
 		String birthDateText=birthDate.getText();
-		String birthPlaceText=birthPlace.getText();
 		String deathDateText=deathDate.getText();
 		Date birthDate= new Date();
 		Date deathDate= new Date();
 		
 		try{
-			DateFormatter.formatter.parse(birthDateText);
+			birthDate=DateFormatter.formatter.parse(birthDateText);
 		}catch (Exception e)
 		{
 			Exception f= new Exception("There was a problem with the format of the inputted birth date. Please try again.");
@@ -103,18 +96,18 @@ public class PersonEntryView extends View {
 		
 		if (deathDateText=="")
 		{
-			return new Person(nameText, birthPlaceText, birthDate);
+			return new Person(nameText, city.getName(), birthDate);
 		}
 		else
 		{
 			try{
-				DateFormatter.formatter.parse(birthDateText);
+				deathDate= DateFormatter.formatter.parse(birthDateText);
 			}catch (Exception e)
 			{
 				Exception f= new Exception("There was a problem with the format of the inputted death date. PLease try again");
 				throw f;
 			}
-			return new Person(nameText, birthPlaceText, birthDate, deathDate);
+			return new Person(nameText, city.getName(), birthDate, deathDate);
 		}
 		
 		
