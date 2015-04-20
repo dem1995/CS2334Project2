@@ -16,10 +16,6 @@ public class State implements Comparable<State>{
 	
 
 	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
-	/**
-	 * <code>true</code> if <code>cities</code> has been sorted, <code>false</code> otherwise
-	 */
-	public boolean isSorted=false;
 	
 	/**
 	 * An <code>ArrayList</code> of <code>City</code> objects
@@ -104,7 +100,7 @@ public class State implements Comparable<State>{
 	{
 		this.cities.add(city);
 		city.setState(this);
-		isSorted=false;
+		Collections.sort(cities, City.compareStateThenCity);
 	}
 
 	/**
@@ -119,14 +115,6 @@ public class State implements Comparable<State>{
 		foundCity.addPerson(person);
 	}
 	
-	/**
-	 * Method for sorting the list of <Code>City</code> objects in this <code>State</code>. Sets <code>isSorted</code> to <code>false</code>.
-	 */
-	void sort()
-	{
-		Collections.sort(cities);
-		isSorted=true;
-	}
 	
 	@Override
 	public int compareTo(State s) {

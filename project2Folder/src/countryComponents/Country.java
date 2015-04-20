@@ -187,7 +187,7 @@ public class Country {
 		city.setState(state);
 		state.addCity(city);
 		allTheCities.add(city);
-		Collections.sort(allTheCities);
+		Collections.sort(allTheCities, City.compareStateThenCity);
 	}
 	
 	/**
