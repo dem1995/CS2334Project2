@@ -85,6 +85,7 @@ public class PersonEntryView extends View {
 		String deathDateText=deathDate.getText();
 		Date birthDate= new Date();
 		Date deathDate= new Date();
+		Person aPerson;
 		
 		try{
 			birthDate=DateFormatter.formatter.parse(birthDateText);
@@ -94,20 +95,20 @@ public class PersonEntryView extends View {
 			throw f;
 		}
 		
-		if (deathDateText=="")
+		if (deathDateText.equals(""))
 		{
-			return new Person(nameText, city.getName(), birthDate);
+			return new Person(nameText, birthDate);
 		}
 		else
 		{
 			try{
-				deathDate= DateFormatter.formatter.parse(birthDateText);
+				deathDate= DateFormatter.formatter.parse(deathDateText);
 			}catch (Exception e)
 			{
 				Exception f= new Exception("There was a problem with the format of the inputted death date. PLease try again");
 				throw f;
 			}
-			return new Person(nameText, city.getName(), birthDate, deathDate);
+			return new Person(nameText, birthDate, deathDate);
 		}
 		
 		

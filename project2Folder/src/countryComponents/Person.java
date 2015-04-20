@@ -120,6 +120,12 @@ public class Person implements Comparable<Person> {
 		}			
 		this.birthDate=birthDate;
 	}
+	
+	public Person(String fullName, Date birthDate, Date deathDate)
+	{
+		this(fullName, birthDate);
+		this.setDeathDate(deathDate);
+	}
 
 
 	/**
