@@ -1,13 +1,11 @@
 package MVCStuff;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 import countryComponents.City;
 import countryComponents.Country;
@@ -16,6 +14,9 @@ import countryComponents.Person;
 import countryComponents.State;
 import countryComponents.Team;
 
+/**
+ *The model for a Country object. It extends Country to fire events whenever things are added to it.
+ */
 public class CountryModel extends Country {
 	
 	/**

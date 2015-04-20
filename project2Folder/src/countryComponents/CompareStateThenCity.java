@@ -2,6 +2,9 @@ package countryComponents;
 
 import java.util.Comparator;
 
+/**
+ *Compares two Cities lexicographically first by the states they're in, then by their names
+ */
 public class CompareStateThenCity implements Comparator<City> 
 {
 

@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 public class EditView extends View {
 	
 	/**
-	 * Constructor for PieChartView
+	 * Constructor for EditView
 	 */
 	public EditView()
 	{
