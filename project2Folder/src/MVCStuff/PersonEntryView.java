@@ -1,5 +1,7 @@
 package MVCStuff;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
@@ -34,22 +36,45 @@ public class PersonEntryView extends View {
 	{
 		//TODO
 		super();
-		this.setLayout(new GridLayout(2,4));
+		this.setLayout(new GridBagLayout());
+		GridBagConstraints constraints=new GridBagConstraints();
+		constraints.fill=GridBagConstraints.BOTH;
+		constraints.weightx=1;
+		constraints.weighty=1;
 		
 		//Adds titles to the columns in the first row
-		this.add(new JLabel("Person Name", SwingConstants.CENTER));
-		this.add(new JLabel("Birth Date", SwingConstants.CENTER));
-		this.add(new JLabel("Birth Place", SwingConstants.CENTER));
-		this.add(new JLabel("Death Date", SwingConstants.CENTER));
+		constraints.gridy=0;
+		constraints.gridx=0;
+		this.add(new JLabel("Person Name", SwingConstants.CENTER), constraints);
+		constraints.gridx=1;
+		this.add(new JLabel("Birth Date", SwingConstants.CENTER), constraints);
+		constraints.gridx=2;
+		this.add(new JLabel("Birth Place", SwingConstants.CENTER), constraints);
+		constraints.gridx=3;
+		this.add(new JLabel("Death Date", SwingConstants.CENTER), constraints);
 		
 		//Adds the text fields
-		this.add(personName);
-		this.add(birthDate);
-		this.add(birthPlace);
-		this.add(deathDate);
+		constraints.gridy=1;
+		constraints.gridx=0;
+		this.add(personName, constraints);
+		constraints.gridx=1;
+		this.add(birthDate, constraints);
+		constraints.gridx=2;
+		this.add(birthPlace, constraints);
+		constraints.gridx=3;
+		this.add(deathDate, constraints);
 		
+		//Adds the enter button
+		constraints.gridy=2;
+		constraints.gridx=0;
+		constraints.gridwidth=GridBagConstraints.REMAINDER;
+		this.add(enterButton, constraints);
 	}
 	
+	public JButton getEnterButton()
+	{
+		return enterButton;
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//TODO	

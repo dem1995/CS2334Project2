@@ -153,11 +153,11 @@ public class SelectionView extends View {
 	}
 
 	public JButton getAddPersonButton(){
-		return addPlaceButton;
+		return addPersonButton;
 	}
 	
 	public JButton getAddTeamButton(){
-		return addPlaceButton;
+		return addTeamButton;
 	}
 
 	public void setModel(CountryModel countryModel)
@@ -171,6 +171,12 @@ public class SelectionView extends View {
 		else
 		placesList=new JList(placesListModel);
 	}
+	
+	public JList<City> getJList()
+	{
+		return placesList;
+	}
+	
 	public void actionPerformed(ActionEvent e)
 	{
 		

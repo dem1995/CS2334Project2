@@ -86,13 +86,13 @@ public class TeamMateController {
     		
     		selectionView.getAddPlaceButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    					setStateSelectionView(new StateSelectionView());
+    				setStateSelectionView(new StateSelectionView());
     			}
     		});
     		
     		selectionView.getAddPersonButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    					//TODO Add Person
+    				setPersonEntryView(new PersonEntryView(selectionView.getJList().getSelectedValue()));
     			}
     		});
     		
@@ -148,5 +148,12 @@ public class TeamMateController {
     	}
     }
     
-
+    public void setPersonEntryView(PersonEntryView personEntryView)
+    {
+    	this.personEntryView=personEntryView;
+    	personEntryView.setModel(countryModel);
+    	if (personEntryView!=null)
+    	{}
+    		//TODO
+    }
 }

@@ -1,5 +1,6 @@
 package MVCStuff;
 
+import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -8,6 +9,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 import countryComponents.City;
 import countryComponents.State;
@@ -51,12 +53,16 @@ public class CityEntryView extends View {
 		this.state=state;
 		setLayout(new GridBagLayout());
 		GridBagConstraints constraints=new GridBagConstraints();
-		constraints.fill=GridBagConstraints.HORIZONTAL;
+		constraints.fill=GridBagConstraints.BOTH;
 		constraints.gridy=0;
 		constraints.gridx=0;
-		add(new JLabel("Enter the city name, latitude, and longitude below, then press the \"enter\" button"), constraints);
+		constraints.weightx=1;
+		constraints.weighty=1;
+		constraints.gridwidth=GridBagConstraints.REMAINDER;
+		add(new JLabel("Enter the city name, latitude, and longitude below, then press the \"enter\" button", SwingConstants.CENTER), constraints);
 		constraints.gridy=1;
 		constraints.gridx=0;
+		constraints.gridwidth=1;
 		add(new JLabel("City Name"), constraints);
 		constraints.gridx=1;
 		add(new JLabel("Latitude"), constraints);
@@ -70,6 +76,8 @@ public class CityEntryView extends View {
 		constraints.gridx=2;
 		add(longitudeEntryJTextField, constraints);
 		constraints.gridy=3;
+		constraints.gridx=0;
+		constraints.gridwidth=GridBagConstraints.REMAINDER;
 		add(enterButton, constraints);
 	}
 	
