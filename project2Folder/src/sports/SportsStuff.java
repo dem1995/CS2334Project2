@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TreeMap;
 
+import MVCStuff.CountryModel;
 import otherClasses.HelperMethods;
 import countryComponents.DateFormatter;
 import countryComponents.Person;
 import countryComponents.PersonList;
 
 public class SportsStuff{
+	
+	
 	
 	/**
 	 * A HashMap where the keys are String team IDs and the values are Teams
@@ -54,14 +57,14 @@ public class SportsStuff{
 	{
 		SportsStuff sportsStuff= new SportsStuff();
 		try{
-		sportsStuff.prepareFromCSV("hello");
+		sportsStuff.prepareFromCSVUsingCountryModel("hello", new CountryModel());
 		}catch (Exception e)
 		{
 			System.out.println ("Help");
 		}
 	}
 	
-	public void prepareFromCSV(String fileName)
+	public void prepareFromCSVUsingCountryModel(String fileName, CountryModel countryModel)
 	{
 		ArrayList<String> strings= new ArrayList<String>();
 		try{
@@ -93,8 +96,17 @@ public class SportsStuff{
 			personList	= new PersonList();
 			for(int j = 4; j<seasonParts.length;j++)
 			{
-		//		Person person	= Person.convertStringToPerson(seasonParts[j], DateFormatter.formatter);
-		//		personList.addPerson(person);
+				Person tempPerson=countryModel.findPerson(seasonParts[j].trim());
+				if (tempPerson!=null)
+					personList.addPerson(tempPerson);
+				else
+				{
+					tempPerson=new Person(seasonParts[j].trim());
+					countryModel.addPerson(tempPerson);
+					personList.addPerson(tempPerson);
+					System.out.println(seasonParts[j].trim()+" wasn't in country. They've been added with empty data.");
+				}
+				
 			}
 			
 			sportsYear=findOrAddSportsYearFromInt(year);

@@ -67,6 +67,7 @@ public class CountryModel extends Country {
 	public void addPerson(City city, Person person)
 	{
 		super.addPerson(city, person);
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.PERSON_ADDED));
 	}
 	
 	/**
@@ -98,6 +99,7 @@ public class CountryModel extends Country {
 				errors+=(e.getMessage()+"\n");
 			}
 		}
+		treeMapNeedsBuilding=true;
 		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.PERSON_ADDED));
 		return errors;
 	}

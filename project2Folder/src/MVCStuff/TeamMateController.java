@@ -57,7 +57,7 @@ public class TeamMateController {
     				}
     				try{
     					SportsStuff tempSportsStuff=new SportsStuff();
-    					tempSportsStuff.prepareFromCSV("teams2.csv");
+    					tempSportsStuff.prepareFromCSVUsingCountryModel("teams2.csv", countryModel);
     					countryModel.setSportsStuff(tempSportsStuff);
     				}catch(Exception f)
     				{
@@ -225,4 +225,6 @@ public class TeamMateController {
     	}
     		//TODO
     }
+
+    
 }

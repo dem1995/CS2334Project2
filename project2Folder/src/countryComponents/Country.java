@@ -36,7 +36,7 @@ public class Country {
 	/**
 	 * Lets you know if this Country's treeMap of people (basically a quick way to search for people if you don't know their city or state) needs to be updated due to changes to this Country.
 	 */
-	private boolean treeMapNeedsBuilding=true;
+	protected boolean treeMapNeedsBuilding=true;
 	
 	/**
 	 * A treemap of players. Used to assign birthdates to players
@@ -137,9 +137,17 @@ public class Country {
 	{
 		if(treeMapNeedsBuilding)
 		{
-			for (Person person: this.toPersonList().getPeople())
-				treeMap.put(person.getFullName(), person);
+			for (int i=0; i<allThePeople.size(); i++)
+			{
+				Person tempPerson=allThePeople.get(i);
+				treeMap.put(tempPerson.getFullName(), tempPerson);
+			}
 		}
+//		if(treeMapNeedsBuilding)
+//		{
+//			for (Person person: this.toPersonList().getPeople())
+//				treeMap.put(person.getFullName(), person);
+//		}
 		treeMapNeedsBuilding=false;
 		return (treeMap.get(personName));
 	}
@@ -153,6 +161,10 @@ public class Country {
 	 */
 	protected void addPerson(Person aPerson)
 	{
+		if(aPerson.getCityName()=="")
+			aPerson.setCityName("Unknown");
+		if(aPerson.getStateName()=="")
+			aPerson.setStateName("Unknown");
 		State foundState=findStateOrAdd(aPerson.getStateName());
 		City foundCity= findCityOrAdd(foundState, aPerson.getCityName());
 		foundState.addPerson(aPerson);
@@ -167,6 +179,8 @@ public class Country {
 		aPerson.setStateName(city.getState().getName());
 		aPerson.setCityName(city.getName());
 		addPerson(aPerson);
+		treeMapNeedsBuilding=true;
+		Collections.sort(allThePeople);
 	}
 	
 	/**
@@ -273,30 +287,6 @@ public class Country {
 		return toPersonList().toString();
 	}
 	
-	//Converter methods
-	/**
-	 * Builds a country from personStrings
-	 * @param personStrings The strings from which the Person objects will be constructed
-	 * @param country The Country to which the PersonList created from the personStrings will be added
-	 * @return The error messages encountered during this
-	 */
-	public static String addStringListToCountry(ArrayList<String> personStrings, Country country)
-	{
-		String errors="";
-		for (String personString: personStrings)
-		{
-			try
-			{
-				Person aPerson=Person.convertStringToPerson(personString, DateFormatter.formatter);
-				country.addPerson(aPerson);
-			}
-			catch (Exception e)
-			{
-				errors+=(e.getMessage()+"\n");
-			}
-		}
-		return errors;
-	}
 	
 
 	
