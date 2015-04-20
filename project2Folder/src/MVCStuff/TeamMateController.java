@@ -20,6 +20,8 @@ public class TeamMateController {
 	
 	private CityEntryView cityEntryView;
 	
+	private CitySelectionView citySelectionView;
+	
 	private PersonEntryView personEntryView;
 
 	/**
@@ -87,13 +89,40 @@ public class TeamMateController {
     		
     		selectionView.getAddPlaceButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    				setStateSelectionView(new StateSelectionView());
+    				ActionListener stateSelectionToCityEntry=new ActionListener(){
+    	    			public void actionPerformed(ActionEvent e){
+    	    				setCityEntryView(new CityEntryView(stateSelectionView.getSelectedState()));
+    	    		    	stateSelectionView.setVisible(false);
+    	    		    	stateSelectionView.dispose();
+    	    			}	
+    	    		};
+    				setStateSelectionView(new StateSelectionView(), stateSelectionToCityEntry);
     			}
     		});
     		
     		selectionView.getAddPersonButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    				setPersonEntryView(new PersonEntryView(selectionView.getJList().getSelectedValue()));
+    				
+    				//Preparing actionlisteners
+    				ActionListener citySelectionToPersonEntry=new ActionListener(){
+    					public void actionPerformed(ActionEvent e)
+    					{
+    						setPersonEntryView(new PersonEntryView(citySelectionView.getSelectedCity()));
+    						citySelectionView.setVisible(false);
+    						citySelectionView.dispose();
+    					}
+    				};
+    				ActionListener stateSelectionToCitySelection= new ActionListener(){
+    					public void actionPerformed(ActionEvent e)
+    					{
+    						setCitySelectionView(new CitySelectionView(stateSelectionView.getSelectedState()), citySelectionToPersonEntry);
+    						stateSelectionView.setVisible(false);
+    						stateSelectionView.dispose();
+    					}
+    				};
+    				
+    				//Setting a view up with the aforementioned ActionListeners
+    				setStateSelectionView(new StateSelectionView(), stateSelectionToCitySelection);
     			}
     		});
     		
@@ -109,22 +138,20 @@ public class TeamMateController {
     }   
     
 
-    public void setStateSelectionView(StateSelectionView stateSelectionView)
+    public void setStateSelectionView(StateSelectionView stateSelectionView, ActionListener actionListener)
     {
     	this.stateSelectionView=stateSelectionView;
     	stateSelectionView.setModel(countryModel);    
     	if (countryModel!=null)
     	{
-    		stateSelectionView.getEnterButton().addActionListener(new ActionListener(){
-    			public void actionPerformed(ActionEvent e){
-    				setCityEntryView(new CityEntryView(stateSelectionView.getSelectedState()));
-    		    	stateSelectionView.setVisible(false);
-    		    	stateSelectionView.dispose();
-    			}	
-    		});
+    		stateSelectionView.getEnterButton().addActionListener(actionListener);
     	}
     }
     
+    /**
+     * View for entering new cities
+     * @param cityEntryView
+     */
     public void setCityEntryView(CityEntryView cityEntryView)
     {
     	this.cityEntryView=cityEntryView;
@@ -147,6 +174,21 @@ public class TeamMateController {
     			}
     		});
     	}
+    }
+    
+    /**
+     * View for selecting cities
+     * @param citySelectionView
+     */
+    public void setCitySelectionView(CitySelectionView citySelectionView, ActionListener f)
+    {
+    	this.citySelectionView=citySelectionView;
+    	citySelectionView.setModel(countryModel);
+    	if(countryModel!=null)
+    	{
+    		citySelectionView.getEnterButton().addActionListener(f);
+    	}
+    	
     }
     
     public void setPersonEntryView(PersonEntryView personEntryView)
