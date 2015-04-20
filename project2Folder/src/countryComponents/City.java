@@ -12,6 +12,17 @@ import java.awt.geom.Point2D;
  * @version 2.0
  */
 public class City implements Comparable<City> {
+	//Comparators
+	
+	/**
+	 * Comparator that compares city names, then state names.
+	 */
+	public static CompareCityThenState compareCityThenState= new CompareCityThenState(); 
+	
+	/**
+	 * Comparator that compares state names, then city names.
+	 */
+	public static CompareStateThenCity compareStateThenCity= new CompareStateThenCity();
 	
 	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
@@ -167,6 +178,7 @@ public class City implements Comparable<City> {
 		return this.getName().compareTo(city.getName());
 	}
 	
+
 	public String toString()
 	{
 		if (this.getState()!=null)

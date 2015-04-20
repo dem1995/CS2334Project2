@@ -153,7 +153,7 @@ public class TeamMateController {
     {
     	this.personEntryView=personEntryView;
     	personEntryView.setModel(countryModel);
-    	if (personEntryView!=null)
+    	if (countryModel!=null)
     	{
     		personEntryView.getEnterButton().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e)

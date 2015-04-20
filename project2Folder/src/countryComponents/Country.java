@@ -167,6 +167,7 @@ public class Country {
 		allThePeople.add(aPerson);
 		//allTheCities.add(foundCity);
 		treeMapNeedsBuilding=true;
+		Collections.sort(allThePeople);
 	}
 	
 	protected void addPerson(City city, Person aPerson)
@@ -186,6 +187,7 @@ public class Country {
 		city.setState(state);
 		state.addCity(city);
 		allTheCities.add(city);
+		Collections.sort(allTheCities);
 	}
 	
 	/**
@@ -195,7 +197,7 @@ public class Country {
 	protected void addState(State state)
 	{
 		states.add(state);
-		this.sortStates();
+		Collections.sort(states);
 	}
 	
 	/**
@@ -294,13 +296,6 @@ public class Country {
 	
 	//Other methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	
-	/**
-	 * Sorts the <code>State</code>s in this <code>Country</code>
-	 */
-	public void sortStates()
-	{
-		Collections.sort(states);
-	}
 	
 
 	public String toString()

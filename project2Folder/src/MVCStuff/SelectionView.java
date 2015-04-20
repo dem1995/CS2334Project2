@@ -57,7 +57,8 @@ public class SelectionView extends View {
 	//The contentPane's JScrollPanes and JLists
 	DefaultListModel<City> placesListModel=new DefaultListModel<City>();
 	private JList<City> placesList= new JList(placesListModel);
-	private JList<Person> peopleList=new JList();
+	DefaultListModel<Person> personListModel=new DefaultListModel<Person>();
+	private JList<Person> peopleList=new JList(personListModel);
 	private JList<Team> teamList= new JList();
 	private JScrollPane placesScrollPane= new JScrollPane(placesList);
 	private JScrollPane peopleScrollPane= new JScrollPane();
@@ -119,6 +120,9 @@ public class SelectionView extends View {
 		addPersonButton.setEnabled(false);
 		this.add(addTeamButton);
 		addTeamButton.setEnabled(false);
+		
+		
+		
 		validate();
 	}
 	
@@ -159,6 +163,7 @@ public class SelectionView extends View {
 	public JButton getAddTeamButton(){
 		return addTeamButton;
 	}
+	
 
 	public void setModel(CountryModel countryModel)
 	{
@@ -186,6 +191,12 @@ public class SelectionView extends View {
 			updatePlaceList();
 			System.out.println("updatedPlaceList");
 		}
+		if (countryModel!=null&& e.getActionCommand()==Constants.PERSON_ADDED)
+		{
+			updatePersonList();
+		}
+
+		//if ()
 		System.out.println("Model fired an action");
 		System.out.println(e.paramString());
 		
@@ -197,7 +208,7 @@ public class SelectionView extends View {
 	private void updatePlaceList()
 	{
 		ArrayList<City> cityList=countryModel.getCities();
-		if (cityList.size()!=placesListModel.getSize())
+		if (cityList.size()!=placesListModel.size())
 		{
 			for (int i=0; i<cityList.size(); i++)
 				if (!placesListModel.contains(cityList.get(i)))
@@ -208,7 +219,17 @@ public class SelectionView extends View {
 			addPersonButton.setEnabled(true);
 		}
 			
-
 	}
+
+	private void updatePersonList()
+	{
+		ArrayList<Person> personList=countryModel.getPeople();
+		if (personListModel.size()!=personList.size())
+		{
+			//TODO
+		}
+	}
+	
+	
 	
 }

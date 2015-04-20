@@ -14,6 +14,7 @@ import java.util.Collections;
  */
 public class State implements Comparable<State>{
 	
+
 	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 	/**
 	 * <code>true</code> if <code>cities</code> has been sorted, <code>false</code> otherwise
