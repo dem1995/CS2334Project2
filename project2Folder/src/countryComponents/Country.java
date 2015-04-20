@@ -27,7 +27,6 @@ public class Country {
 	
 	private ArrayList<Person> allThePeople= new ArrayList<Person>();
 	
-	private ArrayList<Team> allTheTeams= new ArrayList<Team>();
 	
 	/**
 	 * Lets you know if this Country's treeMap of people (basically a quick way to search for people if you don't know their city or state) needs to be updated due to changes to this Country.
@@ -116,25 +115,7 @@ public class Country {
 		return null;
 	}
 	
-	/**
-	 * Searches this country for a Team of a given name
-	 * @param teamName The name of the Team that this object looks for
-	 * @return The Team matching the name given in the parameters
-	 * @throws Exception Thrown if team is null
-	 */
-	public Team findTeam(String teamName) throws Exception
-	{
-		Team team=null;
-		for (State state: getStates())
-			for (City city: state.getCities())
-				if(!(city.getTeams().get(teamName)==null)){
-				team=city.getTeams().get(teamName);
-				}
-		if (team==null)
-			throw new Exception();
-		else
-			return team;
-	}
+
 	
 	/**
 	 * Searches this Country for a Person. Only to be used if the State and City of the Person are unknown
@@ -239,43 +220,6 @@ public class Country {
 		return newCity;			
 	}
 	
-//WARNING: Use the below methods to add teams to cities, don't use the addTeam method found in City
-	/**
-	 * Adds a <code>Team</code> to the TeamLinkedHashMap of one of the Cities held by one of the States in this Country
-	 * @param team The team to be added
-	 */
-	protected void addTeam(Team team)
-	{
-		assert (team!=null);
-		for (int i=0; i<team.getTeamMembers().getPeople().size(); i++)
-		{
-			if(this.findPerson(team.getTeamMembers().getPeople().get(i).getFullName())!=null)
-			team.getTeamMembers().getPeople().set(i,this.findPerson(team.getTeamMembers().getPeople().get(i).getFullName()));
-		}
-	    State foundState=this.findStateOrAdd(team.getStateName());
-	    City foundCity=findCityOrAdd(foundState, team.getCityName());
-	    foundCity.addTeam(team);
-	    allTheTeams.add(team);
-	}
-
-	/**
-	 * Adds <code>Team</code>s to the TeamLinkedHashMaps of one of the Cities held by the States in this Country
-	 * @param teams the teams to be added.
-	 */
-	protected void addTeams(ArrayList<Team> teams)
-	{
-		for (Team team: teams)
-		{
-			try
-		{
-			this.addTeam(team);
-		}catch (Exception e)
-		{
-			System.out.println("AddTeams Error");
-			e.printStackTrace();
-		}
-		}
-	}
 	
 	
 

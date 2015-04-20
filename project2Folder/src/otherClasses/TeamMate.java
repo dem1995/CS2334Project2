@@ -12,6 +12,7 @@ import java.util.Collections;
 
 import javax.swing.JFrame;
 
+import sports.Team;
 import MVCStuff.CountryModel;
 import countryComponents.City;
 import countryComponents.Country;
@@ -19,7 +20,6 @@ import countryComponents.CustomBufferedReader;
 import countryComponents.Person;
 import countryComponents.PersonList;
 import countryComponents.State;
-import countryComponents.Team;
 
 
 /**

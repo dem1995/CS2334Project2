@@ -39,12 +39,7 @@ public class City implements Comparable<City> {
 	 * The State that the city's in
 	 */
 	private State theState;
-	
-	/**
-	 * The teams based in this city
-	 */
-	//TODO Change this variable to a LinkedHashMap<Integer, TeamLinkedHashMap> to add support for years.
-	private TeamLinkedHashMap teams=new TeamLinkedHashMap();
+
 	/**
 	 * the latitude of this city
 	 */
@@ -78,14 +73,7 @@ public class City implements Comparable<City> {
 		return personList;
 	}
 	
-	/**
-	 * Getter method for this City's Teams
-	 * @return The teams that are based in this city
-	 */
-	public TeamLinkedHashMap getTeams()
-	{
-		return teams;
-	}
+
 	
 	/**
 	 * A getter method for cityName
@@ -152,16 +140,7 @@ public class City implements Comparable<City> {
 	}
 	
 	//Adder methods
-	/**
-	 * Adds a Team to this City's TeamLinkedHashMap
-	 * @param team the Team to be added
-	 */
-	public void addTeam(Team team)
-	{
-		//TODO change this method to take in a year
-		teams.addTeam(team);
-	}
-	
+
 	/**
 	 * Adds a person to this City. THE ONLY CLASS THAT SHOULD CALL THIS METHOD IS STATE
 	 * @param person The person to be added

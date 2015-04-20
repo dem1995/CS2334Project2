@@ -183,7 +183,7 @@ public class PersonList {
 	 * A method for adding a <code>Person</code> to <code>people</code>
 	 * @param person The person to be added to People
 	 */
-	void addPerson(Person person)
+	public void addPerson(Person person)
 	{
 		people.add(person);		
 	}

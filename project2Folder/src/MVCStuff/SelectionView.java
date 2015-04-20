@@ -17,10 +17,10 @@ import javax.swing.ListModel;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
+import sports.Team;
 import countryComponents.City;
 import countryComponents.Person;
 import countryComponents.State;
-import countryComponents.Team;
 
 /**
  *	The view that appears when the user starts the program. It has a menu bar with a file menu and a graph menu.

@@ -14,8 +14,6 @@ import javax.swing.JComponent;
 import countryComponents.Person;
 import countryComponents.PersonList;
 import countryComponents.Sector;
-import countryComponents.Team;
-
 /**
  * A Pie chart.
  */
@@ -47,14 +45,6 @@ public class Pie extends JComponent {
 	public Pie()
 	{
 		this.setPreferredSize(new Dimension (1000, 1000));
-	}
-	
-	/**
-	 * @param team Creates a Pie chart from a team object
-	 */
-	public Pie(Team team)
-	{
-		this(team.getTeamMembers(), team.getTeamName());
 	}
 	
 	/**

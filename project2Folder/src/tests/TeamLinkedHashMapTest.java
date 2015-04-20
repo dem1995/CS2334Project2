@@ -4,9 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import countryComponents.Team;
-import countryComponents.TeamLinkedHashMap;
 import otherClasses.TeamMate;
+import sports.Team;
+import sports.TeamLinkedHashMap;
 
 public class TeamLinkedHashMapTest {
 

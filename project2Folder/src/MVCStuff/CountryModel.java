@@ -12,7 +12,6 @@ import countryComponents.Country;
 import countryComponents.DateFormatter;
 import countryComponents.Person;
 import countryComponents.State;
-import countryComponents.Team;
 
 /**
  *The model for a Country object. It extends Country to fire events whenever things are added to it.
@@ -98,25 +97,6 @@ public class CountryModel extends Country {
 		}
 		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.PERSON_ADDED));
 		return errors;
-	}
-	
-	/**
-	 * Method for adding a team
-	 * @param team The Team to be added
-	 */
-	@Override
-	public void addTeam (Team team)
-	{
-		super.addTeam(team);
-		
-		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.TEAM_ADDED));
-		
-		//TODO addTeam method
-	}
-	
-	public void addTeams(ArrayList<Team> teams)
-	{
-		super.addTeams(teams);	
 	}
 	
 	/**
