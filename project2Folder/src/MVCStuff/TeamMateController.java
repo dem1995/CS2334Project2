@@ -157,7 +157,7 @@ public class TeamMateController {
     						String chosenFile=this.getSelectedFile().getAbsolutePath();
     						System.out.println(chosenFile);
     						try{
-    	    					//HelperMethods.saveToFile(chosenFile);
+    	    					countryModel=HelperMethods.readFile(chosenFile);
     	    				}catch(Exception f)
     	    				{
     	    					System.out.println("File saving failed");

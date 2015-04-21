@@ -11,10 +11,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+import MVCStuff.CountryModel;
 import countryComponents.Country;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 
 
@@ -50,7 +52,7 @@ public class HelperMethods {
 		return stringList;
 	}
 	
-	public static void saveToFile(Country country, String fileName)
+	public static void saveToFile(CountryModel countryModel, String fileName)
 	{
 		ObjectOutputStream stream = null;
 		try 
@@ -63,7 +65,7 @@ public class HelperMethods {
 		}		
 		try 
 		{
-			stream.writeObject(country);
+			stream.writeObject(countryModel);
 			stream.close();
 		} catch (IOException e) 
 		{
@@ -72,9 +74,9 @@ public class HelperMethods {
 		
 	}
 
-<<<<<<< HEAD
-	public static void readFile(String fileName)
+	public static CountryModel readFile(String fileName)
 	{
+		CountryModel readIn=new CountryModel();
 		
 		FileInputStream fis = null;
 		try 
@@ -97,7 +99,7 @@ public class HelperMethods {
 
 	    try 
 	    {
-			Country countryReadIn = (Country)ois.readObject();
+			readIn = (CountryModel)ois.readObject();
 		} 
 	    catch (ClassNotFoundException | IOException e) 
 	    {
@@ -111,8 +113,8 @@ public class HelperMethods {
 	    {
 			e.printStackTrace();
 		}
+	    
+	    return readIn; 
 		
 	}
-=======
->>>>>>> origin/master
 }
