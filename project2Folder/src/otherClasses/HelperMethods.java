@@ -63,6 +63,7 @@ public class HelperMethods {
 		}		
 		try 
 		{
+			stream.writeObject(country);
 			stream.close();
 		} catch (IOException e) 
 		{
