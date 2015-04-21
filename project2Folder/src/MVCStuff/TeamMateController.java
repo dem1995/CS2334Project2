@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import countryComponents.City;
@@ -123,6 +124,7 @@ public class TeamMateController {
     		selectionView.getSaveMenuItem().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
     					//TODO Save Method
+    				EditView.save();
     			}
     		});
     		

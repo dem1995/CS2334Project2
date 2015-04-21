@@ -7,6 +7,10 @@ import otherClasses.Pie;
 public class PieChartView extends View {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Pie pie;
 	
 	/**

@@ -1,7 +1,7 @@
 package MVCStuff;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+//import java.awt.GridBagConstraints;
+//import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
@@ -17,6 +17,11 @@ import countryComponents.State;
  */
 public class StateSelectionView extends View {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The model for this view
 	 */

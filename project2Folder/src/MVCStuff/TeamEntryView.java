@@ -5,7 +5,12 @@ import java.awt.event.ActionEvent;
 public class TeamEntryView extends View {
 	
 	/**
-	 * Constructor for PieChartView
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Constructor for TeamEntryView
 	 */
 	public TeamEntryView()
 	{

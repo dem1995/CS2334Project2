@@ -1,6 +1,6 @@
 package MVCStuff;
 
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
@@ -19,6 +19,10 @@ import countryComponents.State;
  */
 public class CityEntryView extends View {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	/**
 	 * The State of which the created City will be a part of.
 	 */

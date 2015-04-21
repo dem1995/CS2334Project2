@@ -2,23 +2,28 @@ package MVCStuff;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.GridLayout;
+//import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
+//import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import countryComponents.City;
 import countryComponents.DateFormatter;
 import countryComponents.Person;
-import countryComponents.State;
+//import countryComponents.State;
 
 public class PersonEntryView extends View {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * The button for entering a created person into the database.
 	 */
@@ -85,7 +90,7 @@ public class PersonEntryView extends View {
 		String deathDateText=deathDate.getText();
 		Date birthDate= new Date();
 		Date deathDate= new Date();
-		Person aPerson;
+		//Person aPerson;
 		
 		try{
 			birthDate=DateFormatter.formatter.parse(birthDateText);

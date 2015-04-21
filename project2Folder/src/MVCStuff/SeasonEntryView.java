@@ -3,6 +3,11 @@ package MVCStuff;
 import java.awt.event.ActionEvent;
 
 public class SeasonEntryView extends View {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	
 	/**
 	 * Constructor for PieChartView

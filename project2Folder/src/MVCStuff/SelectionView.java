@@ -5,7 +5,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
-import javax.swing.DefaultListModel;
+//import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -13,15 +13,15 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
-import javax.swing.ListModel;
+//import javax.swing.ListModel;
 import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
-import sports.Team;
+//import sports.Team;
 import sports.TeamSeason;
 import countryComponents.City;
 import countryComponents.Person;
-import countryComponents.State;
+//import countryComponents.State;
 
 /**
  *	The view that appears when the user starts the program. It has a menu bar with a file menu and a graph menu.
@@ -30,6 +30,11 @@ import countryComponents.State;
  */
 public class SelectionView extends View {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	//The model from which this view obtains data
 	private CountryModel countryModel;
 	
@@ -56,9 +61,9 @@ public class SelectionView extends View {
 	private JMenuItem mapMenuItem= new JMenuItem("Map");
 	
 	//The contentPane's JScrollPanes and JLists
-	private JList<City> placesList= new JList();
-	private JList<Person> peopleList=new JList();
-	private JList<TeamSeason> seasonList= new JList();
+	private JList<City> placesList= new JList<City>();
+	private JList<Person> peopleList=new JList<Person>();
+	private JList<TeamSeason> seasonList= new JList<TeamSeason>();
 	private JScrollPane placesScrollPane= new JScrollPane(placesList);
 	private JScrollPane peopleScrollPane= new JScrollPane(peopleList);
 	private JScrollPane teamsScrollPane=  new JScrollPane(seasonList);

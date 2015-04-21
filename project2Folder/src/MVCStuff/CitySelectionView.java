@@ -11,12 +11,21 @@ import countryComponents.State;
 
 public class CitySelectionView extends View {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private JList<City> cityList;
 	
 	private JScrollPane cityScrollPane;
 	
 	private JButton enterButton= new JButton("Enter");
 	
+	/**
+	 * Constructor for CitySelectionView. this contains all city within the state
+	 * @param the State from which to grab the cities
+	 */
 	public CitySelectionView(State state)
 	{
 		super();
