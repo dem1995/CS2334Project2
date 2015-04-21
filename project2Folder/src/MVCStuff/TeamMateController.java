@@ -61,7 +61,7 @@ public class TeamMateController {
     				Object[] options= {"People file", "Team file"};
     				int n = JOptionPane.showOptionDialog(null,
     					    "What kind of file are you loading?",
-    					    "A Silly Question",
+    					    "",
     					    JOptionPane.DEFAULT_OPTION,
     					    JOptionPane.PLAIN_MESSAGE,
     					    null,     //do not use a custom Icon
@@ -122,9 +122,22 @@ public class TeamMateController {
     		});
     		
     		selectionView.getSaveMenuItem().addActionListener(new ActionListener(){
-    			public void actionPerformed(ActionEvent e){
-    					//TODO Save Method
-    				EditView.save();
+    			public void actionPerformed(ActionEvent e)
+    			{		
+    				JFileChooser fileChooser= new JFileChooser()
+    				{
+    					public void approveSelection(){
+    						super.approveSelection();
+    						String chosenFile=this.getSelectedFile().getAbsolutePath();
+    						System.out.println(chosenFile);
+    						try{
+    	    					//HelperMethods.readFileAndPrint(chosenFile);
+    	    				}catch(Exception f)
+    	    				{
+    	    					System.out.println("File saving failed");
+    	    				}
+    					}		
+    				};
     			}
     		});
     		
