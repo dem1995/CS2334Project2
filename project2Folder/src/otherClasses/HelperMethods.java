@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import countryComponents.Country;
+
 public class HelperMethods {
 	
 	/**
@@ -35,6 +37,36 @@ public class HelperMethods {
 		return stringList;
 	}
 	
+	public static void readFileAndPrint(String fileName, Country country)
+	{
+		
+		BufferedReader br = null;
+		
+		try
+		{
+			String sCurrentLine;
+			br = new BufferedReader(new FileReader(fileName));
+			
+			while((sCurrentLine = br.readLine())!= null)
+			{
+				System.out.println(sCurrentLine);
+			}
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			try
+			{
+				if(br != null) br.close();
+			}
+			catch(IOException ex)
+			{
+				ex.printStackTrace();
+			}
+		}
 
 	
 	

@@ -52,7 +52,7 @@ public class TeamMateController {
     		return;
     	else
     	{	
-    		selectionView.getLoadMenuItem().addActionListener(new ActionListener(){
+    		selectionView.getImportMenuItem().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
     				
     				
@@ -69,7 +69,8 @@ public class TeamMateController {
     					    options[0]); //default button title
     				
     				File currentDirectory = new File(System.getProperty("user.dir"));
-
+    				FileNameExtensionFilter filter = new FileNameExtensionFilter(
+					        "CSV files", "csv");
     				JFileChooser fileChooser=new JFileChooser();
     				if(n==0)
     				{
@@ -90,6 +91,7 @@ public class TeamMateController {
     							
     					}		
     				};
+    				fileChooser.setFileFilter(filter);
     				fileChooser.setCurrentDirectory(currentDirectory);
     				fileChooser.showOpenDialog(null);
     				}
@@ -111,6 +113,7 @@ public class TeamMateController {
         	    				}
         					}		
         				};
+        			fileChooser.setFileFilter(filter);
         			fileChooser.setCurrentDirectory(currentDirectory);
         			fileChooser.showOpenDialog(null);
     				}
@@ -124,6 +127,8 @@ public class TeamMateController {
     		selectionView.getSaveMenuItem().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e)
     			{		
+    				
+    					   
     				JFileChooser fileChooser= new JFileChooser()
     				{
     					public void approveSelection(){
@@ -131,19 +136,36 @@ public class TeamMateController {
     						String chosenFile=this.getSelectedFile().getAbsolutePath();
     						System.out.println(chosenFile);
     						try{
-    	    					//HelperMethods.readFileAndPrint(chosenFile);
+    	    					//HelperMethods.readFileAndPrint(chosenFile, this);
     	    				}catch(Exception f)
     	    				{
     	    					System.out.println("File saving failed");
     	    				}
     					}		
     				};
+    				fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+    				fileChooser.showOpenDialog(null);
     			}
     		});
     		
-    		selectionView.getImportMenuItem().addActionListener(new ActionListener(){
+    		selectionView.getLoadMenuItem().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    					//TODO Import Method
+    				JFileChooser fileChooser= new JFileChooser()
+    				{
+    					public void approveSelection(){
+    						super.approveSelection();
+    						String chosenFile=this.getSelectedFile().getAbsolutePath();
+    						System.out.println(chosenFile);
+    						try{
+    	    					//HelperMethods.saveToFile(chosenFile);
+    	    				}catch(Exception f)
+    	    				{
+    	    					System.out.println("File saving failed");
+    	    				}
+    					}		
+    				};
+    				fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+    				fileChooser.showOpenDialog(null);
     			}
     		});
     		
