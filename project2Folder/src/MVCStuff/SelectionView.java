@@ -73,6 +73,13 @@ public class SelectionView extends View {
 	private JButton addPersonButton= new JButton("Add");
 	private JButton addSeasonButton= new JButton ("Add");
 	
+	private JButton editPlaceButton= new JButton("Edit");
+	private JButton editPersonButton= new JButton("Edit");
+	private JButton editSeasonButton= new JButton ("Edit");
+	
+	private JButton deletePlaceButton= new JButton("Delete");
+	private JButton deletePersonButton= new JButton("Delete");
+	private JButton deleteSeasonButton= new JButton ("Delete");
 	/**
 	 * The constructor method for SelectionView
 	 */
@@ -91,7 +98,7 @@ public class SelectionView extends View {
 		this.setExtendedState(Frame.MAXIMIZED_BOTH);
 		
 		//Set the layout for the JFrame
-		this.setLayout(new GridLayout(3,3));
+		this.setLayout(new GridLayout(5,3));
 		
 		//Set up the menu bar
 		setJMenuBar(new JMenuBar());
@@ -124,6 +131,14 @@ public class SelectionView extends View {
 		addPersonButton.setEnabled(false);
 		this.add(addSeasonButton);
 		addSeasonButton.setEnabled(false);
+		
+		this.add(editPlaceButton);
+		this.add(editPersonButton);
+		this.add(editSeasonButton);
+		
+		this.add(deletePlaceButton);
+		this.add(deletePersonButton);
+		this.add(deleteSeasonButton);
 		
 	
 		validate();
@@ -222,7 +237,6 @@ public class SelectionView extends View {
 			addPersonButton.setEnabled(true);
 		}
 		
-			
 	}
 
 	private void updatePersonList()
