@@ -45,7 +45,8 @@ public class SportsStuff{
 	 */
 	public void addTeam(String ID, Team team)
 	{
-		teams.put(ID, team);
+		if(teams.get(ID)==null)
+			teams.put(ID, team);
 	}
 	
 	public void addTeamSeason(String ID, TeamSeason teamSeason, int year)

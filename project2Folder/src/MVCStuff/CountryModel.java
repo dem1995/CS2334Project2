@@ -92,6 +92,7 @@ public class CountryModel extends Country {
 			try
 			{
 				Person aPerson=Person.convertStringToPerson(personString, DateFormatter.formatter);
+				if(findPerson(aPerson.getFullName())==null)
 				this.addPersonWithoutTriggeringEvent(aPerson);
 			}
 			catch (Exception e)

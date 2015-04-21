@@ -2,6 +2,7 @@ package countryComponents;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.TreeMap;
@@ -19,7 +20,7 @@ import sports.TeamSeason;
  *</p>
  *@version 2.0
  */
-public class Country {
+public class Country implements Serializable {
 
 	//Instance variables
 	/**

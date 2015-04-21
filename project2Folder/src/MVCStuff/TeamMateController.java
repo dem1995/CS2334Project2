@@ -2,9 +2,12 @@ package MVCStuff;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import countryComponents.City;
 import countryComponents.Person;
@@ -24,6 +27,10 @@ public class TeamMateController {
 	private CitySelectionView citySelectionView;
 	
 	private PersonEntryView personEntryView;
+	
+	private FileChooserView fileChooserView;
+	
+	String fileName;
 
 	/**
 	 * Instance method for TeamMateController
@@ -46,23 +53,70 @@ public class TeamMateController {
     	{	
     		selectionView.getLoadMenuItem().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
+    				
+    				
     					//TODO Load method. The method below is not what the instructions want, and is only for testing purposes so please prepare a proper file searcher.
-    				try{
-    				ArrayList<String> csvStrings= HelperMethods.convertCSVToStringList("Players.csv");
-    				countryModel.addStringList(csvStrings);
-    				System.out.println("File loaded");
-    				}catch (Exception f)
+    				
+    				Object[] options= {"People file", "Team file"};
+    				int n = JOptionPane.showOptionDialog(null,
+    					    "What kind of file are you loading?",
+    					    "A Silly Question",
+    					    JOptionPane.DEFAULT_OPTION,
+    					    JOptionPane.PLAIN_MESSAGE,
+    					    null,     //do not use a custom Icon
+    					    options,  //the titles of buttons
+    					    options[0]); //default button title
+    				
+    				File currentDirectory = new File(System.getProperty("user.dir"));
+
+    				JFileChooser fileChooser=new JFileChooser();
+    				if(n==0)
     				{
-    					System.out.println("An error occurred");
+    					fileChooser= new JFileChooser()
+    					{
+    						public void approveSelection(){
+    							super.approveSelection();
+    							String chosenFile=this.getSelectedFile().getAbsolutePath();
+    							System.out.println(chosenFile);
+    							try{
+    			    				ArrayList<String> csvStrings= HelperMethods.convertCSVToStringList(chosenFile);
+    			    				countryModel.addStringList(csvStrings);
+    			    				System.out.println("File loaded");
+    			    				}catch (Exception f)
+    			    				{
+    			    					System.out.println("An error occurred");
+    			    				}
+    							
+    					}		
+    				};
+    				fileChooser.setCurrentDirectory(currentDirectory);
+    				fileChooser.showOpenDialog(null);
     				}
-    				try{
-    					SportsStuff tempSportsStuff=new SportsStuff();
-    					tempSportsStuff.prepareFromCSVUsingCountryModel("teams2.csv", countryModel);
-    					countryModel.setSportsStuff(tempSportsStuff);
-    				}catch(Exception f)
+    				else if (n==1)
     				{
-    					System.out.println("Team loading failed");
+    					fileChooser= new JFileChooser()
+        				{
+        					public void approveSelection(){
+        						super.approveSelection();
+        						String chosenFile=this.getSelectedFile().getAbsolutePath();
+        						System.out.println(chosenFile);
+        						try{
+        	    					SportsStuff tempSportsStuff=new SportsStuff();
+        	    					tempSportsStuff.prepareFromCSVUsingCountryModel(chosenFile, countryModel);
+        	    					countryModel.setSportsStuff(tempSportsStuff);
+        	    				}catch(Exception f)
+        	    				{
+        	    					System.out.println("Team loading failed");
+        	    				}
+        					}		
+        				};
+        			fileChooser.setCurrentDirectory(currentDirectory);
+        			fileChooser.showOpenDialog(null);
     				}
+
+    				
+    				
+    				
     			}
     		});
     		
@@ -224,6 +278,12 @@ public class TeamMateController {
     		});
     	}
     		//TODO
+    }
+    
+    public void setFileChooserView(ActionListener actionListener)
+    {
+    	 this.fileChooserView=new FileChooserView(actionListener);
+    	 fileChooserView.setModel(countryModel);   	 
     }
 
     
