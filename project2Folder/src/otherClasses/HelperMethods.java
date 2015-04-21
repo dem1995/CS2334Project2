@@ -71,6 +71,7 @@ public class HelperMethods {
 		
 	}
 
+<<<<<<< HEAD
 	public static void readFile(String fileName)
 	{
 		
@@ -111,4 +112,6 @@ public class HelperMethods {
 		}
 		
 	}
+=======
+>>>>>>> origin/master
 }

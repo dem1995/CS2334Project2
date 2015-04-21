@@ -1,5 +1,6 @@
 package countryComponents;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -12,7 +13,7 @@ import java.util.Collections;
  * </p>
  * @version 2.0
  */
-public class State implements Comparable<State>{
+public class State implements Comparable<State>, Serializable{
 	
 
 	//Instance variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
