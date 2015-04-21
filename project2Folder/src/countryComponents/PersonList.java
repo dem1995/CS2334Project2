@@ -1,5 +1,6 @@
 package countryComponents;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -13,7 +14,7 @@ import java.util.Comparator;
  * </p>
  * @version 2.0
  */
-public class PersonList {
+public class PersonList implements Serializable{
 	
 	//Static Comparator<Person> objects. To be used when sorting and searching for things		
 	/**

@@ -3,6 +3,7 @@
  */
 package countryComponents;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,7 +17,7 @@ import java.util.Date;
  * </p>
  * @version 2.0
  */
-public class Person implements Comparable<Person> {
+public class Person implements Comparable<Person>, Serializable {
 	
 	//Instance Variables~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	

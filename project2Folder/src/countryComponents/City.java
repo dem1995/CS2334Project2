@@ -1,6 +1,7 @@
 package countryComponents;
 
 import java.awt.geom.Point2D;
+import java.io.Serializable;
 
 /**
  * Project #4
@@ -11,7 +12,7 @@ import java.awt.geom.Point2D;
  * </p>
  * @version 2.0
  */
-public class City implements Comparable<City> {
+public class City implements Comparable<City>, Serializable {
 	//Comparators
 	
 	/**
