@@ -45,9 +45,20 @@ public class TeamSeason implements Serializable {
 		this.sportsYear=sportsYear;
 	}
 
-	public String toString()
+	
+	public PersonList getPlayers()
+	{
+		return players;
+	}
+	
+	public String getName()
 	{
 		return name;
+	}
+	
+	public String toString()
+	{
+		return name+", "+sportsYear.getYear();
 	}
 	
 

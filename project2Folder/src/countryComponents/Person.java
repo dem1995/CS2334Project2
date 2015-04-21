@@ -293,6 +293,8 @@ public class Person implements Comparable<Person>, Serializable {
 	@SuppressWarnings("deprecation")
 	public int getAge(Date birth, Date death)
 	{
+		try{
+			
 		if(birth!=null)
 		{
 			if(death ==null)
@@ -312,6 +314,8 @@ public class Person implements Comparable<Person>, Serializable {
 		}
 		else
 			return 0;
+		}catch (Exception e)
+			{return 0;}
 		
 	}
 	

@@ -222,6 +222,16 @@ public class SelectionView extends View {
 		
 	}
 	
+	public ArrayList<Person> getSelectedPeople()
+	{
+		return new ArrayList<Person>(peopleList.getSelectedValuesList());
+	}
+	
+	public ArrayList<TeamSeason> getSelectedSeasons()
+	{
+		return new ArrayList<TeamSeason>(seasonList.getSelectedValuesList());
+	}
+	
 	/**
 	 * Updates the placesListModel of placesList
 	 */
@@ -252,6 +262,7 @@ public class SelectionView extends View {
 	{
 		seasonList.setListData(countryModel.getSportsStuff().getTeamSeasons().toArray(new TeamSeason[0]));
 	}
+	
 	
 	
 }

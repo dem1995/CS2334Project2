@@ -56,6 +56,11 @@ public class PersonList implements Serializable{
 		people=new ArrayList<Person>();
 	}
 	
+	public PersonList(ArrayList<Person> people)
+	{
+		this.people=people;
+	}
+	
 	//Getter methods~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	/**
 	 * A method for getting a <code>Person</code> from <code>people</code>

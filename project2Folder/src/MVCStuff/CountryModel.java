@@ -171,6 +171,15 @@ public class CountryModel extends Country {
 		//TODO removeActionListener method from TeamMateModel method
 	}
 	
+	public void forceUpdate()
+	{
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.PERSON_ADDED));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.STATE_ADDED));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.CITY_ADDED));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.TEAM_ADDED));
+		processEvent(new ActionEvent(this, ActionEvent.ACTION_PERFORMED, Constants.SEASON_ADDED));
+	}
+	
 	
 	/**
 	 * Processes an ActionEvent
@@ -207,6 +216,7 @@ public class CountryModel extends Country {
 	}
 	bufferedReader.close();	
 	}
+
 	
 
 }

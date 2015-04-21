@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 import javax.swing.JComponent;
 
+import sports.TeamSeason;
 import countryComponents.Person;
 import countryComponents.PersonList;
 import countryComponents.Sector;
@@ -47,6 +48,11 @@ public class Pie extends JComponent {
 		this.setPreferredSize(new Dimension (1000, 1000));
 	}
 	
+	public Pie(TeamSeason teamSeason)
+	{
+		this(teamSeason.getPlayers(), teamSeason.toString());
+	}
+	
 	/**
 	 * Creates a Pie chart from a personlist object
 	 * @param personList the personList to construct the pie chart from
@@ -60,6 +66,7 @@ public class Pie extends JComponent {
 		for (Person person: personArrayList)
 		{
 			ageArray[person.getAge()]=ageArray[person.getAge()]+1;
+			
 		}
 		//ageArray[100]=1;
 		for (int i=0; i<ageArray.length; i++)

@@ -7,12 +7,13 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import countryComponents.City;
 import countryComponents.Person;
+import countryComponents.PersonList;
 import otherClasses.HelperMethods;
+import otherClasses.Pie;
 import sports.SportsStuff;
 
 public class TeamMateController {
@@ -158,9 +159,10 @@ public class TeamMateController {
     						System.out.println(chosenFile);
     						try{
     	    					countryModel=HelperMethods.readFile(chosenFile);
+    	    					countryModel.forceUpdate();
     	    				}catch(Exception f)
     	    				{
-    	    					System.out.println("File saving failed");
+    	    					System.out.println("File loading failed");
     	    				}
     					}		
     				};
@@ -177,7 +179,20 @@ public class TeamMateController {
     		
     		selectionView.getPieChartMenuItem().addActionListener(new ActionListener(){
     			public void actionPerformed(ActionEvent e){
-    					//TODO Pie Chart Method
+    				
+    				try{
+    					Pie pie=new Pie(new PersonList(selectionView.getSelectedPeople()), "");
+    					new PieChartView(pie);
+    				}catch (Exception f){};
+    				
+
+    					for (int i=0; i<selectionView.getSelectedSeasons().size(); i++)
+    					{
+    						try{
+    							Pie pie=new Pie(selectionView.getSelectedSeasons().get(i));
+    							new PieChartView(pie);
+    						}catch (Exception f){};
+    					}
     			}
     		});
     		

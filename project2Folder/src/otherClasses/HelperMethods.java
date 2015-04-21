@@ -71,6 +71,7 @@ public class HelperMethods {
 		{
 			e.printStackTrace();
 		}
+		System.out.println("File printed");
 		
 	}
 
@@ -113,7 +114,7 @@ public class HelperMethods {
 	    {
 			e.printStackTrace();
 		}
-	    
+	    System.out.println("File read");
 	    return readIn; 
 		
 	}

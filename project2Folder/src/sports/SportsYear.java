@@ -24,4 +24,9 @@ public class SportsYear implements Serializable{
 	{
 		//TODO
 	}
+	
+	public int getYear()
+	{
+		return year;
+	}
 }
