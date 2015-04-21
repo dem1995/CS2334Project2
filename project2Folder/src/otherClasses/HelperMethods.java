@@ -2,14 +2,20 @@ package otherClasses;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+
+import countryComponents.Country;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+
 import countryComponents.Country;
+
 
 public class HelperMethods {
 	
@@ -37,6 +43,27 @@ public class HelperMethods {
 		return stringList;
 	}
 	
+	public static void saveToFile(Country country, String fileName)
+	{
+		ObjectOutputStream stream = null;
+		try 
+		{
+			 stream = new ObjectOutputStream(new FileOutputStream(fileName));
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}		
+		try 
+		{
+			stream.close();
+		} catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+		
+	}
+
 	public static void readFileAndPrint(String fileName, Country country)
 	{
 		
@@ -68,7 +95,9 @@ public class HelperMethods {
 			}
 		}
 
+
 	
 	
 
+}
 }
