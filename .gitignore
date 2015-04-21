@@ -29,3 +29,5 @@
 .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_l
 .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_m
 .recommenders/index/http___download_eclipse_org_recommenders_models_luna_/segments_n
+TempFiles/.classpath
+*.project
