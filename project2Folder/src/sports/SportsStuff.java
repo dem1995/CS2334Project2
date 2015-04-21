@@ -1,5 +1,6 @@
 package sports;
 
+import java.io.Serializable;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,7 +12,7 @@ import countryComponents.DateFormatter;
 import countryComponents.Person;
 import countryComponents.PersonList;
 
-public class SportsStuff{
+public class SportsStuff implements Serializable{
 	
 	
 	

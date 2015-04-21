@@ -1,9 +1,10 @@
 package sports;
 
 
+import java.io.Serializable;
 import java.util.TreeMap;
 
-public class Team {
+public class Team implements Serializable{
 	
 	/**
 	 * The ID of the team

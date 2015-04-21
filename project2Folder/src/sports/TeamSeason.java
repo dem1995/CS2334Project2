@@ -1,10 +1,12 @@
 package sports;
 
+import java.io.Serializable;
+
 import countryComponents.DateFormatter;
 import countryComponents.Person;
 import countryComponents.PersonList;
 
-public class TeamSeason {
+public class TeamSeason implements Serializable {
 	
 
 	/**
