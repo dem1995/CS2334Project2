@@ -2,9 +2,12 @@ package otherClasses;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -12,6 +15,10 @@ import countryComponents.Country;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+
+
+
 
 
 import countryComponents.Country;
@@ -64,40 +71,44 @@ public class HelperMethods {
 		
 	}
 
-	public static void readFileAndPrint(String fileName, Country country)
+	public static void readFile(String fileName)
 	{
 		
-		BufferedReader br = null;
-		
-		try
+		FileInputStream fis = null;
+		try 
 		{
-			String sCurrentLine;
-			br = new BufferedReader(new FileReader(fileName));
-			
-			while((sCurrentLine = br.readLine())!= null)
-			{
-				System.out.println(sCurrentLine);
-			}
-		}
-		catch(IOException e)
+			fis = new FileInputStream(fileName);
+		} 
+		catch (FileNotFoundException e) 
 		{
 			e.printStackTrace();
 		}
-		finally
+	    ObjectInputStream ois = null;
+		try 
 		{
-			try
-			{
-				if(br != null) br.close();
-			}
-			catch(IOException ex)
-			{
-				ex.printStackTrace();
-			}
+			ois = new ObjectInputStream(fis);
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
 		}
 
-
-	
-	
-
-}
+	    try 
+	    {
+			Country countryReadIn = (Country)ois.readObject();
+		} 
+	    catch (ClassNotFoundException | IOException e) 
+	    {
+			e.printStackTrace();
+		}
+	    
+	    try 
+	    {
+			ois.close();
+		} catch (IOException e) 
+	    {
+			e.printStackTrace();
+		}
+		
+	}
 }
