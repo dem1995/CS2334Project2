@@ -18,6 +18,11 @@ public abstract class View extends JFrame implements ActionListener
 {
 	
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 * The TeamMateModel used by this view
 	 */
 	private CountryModel countryModel;
